@@ -1,0 +1,65 @@
+﻿<Properties StartupConfiguration="{55CEFEE5-DB37-49F7-8512-77785319A1E2}|Default">
+  <MonoDevelop.Ide.ItemProperties.TicketsBooking.APIs PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TicketsBooking.APIs/Setups/Bases/CoreController.cs">
+    <Files>
+      <File FileName="TicketsBooking.APIs/Setups/Bases/CoreController.cs" Line="10" Column="2" />
+      <File FileName="TicketsBooking.APIs/Setups/Builders/AuthenticationServiceBuilderSetup.cs" />
+      <File FileName="TicketsBooking.Infrastructure/Persistence/Configurations/SocialMediaConfig.cs" />
+      <File FileName="TicketsBooking.Application/Components/SocialMedia/DTOs/SocialMediaEntry.cs" />
+      <File FileName="TicketsBooking.Application/Components/EventProviders/DTOs/Commands/RegisterOrgCommand.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TicketsBooking" expanded="True">
+            <Node name="TicketsBooking.APIs" expanded="True" selected="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Setups" expanded="True">
+                <Node name="Bases" expanded="True" />
+                <Node name="Builders" expanded="True" />
+                <Node name="Factory" expanded="True" />
+                <Node name="Services" expanded="True" />
+                <Node name="Settings" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="TicketsBooking.Application" expanded="True">
+              <Node name="Components" expanded="True">
+                <Node name="EventProviders" expanded="True">
+                  <Node name="DTOs" expanded="True">
+                    <Node name="Commands" expanded="True" />
+                  </Node>
+                </Node>
+                <Node name="SocialMedia" expanded="True">
+                  <Node name="DTOs" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+            <Node name="TicketsBooking.Domain" expanded="True">
+              <Node name="Entities" expanded="True" />
+            </Node>
+            <Node name="TicketsBooking.Infrastructure" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Persistence" expanded="True">
+                <Node name="Configurations" expanded="True" />
+                <Node name="Seeders" expanded="True" />
+              </Node>
+              <Node name="Repos" expanded="True" />
+            </Node>
+            <Node name="TicketsBooking.UnitTest" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+                <Node name="ProjectDependencies" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
