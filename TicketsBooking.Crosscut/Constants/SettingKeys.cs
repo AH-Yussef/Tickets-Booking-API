@@ -1,10 +1,9 @@
 ﻿namespace TicketsBooking.Crosscut.Constants
 {
-    public static class SettingKeys
+    public static class Roles
     {
-        public static string ContactUsEmail => "contact-us-email";
-        public static string ContactUsPhone => "contact-us-phone";
-        public static string AboutUsAr => "about-us-ar";
-        public static string AboutUsEn => "about-us-en";
+        public static string Admin => "Admin";
+        public static string EventProvider => "EventProvider";
+        public static string Customer => "Customer";
     }
 }

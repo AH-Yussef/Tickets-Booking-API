@@ -1734,6 +1734,7 @@
           "FluentValidation.DependencyInjectionExtensions": "10.3.3",
           "MediatR": "9.0.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "9.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.8",
           "Serilog": "2.10.0",
           "Serilog.AspNetCore": "4.1.0",
           "TanvirArjel.Extensions.Microsoft.DependencyInjection": "2.0.0",

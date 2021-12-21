@@ -19,6 +19,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Moq" Version="4.16.1" />
+    <PackageReference Include="Autofac.Extras.Moq" Version="6.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,5 +32,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Moq" />
+    <None Remove="AuthTests\" />
+    <None Remove="Autofac.Extras.Moq" />
+    <None Remove="AutoFixture.AutoMoq" />
+    <None Remove="AutoMoq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AuthTests\" />
   </ItemGroup>
 </Project>

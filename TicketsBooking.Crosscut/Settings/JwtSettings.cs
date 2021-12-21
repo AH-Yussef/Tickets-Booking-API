@@ -1,5 +1,4 @@
-﻿using System;
-namespace TicketsBooking.APIs.Setups.Settings
+﻿namespace TicketsBooking.Crosscut.Settings
 {
     public class JwtSettings
     {

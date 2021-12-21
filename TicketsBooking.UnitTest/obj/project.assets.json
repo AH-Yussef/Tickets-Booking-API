@@ -2,6 +2,32 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "Autofac/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Diagnostics.DiagnosticSource": "4.7.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/Autofac.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Autofac.dll": {}
+        }
+      },
+      "Autofac.Extras.Moq/6.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Autofac": "6.0.0",
+          "Moq": "4.7.0",
+          "System.ComponentModel.TypeConverter": "4.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/Autofac.Extras.Moq.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Autofac.Extras.Moq.dll": {}
+        }
+      },
       "AutoMapper/10.1.1": {
         "type": "package",
         "dependencies": {
@@ -3712,6 +3738,7 @@
           "FluentValidation.DependencyInjectionExtensions": "10.3.3",
           "MediatR": "9.0.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "9.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.8",
           "Serilog": "2.10.0",
           "Serilog.AspNetCore": "4.1.0",
           "TanvirArjel.Extensions.Microsoft.DependencyInjection": "2.0.0",
@@ -3822,6 +3849,42 @@
     }
   },
   "libraries": {
+    "Autofac/6.0.0": {
+      "sha512": "tRVRXGxwXbQmPy1ZGso115O55ffVW4mWtufjOy7hduQ1BNVR1j7RQQjxpYuB6tJw5OrgqRWYVJLJ8RwYNz/j+A==",
+      "type": "package",
+      "path": "autofac/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "autofac.6.0.0.nupkg.sha512",
+        "autofac.nuspec",
+        "icon.png",
+        "lib/netstandard2.0/Autofac.dll",
+        "lib/netstandard2.0/Autofac.pdb",
+        "lib/netstandard2.0/Autofac.xml",
+        "lib/netstandard2.1/Autofac.dll",
+        "lib/netstandard2.1/Autofac.pdb",
+        "lib/netstandard2.1/Autofac.xml"
+      ]
+    },
+    "Autofac.Extras.Moq/6.1.0": {
+      "sha512": "8QzrP3V9dlBCQ7xB8I/WRpBNqikz4HYTN4K+IEkUH3NpT1V9fuh4ubDhAYKylx5dIi8KJ9hkRaTlP+4Zucqu7Q==",
+      "type": "package",
+      "path": "autofac.extras.moq/6.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "autofac.extras.moq.6.1.0.nupkg.sha512",
+        "autofac.extras.moq.nuspec",
+        "icon.png",
+        "lib/netstandard2.0/Autofac.Extras.Moq.dll",
+        "lib/netstandard2.0/Autofac.Extras.Moq.pdb",
+        "lib/netstandard2.0/Autofac.Extras.Moq.xml",
+        "lib/netstandard2.1/Autofac.Extras.Moq.dll",
+        "lib/netstandard2.1/Autofac.Extras.Moq.pdb",
+        "lib/netstandard2.1/Autofac.Extras.Moq.xml"
+      ]
+    },
     "AutoMapper/10.1.1": {
       "sha512": "uMgbqOdu9ZG5cIOty0C85hzzayBH2i9BthnS5FlMqKtMSHDv4ts81a2jS1VFaDBVhlBeIqJ/kQKjQY95BZde9w==",
       "type": "package",
@@ -11645,6 +11708,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "Autofac.Extras.Moq >= 6.1.0",
       "Microsoft.NET.Test.Sdk >= 16.10.0",
       "Moq >= 4.16.1",
       "TicketsBooking.APIs >= 1.0.0",
@@ -11715,6 +11779,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "Autofac.Extras.Moq": {
+            "target": "Package",
+            "version": "[6.1.0, )"
+          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[16.10.0, )"
@@ -11759,7 +11827,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
       }
     }
   }

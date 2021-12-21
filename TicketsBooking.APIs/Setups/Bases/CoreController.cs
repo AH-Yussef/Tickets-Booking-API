@@ -9,11 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 namespace TicketsBooking.APIs.Setups.Bases
 {
     [ApiController]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class CoreController : ControllerBase
     {
-        private ISender _mediator;
-        protected ISender Mediator => _mediator ??= HttpContext.RequestServices.GetService<ISender>();
         public ObjectResult NewResult<T>(OutputResponse<T> response)
         {
             switch (response.StatusCode)

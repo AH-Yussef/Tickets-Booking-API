@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TicketsBooking.Application.Components.Events.DTOs.Queries;
 using TicketsBooking.Application.Components.Events;
-
+using TicketsBooking.Crosscut.Enums;
 
 namespace TicketsBooking.APIs.Controllers
 {
@@ -17,6 +17,7 @@ namespace TicketsBooking.APIs.Controllers
         }
 
         //[AllowAnonymous]
+        [Authorize(Roles = "EventProvider")]
         [HttpGet(Router.Event.List)]
         public async Task<IActionResult> List([FromQuery] ListEventsQuery query)
         {

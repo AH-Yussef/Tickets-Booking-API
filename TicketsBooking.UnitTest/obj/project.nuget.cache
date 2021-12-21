@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "1LqMn/jbKGR6uXBMwMsCeNM3xrM3MFSViM4TXjPB0TziYJyM3J5Zu2IacKx2gejt3hUufBo/4aGn86fmfzggQQ==",
+  "dgSpecHash": "B4mmjtOhfnMUk6iqDE6P0gmImXP7PpwulnKV6fvy8M7aHobk0WTeLr415m0fkhP5XIEH5vy//I/1SYHp/re+TA==",
   "success": true,
   "projectFilePath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.UnitTest/TicketsBooking.UnitTest.csproj",
   "expectedPackageFiles": [
+    "/Users/alihassan/.nuget/packages/autofac/6.0.0/autofac.6.0.0.nupkg.sha512",
+    "/Users/alihassan/.nuget/packages/autofac.extras.moq/6.1.0/autofac.extras.moq.6.1.0.nupkg.sha512",
     "/Users/alihassan/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
     "/Users/alihassan/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/8.1.1/automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "/Users/alihassan/.nuget/packages/bcrypt.net-next/4.0.2/bcrypt.net-next.4.0.2.nupkg.sha512",

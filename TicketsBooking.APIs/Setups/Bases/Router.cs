@@ -17,8 +17,9 @@ namespace TicketsBooking.APIs.Setups.Bases
         public static class EventProvider
         {
             private const string Prefix = Rule + "EventProviders";
-            public const string Register = Prefix;
-            public const string OrgAlreadyExist = Prefix + "OrgAlreadyExist";
+            public const string Register = Prefix + "/Register";
+            public const string OrgAlreadyExist = Prefix + "/OrgAlreadyExist";
+            public const string Auth = Prefix + "/Auth";
         }
     }
 }

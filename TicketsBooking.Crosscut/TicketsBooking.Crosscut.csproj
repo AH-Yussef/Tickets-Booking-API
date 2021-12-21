@@ -8,4 +8,10 @@
     <PackageReference Include="FluentValidation" Version="10.3.3" />
     <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Settings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Settings\" />
+  </ItemGroup>
 </Project>

@@ -2,6 +2,7 @@
 using TicketsBooking.Infrastructure.Persistence;
 using TicketsBooking.Application.Components.EventProviders;
 using TicketsBooking.Application.Components.EventProviders.DTOs.Commands;
+using TicketsBooking.Domain.Entities;
 
 namespace TicketsBooking.Infrastructure.Repos
 {
@@ -20,6 +21,11 @@ namespace TicketsBooking.Infrastructure.Repos
         }
 
         public Task<bool> Register(RegisterOrgCommand command)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public EventProvider GetEventProvider(string email)
         {
             throw new System.NotImplementedException();
         }

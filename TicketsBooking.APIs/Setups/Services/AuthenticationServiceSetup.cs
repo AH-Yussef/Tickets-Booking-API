@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using TicketsBooking.APIs.Setups.Factory;
-using TicketsBooking.APIs.Setups.Settings;
+using TicketsBooking.Crosscut.Settings;
 
 namespace TicketsBooking.APIs.Setups.Services
 {
@@ -19,7 +19,7 @@ namespace TicketsBooking.APIs.Setups.Services
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                //x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             })
             .AddJwtBearer(x =>
             {

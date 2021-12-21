@@ -1,6 +1,8 @@
 ﻿using System.Threading.Tasks;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 using TicketsBooking.Application.Components.EventProviders.DTOs.Commands;
+using TicketsBooking.Domain.Entities;
+
 namespace TicketsBooking.Application.Components.EventProviders
 {
     [ScopedService]
@@ -8,5 +10,6 @@ namespace TicketsBooking.Application.Components.EventProviders
     {
         Task<bool> Register(RegisterOrgCommand command);
         Task<bool> DoesOrgAlreadyExist(string Name);
+        EventProvider GetEventProvider(string email);
     }
 }
