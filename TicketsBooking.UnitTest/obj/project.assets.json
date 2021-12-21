@@ -2,6 +2,32 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "Autofac/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Diagnostics.DiagnosticSource": "4.7.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/Autofac.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Autofac.dll": {}
+        }
+      },
+      "Autofac.Extras.Moq/6.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Autofac": "6.0.0",
+          "Moq": "4.7.0",
+          "System.ComponentModel.TypeConverter": "4.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/Autofac.Extras.Moq.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Autofac.Extras.Moq.dll": {}
+        }
+      },
       "AutoMapper/10.1.1": {
         "type": "package",
         "dependencies": {
@@ -3861,6 +3887,42 @@
     }
   },
   "libraries": {
+    "Autofac/6.0.0": {
+      "sha512": "tRVRXGxwXbQmPy1ZGso115O55ffVW4mWtufjOy7hduQ1BNVR1j7RQQjxpYuB6tJw5OrgqRWYVJLJ8RwYNz/j+A==",
+      "type": "package",
+      "path": "autofac/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "autofac.6.0.0.nupkg.sha512",
+        "autofac.nuspec",
+        "icon.png",
+        "lib/netstandard2.0/Autofac.dll",
+        "lib/netstandard2.0/Autofac.pdb",
+        "lib/netstandard2.0/Autofac.xml",
+        "lib/netstandard2.1/Autofac.dll",
+        "lib/netstandard2.1/Autofac.pdb",
+        "lib/netstandard2.1/Autofac.xml"
+      ]
+    },
+    "Autofac.Extras.Moq/6.1.0": {
+      "sha512": "8QzrP3V9dlBCQ7xB8I/WRpBNqikz4HYTN4K+IEkUH3NpT1V9fuh4ubDhAYKylx5dIi8KJ9hkRaTlP+4Zucqu7Q==",
+      "type": "package",
+      "path": "autofac.extras.moq/6.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "autofac.extras.moq.6.1.0.nupkg.sha512",
+        "autofac.extras.moq.nuspec",
+        "icon.png",
+        "lib/netstandard2.0/Autofac.Extras.Moq.dll",
+        "lib/netstandard2.0/Autofac.Extras.Moq.pdb",
+        "lib/netstandard2.0/Autofac.Extras.Moq.xml",
+        "lib/netstandard2.1/Autofac.Extras.Moq.dll",
+        "lib/netstandard2.1/Autofac.Extras.Moq.pdb",
+        "lib/netstandard2.1/Autofac.Extras.Moq.xml"
+      ]
+    },
     "AutoMapper/10.1.1": {
       "sha512": "uMgbqOdu9ZG5cIOty0C85hzzayBH2i9BthnS5FlMqKtMSHDv4ts81a2jS1VFaDBVhlBeIqJ/kQKjQY95BZde9w==",
       "type": "package",
@@ -11805,6 +11867,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "Autofac.Extras.Moq >= 6.1.0",
       "Microsoft.NET.Test.Sdk >= 16.10.0",
       "Moq >= 4.16.1",
       "TicketsBooking.APIs >= 1.0.0",
@@ -11820,49 +11883,47 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mohan\\.nuget\\packages\\": {}
+    "/Users/alihassan/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\SWE\\TicketsBooking.UnitTest\\TicketsBooking.UnitTest.csproj",
+      "projectUniqueName": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.UnitTest/TicketsBooking.UnitTest.csproj",
       "projectName": "TicketsBooking.UnitTest",
-      "projectPath": "E:\\SWE\\TicketsBooking.UnitTest\\TicketsBooking.UnitTest.csproj",
-      "packagesPath": "C:\\Users\\mohan\\.nuget\\packages\\",
-      "outputPath": "E:\\SWE\\TicketsBooking.UnitTest\\obj\\",
+      "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.UnitTest/TicketsBooking.UnitTest.csproj",
+      "packagesPath": "/Users/alihassan/.nuget/packages/",
+      "outputPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.UnitTest/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mohan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/alihassan/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\SWE\\TicketsBooking.APIs\\TicketsBooking.APIs.csproj": {
-              "projectPath": "E:\\SWE\\TicketsBooking.APIs\\TicketsBooking.APIs.csproj"
+            "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.APIs/TicketsBooking.APIs.csproj": {
+              "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.APIs/TicketsBooking.APIs.csproj"
             },
-            "E:\\SWE\\TicketsBooking.Application\\TicketsBooking.Application.csproj": {
-              "projectPath": "E:\\SWE\\TicketsBooking.Application\\TicketsBooking.Application.csproj"
+            "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Application/TicketsBooking.Application.csproj": {
+              "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Application/TicketsBooking.Application.csproj"
             },
-            "E:\\SWE\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj": {
-              "projectPath": "E:\\SWE\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj"
+            "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/TicketsBooking.Crosscut.csproj": {
+              "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/TicketsBooking.Crosscut.csproj"
             },
-            "E:\\SWE\\TicketsBooking.Domain\\TicketsBooking.Domain.csproj": {
-              "projectPath": "E:\\SWE\\TicketsBooking.Domain\\TicketsBooking.Domain.csproj"
+            "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Domain/TicketsBooking.Domain.csproj": {
+              "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Domain/TicketsBooking.Domain.csproj"
             },
-            "E:\\SWE\\TicketsBooking.Infrastructure\\TicketsBooking.Infrastructure.csproj": {
-              "projectPath": "E:\\SWE\\TicketsBooking.Infrastructure\\TicketsBooking.Infrastructure.csproj"
+            "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Infrastructure/TicketsBooking.Infrastructure.csproj": {
+              "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Infrastructure/TicketsBooking.Infrastructure.csproj"
             },
-            "E:\\SWE\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj": {
-              "projectPath": "E:\\SWE\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj"
+            "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Integration/TicketsBooking.Integration.csproj": {
+              "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Integration/TicketsBooking.Integration.csproj"
             }
           }
         }
@@ -11877,6 +11938,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "Autofac.Extras.Moq": {
+            "target": "Package",
+            "version": "[6.1.0, )"
+          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[16.10.0, )"
@@ -11921,7 +11986,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.404/RuntimeIdentifierGraph.json"
       }
     }
   }

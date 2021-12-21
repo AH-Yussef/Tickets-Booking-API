@@ -27,6 +27,7 @@
     <None Remove="Components\EventProviders\DTOs\Commands\" />
     <None Remove="Components\SocialMedia\" />
     <None Remove="Components\SocialMedia\DTOs\" />
+    <None Remove="Components\EventProviders\Validators\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Components\Events\DTOs\" />
@@ -36,5 +37,6 @@
     <Folder Include="Components\EventProviders\DTOs\Results\" />
     <Folder Include="Components\SocialMedia\" />
     <Folder Include="Components\SocialMedia\DTOs\" />
+    <Folder Include="Components\EventProviders\Validators\" />
   </ItemGroup>
 </Project>

@@ -7,5 +7,6 @@
         public static string Failure => " your operation doesn't completed successfully, please check your input and try again";
         public static string Unauthorized => "sorry, you are not authorized to perform this action";
         public static string Unauthenticated => "login failed. wrong user credentials";
+        public static string UnprocessableEntity => "input values are not valid";
     }
 }

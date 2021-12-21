@@ -18,7 +18,7 @@ namespace TicketsBooking.Infrastructure.Persistence.Seeders
 
         public void Seed()
         {
-            new EventSeeder(_dbContext, _faker).Seed();
+            new EventProviderSeeder(_dbContext, _faker).Seed();
         }
     }
 }

@@ -1,9 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Threading.Tasks;
 using AutoMapper;
+using FluentValidation;
+using TicketsBooking.Application.Common.Responses;
 using TicketsBooking.Application.Components.EventProviders.DTOs.Commands;
 using TicketsBooking.Application.Components.EventProviders.DTOs.Queries;
+using TicketsBooking.Application.Components.EventProviders.DTOs.Results;
+using TicketsBooking.Application.Components.EventProviders.Validators;
+using TicketsBooking.Crosscut.Constants;
 
 namespace TicketsBooking.Application.Components.EventProviders
 {
@@ -11,56 +17,172 @@ namespace TicketsBooking.Application.Components.EventProviders
     {
         private readonly IEventProviderRepo _eventRepo;
         private readonly IMapper _mapper;
+        private readonly AbstractValidator<CreateEventProviderCommand> _createEventProviderCommandValidator;
+        private readonly AbstractValidator<SetVerifiedCommand> _setVerifiedCommandValidator;
 
         public EventProviderService(IEventProviderRepo eventRepo, IMapper mapper)
         {
             _eventRepo = eventRepo;
             _mapper = mapper;
+            _createEventProviderCommandValidator = new CreateEventProviderCommandValidator();
+            _setVerifiedCommandValidator = new SetVerifiedCommandValidator();
         }
 
-        public Task<bool> DeleteEventProvider(string name)
+        public async Task<OutputResponse<bool>> Delete(string name)
         {
-            return _eventRepo.Delete(name);
-            //throw new NotImplementedException();
+            if(string.IsNullOrEmpty(name))
+            {
+                return new OutputResponse<bool>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.UnprocessableEntity,
+                    Message = ResponseMessages.UnprocessableEntity,
+                };
+            }
+
+            if(await _eventRepo.GetSingle(name) == null)
+            {
+                return new OutputResponse<bool>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.NotFound,
+                    Message = ResponseMessages.Failure,
+                };
+            }
+
+            await _eventRepo.Delete(name);
+
+            return new OutputResponse<bool>
+            {
+                Success = true,
+                StatusCode = HttpStatusCode.Accepted,
+                Message = ResponseMessages.Success,
+            };
         }
 
-        public Task<bool> DoesOrgAlreadyExist(DoesOrgAlreadyExistQuery query)
+        public async Task<OutputResponse<bool>> DoesEventProviderAlreadyExist(string name)
         {
-            return _eventRepo.DoesOrgAlreadyExist(query.Name);
-            //throw new NotImplementedException();
+            if (string.IsNullOrEmpty(name))
+            {
+                return new OutputResponse<bool>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.UnprocessableEntity,
+                    Message = ResponseMessages.UnprocessableEntity,
+                };
+            }
+
+            var doesExist = await _eventRepo.GetSingle(name) == null;
+            return new OutputResponse<bool>
+            {
+                Success = true,
+                StatusCode = HttpStatusCode.Accepted,
+                Message = ResponseMessages.Success,
+                Model = doesExist,
+            };
+        } 
+
+        public async Task<OutputResponse<List<EventProviderListedResult>>> GetAll(GetAllEventProvidersQuery query)
+        {
+            var eventProviders = await _eventRepo.GetAll(query);
+            return new OutputResponse<List<EventProviderListedResult>>
+            {
+                Success = true,
+                StatusCode = HttpStatusCode.Accepted,
+                Message = ResponseMessages.Success,
+                Model = _mapper.Map<List<EventProviderListedResult>>(eventProviders),
+            };
         }
 
-        public Task<List<GetAllQuery>> GetAll(GetAllEventProvidersQuery query)
+        public async Task<OutputResponse<EventProviderSingleResult>> GetSingle(string name)
         {
-            return _eventRepo.GetAll(query);
-            //throw new NotImplementedException();
+            if (string.IsNullOrEmpty(name))
+            {
+                return new OutputResponse<EventProviderSingleResult>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.UnprocessableEntity,
+                    Message = ResponseMessages.UnprocessableEntity,
+                    Model = null,
+                };
+            }
+
+            var eventProvider = await _eventRepo.GetSingle(name);
+
+            if(eventProvider == null)
+            {
+                return new OutputResponse<EventProviderSingleResult>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.NotFound,
+                    Message = ResponseMessages.Failure,
+                    Model = null,
+                };
+            }
+
+            return new OutputResponse<EventProviderSingleResult>
+            {
+                Success = true,
+                StatusCode = HttpStatusCode.Accepted,
+                Message = ResponseMessages.Success,
+                Model = _mapper.Map<EventProviderSingleResult>(eventProvider),
+            };
         }
 
-        public Task<GetSingleQuery> GetSingle(string str)
+        public async Task<OutputResponse<bool>> Register(CreateEventProviderCommand command)
         {
-            return _eventRepo.GetSingle(str);
-            //throw new NotImplementedException();
+            var isValid = _createEventProviderCommandValidator.Validate(command).IsValid;
+            if(!isValid)
+            {
+                return new OutputResponse<bool>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.UnprocessableEntity,
+                    Message = ResponseMessages.UnprocessableEntity,
+                };
+            }
+
+            if (await _eventRepo.GetSingle(command.Name) == null)
+            {
+                return new OutputResponse<bool>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.NotFound,
+                    Message = ResponseMessages.Failure,
+                };
+            }
+
+            await _eventRepo.Create(command);
+            return new OutputResponse<bool>
+            {
+                Success = true,
+                StatusCode = HttpStatusCode.Created,
+                Message = ResponseMessages.Success,
+                Model = true,
+            };
         }
 
-        public Task<bool> Register(RegisterOrgCommand command)
+        public async Task<OutputResponse<bool>> UpdateVerified(SetVerifiedCommand command)
         {
-           // DoesOrgAlreadyExistQuery doaeq = new DoesOrgAlreadyExistQuery();
-            // doaeq.Name = command.Name;
-            
-            return _eventRepo.Register(command);
-            //throw new NotImplementedException();
-        }
+            var isValid = _setVerifiedCommandValidator.Validate(command).IsValid;
+            if (!isValid)
+            {
+                return new OutputResponse<bool>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.UnprocessableEntity,
+                    Message = ResponseMessages.UnprocessableEntity,
+                };
+            }
 
-        public Task<bool> SetVerdict(VerdictCommand command)
-        {
-            return _eventRepo.SetVerdict(command);
-            //throw new NotImplementedException();
-        }
-
-        public Task<bool> UpdateEventProvider(RegisterOrgCommand eventProviderInfo)
-        {
-            return _eventRepo.UpdateEventProvider(eventProviderInfo);
-            //throw new NotImplementedException();
+            await _eventRepo.UpdateVerified(command);
+            return new OutputResponse<bool>
+            {
+                Success = true,
+                StatusCode = HttpStatusCode.Accepted,
+                Message = ResponseMessages.Success,
+                Model = true,
+            };
         }
     }
 }

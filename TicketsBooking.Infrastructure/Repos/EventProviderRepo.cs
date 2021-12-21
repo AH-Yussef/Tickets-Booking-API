@@ -20,106 +20,67 @@ namespace TicketsBooking.Infrastructure.Repos
             _dbContext = dbContext;
         }
         
-        public Task<bool> Delete(string str)
+        public async Task<bool> Delete(string name)
         {
-            var entity = _dbContext.EventProviders.Find(str);
-            if(entity == null) return new Task<bool>(() => false);
+            var entity = _dbContext.EventProviders.Find(name);
             _dbContext.EventProviders.Remove(entity);
-            _dbContext.SaveChanges();
-            return new Task<bool>(() => true);
-            //throw new System.NotImplementedException();
+            await _dbContext.SaveChangesAsync();
+            return true;
         }
 
-        public Task<bool> DoesOrgAlreadyExist(string Name)
+        public async Task<List<EventProvider>> GetAll(GetAllEventProvidersQuery query)
         {
-            var entity = _dbContext.EventProviders.Find(Name);
-            return new Task<bool>(() => entity != null);
-
-            //throw new System.NotImplementedException();
-        }
-
-        public async Task<List<GetAllQuery>> GetAll(GetAllEventProvidersQuery query) // get some info
-        {
-
             var result = _dbContext.EventProviders.AsQueryable();
-            result.Where(record => record.Verified == false);
-            result = result.Skip((query.pageNumber - 1) * query.pageSize).Take(query.pageSize);
-            //return await result.ToListAsync();
-            List<GetAllQuery> queryList = new List<GetAllQuery>();
-            //for(EventProvider oneResult : result.ToListAsync())
-            foreach(EventProvider oneResult in result)
+
+            string searchTarget = query.searchTarget;
+            if (!string.IsNullOrEmpty(searchTarget))
             {
-                GetAllQuery gaq = new GetAllQuery();
-                gaq.Name = oneResult.Name;
-                gaq.Email = oneResult.Email;
-                gaq.Verified = oneResult.Verified;
-             
-                queryList.Add(gaq);
+                result = result.Where(record => record.Name.Contains(searchTarget));
             }
-            //throw new System.NotImplementedException();
-            return queryList;
+            result = result.Where(record => record.Verified == query.isVerified);
+            result = result.Skip((query.pageNumber - 1) * query.pageSize).Take(query.pageSize);
+            return await result.ToListAsync();
         }
 
-        public Task<GetSingleQuery> GetSingle(string str) // get all info
+        public async Task<EventProvider> GetSingle(string name)
         {
-            var entity = _dbContext.EventProviders.Find(str);
-            if(entity == null) return null;
-            GetSingleQuery query = new GetSingleQuery();
-            query.Address = entity.Address;
-            query.Name = entity.Name;
-            query.Email = entity.Email;
-            query.Verified = entity.Verified;
-            query.Bio = entity.Bio;
-            query.WebsiteLink = entity.WebsiteLink;
-            // social media--
-            //throw new System.NotImplementedException();
-            return new Task<GetSingleQuery>(() => query);
+            return await _dbContext.EventProviders.FindAsync(name);
         }
 
-        public Task<bool> SetVerdict(VerdictCommand command)
+        public async Task<bool> UpdateVerified(SetVerifiedCommand command)
         {
             var result = _dbContext.EventProviders.Find(command.Name);
-            if(result == null) return new Task<bool>(() => false);
             result.Verified = command.Verified;
-            _dbContext.SaveChanges();
-            return new Task<bool>(() => true);
-            //throw new System.NotImplementedException();
+            await _dbContext.SaveChangesAsync();
+            return true;
         }
 
-        public Task<bool> Register(RegisterOrgCommand command)
+        public async Task<EventProvider> Create(CreateEventProviderCommand command)
         {
-            EventProvider eventProvider = new EventProvider();
-            eventProvider.Name = command.Name;
-            eventProvider.Password = command.Password;
-            eventProvider.Email = command.Email;
-            eventProvider.Address = command.Address;
-            eventProvider.Bio = command.Bio;
-            eventProvider.WebsiteLink= command.WebsiteLink;
-            eventProvider.Verified = false;
-            // ICollection<SocialMediaEntry> sme = new SocialMediaEntry();
-            //sme.Type = 
-            //eventProvider.SocialMedias = command.SocialMedias;
+            var newEventProvider = new EventProvider
+            {
+                Name = command.Name,
+                Password = command.Password,
+                Email = command.Email,
+                Address = command.Address,
+                Bio = command.Bio,
+                WebsiteLink = command.WebsiteLink,
+                Verified = false,
+            };
+            foreach(var entry in command.SocialMedias)
+            {
+                var newSocialMedia = new SocialMedia
+                {
+                    Type = entry.Type,
+                    Link = entry.Link,
+                };
+                newEventProvider.SocialMedias.Add(newSocialMedia);
+            }
+            
+            await _dbContext.EventProviders.AddAsync(newEventProvider);
+            await _dbContext.SaveChangesAsync();
 
-            _dbContext.EventProviders.AddAsync(eventProvider);
-            _dbContext.SaveChanges();
-
-            return new Task<bool>(() => false); // just for testing purposes
-            //throw new System.NotImplementedException();
-        }
-
-        public Task<bool> UpdateEventProvider(RegisterOrgCommand command)
-        {
-            // _dbContext.EventProviders.
-            var result = _dbContext.EventProviders.Find(command.Name);
-            if(result == null) return new Task<bool>(() => false);
-            result.Password = command.Password;
-            result.Email = command.Email;
-            result.Address = command.Address;
-            result.Bio = command.Bio;
-            result.WebsiteLink = command.WebsiteLink;
-            _dbContext.SaveChanges();
-            return new Task<bool>(() => true);
-            //throw new System.NotImplementedException();
+            return newEventProvider;
         }
     }
 }

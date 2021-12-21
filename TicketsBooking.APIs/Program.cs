@@ -1,10 +1,7 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using TicketsBooking.APIs.Setups.Settings;
 using TicketsBooking.Infrastructure.Persistence.Seeders;
-using Serilog;
 
 namespace TicketsBooking.APIs
 {
