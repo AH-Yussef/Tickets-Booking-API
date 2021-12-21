@@ -22,3 +22,15 @@
 /Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Integration/obj/Debug/net5.0/TicketsBooking.Integration.dll
 /Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Integration/obj/Debug/net5.0/ref/TicketsBooking.Integration.dll
 /Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Integration/obj/Debug/net5.0/TicketsBooking.Integration.pdb
+E:\SWE\TicketsBooking.Integration\bin\Debug\net5.0\TicketsBooking.Integration.deps.json
+E:\SWE\TicketsBooking.Integration\bin\Debug\net5.0\TicketsBooking.Integration.dll
+E:\SWE\TicketsBooking.Integration\bin\Debug\net5.0\ref\TicketsBooking.Integration.dll
+E:\SWE\TicketsBooking.Integration\bin\Debug\net5.0\TicketsBooking.Integration.pdb
+E:\SWE\TicketsBooking.Integration\obj\Debug\net5.0\TicketsBooking.Integration.csproj.AssemblyReference.cache
+E:\SWE\TicketsBooking.Integration\obj\Debug\net5.0\TicketsBooking.Integration.GeneratedMSBuildEditorConfig.editorconfig
+E:\SWE\TicketsBooking.Integration\obj\Debug\net5.0\TicketsBooking.Integration.AssemblyInfoInputs.cache
+E:\SWE\TicketsBooking.Integration\obj\Debug\net5.0\TicketsBooking.Integration.AssemblyInfo.cs
+E:\SWE\TicketsBooking.Integration\obj\Debug\net5.0\TicketsBooking.Integration.csproj.CoreCompileInputs.cache
+E:\SWE\TicketsBooking.Integration\obj\Debug\net5.0\TicketsBooking.Integration.dll
+E:\SWE\TicketsBooking.Integration\obj\Debug\net5.0\ref\TicketsBooking.Integration.dll
+E:\SWE\TicketsBooking.Integration\obj\Debug\net5.0\TicketsBooking.Integration.pdb

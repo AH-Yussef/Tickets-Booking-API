@@ -21,6 +21,9 @@ namespace TicketsBooking.Infrastructure.Repos
 
         public async Task<List<Event>> ListAsync(ListEventsQuery query)
         {
+            // give new event obj, .save (save changes)
+            // entity framework c#
+            // _dbContext.Events.AddAsync();
             var result = _dbContext.Events.AsQueryable();
 
             if (!string.IsNullOrEmpty(query.Q))

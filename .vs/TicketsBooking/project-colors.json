@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "15878a6c-00e8-4da7-bf38-35f8fc6a64c4": {
+      "ProjectGuid": "15878a6c-00e8-4da7-bf38-35f8fc6a64c4",
+      "DisplayName": "TicketsBooking.Integration",
+      "ColorIndex": 0
+    },
+    "55cefee5-db37-49f7-8512-77785319a1e2": {
+      "ProjectGuid": "55cefee5-db37-49f7-8512-77785319a1e2",
+      "DisplayName": "TicketsBooking.APIs",
+      "ColorIndex": 1
+    },
+    "7f1c7bf2-989e-4500-89da-8958b0c3b5d9": {
+      "ProjectGuid": "7f1c7bf2-989e-4500-89da-8958b0c3b5d9",
+      "DisplayName": "TicketsBooking.UnitTest",
+      "ColorIndex": 2
+    },
+    "be8d63b1-b57c-40dd-b195-563fa9993e7a": {
+      "ProjectGuid": "be8d63b1-b57c-40dd-b195-563fa9993e7a",
+      "DisplayName": "TicketsBooking.Domain",
+      "ColorIndex": 3
+    },
+    "cbc67a5e-16a5-4c9c-8137-e399ae567cca": {
+      "ProjectGuid": "cbc67a5e-16a5-4c9c-8137-e399ae567cca",
+      "DisplayName": "TicketsBooking.Infrastructure",
+      "ColorIndex": 4
+    },
+    "7c8f5b3b-2ef7-4074-9bad-aa4463bd3366": {
+      "ProjectGuid": "7c8f5b3b-2ef7-4074-9bad-aa4463bd3366",
+      "DisplayName": "TicketsBooking.Crosscut",
+      "ColorIndex": 5
+    }
+  },
+  "NextColorIndex": 6
+}

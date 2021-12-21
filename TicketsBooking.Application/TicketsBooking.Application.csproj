@@ -33,10 +33,7 @@
     <Folder Include="Components\Events\DTOs\Results\" />
     <Folder Include="Components\Events\DTOs\Commands\" />
     <Folder Include="Components\Events\DTOs\Queries\" />
-    <Folder Include="Components\EventProviders\" />
-    <Folder Include="Components\EventProviders\DTOs\" />
     <Folder Include="Components\EventProviders\DTOs\Results\" />
-    <Folder Include="Components\EventProviders\DTOs\Commands\" />
     <Folder Include="Components\SocialMedia\" />
     <Folder Include="Components\SocialMedia\DTOs\" />
   </ItemGroup>
