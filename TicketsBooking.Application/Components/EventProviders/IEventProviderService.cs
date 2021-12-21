@@ -9,7 +9,7 @@ namespace TicketsBooking.Application.Components.EventProviders
     [ScopedService]
     public interface IEventProviderService
     {
-        string Authenticate(AuthCreds creds);
+        Task<string> Authenticate(AuthCreds creds);
         Task<bool> Register(RegisterOrgCommand command);
         Task<bool> DoesOrgAlreadyExist(DoesOrgAlreadyExistQuery query);
     }

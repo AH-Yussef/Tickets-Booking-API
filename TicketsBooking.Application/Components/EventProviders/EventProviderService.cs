@@ -34,10 +34,11 @@ namespace TicketsBooking.Application.Components.EventProviders
 
         public string Authenticate(AuthCreds creds)
         {
-            //if (creds.Email == "test@test.com" && creds.Password == "123") return _tokenManager.GenerateToken(user, Roles.EventProvider);
-            //return null;
-            _eventProviderRepo.GetEventProvider("test@test.com");
-            return "ali";
+            var eventProvider = _eventProviderRepo.GetEventProvider("test@test.com");
+
+            if (eventProvider != null && creds.Password == "123456789aH")
+                return _tokenManager.GenerateToken(eventProvider, Roles.EventProvider);
+            return null;
 
             //throw new NotImplementedException();
         }

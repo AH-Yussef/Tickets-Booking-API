@@ -35,3 +35,4 @@
 /Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/obj/Debug/net5.0/TicketsBooking.Crosscut.dll
 /Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/obj/Debug/net5.0/ref/TicketsBooking.Crosscut.dll
 /Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/obj/Debug/net5.0/TicketsBooking.Crosscut.pdb
+/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/obj/Debug/net5.0/TicketsBooking.Crosscut.csproj.AssemblyReference.cache
