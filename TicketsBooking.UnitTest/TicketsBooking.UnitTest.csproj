@@ -36,8 +36,12 @@
     <None Remove="Autofac.Extras.Moq" />
     <None Remove="AutoFixture.AutoMoq" />
     <None Remove="AutoMoq" />
+    <None Remove="ServideLayerTests\EventProviderTests\" />
+    <None Remove="APILayerTesting\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AuthTests\" />
+    <Folder Include="ServideLayerTesting\" />
+    <Folder Include="ServideLayerTesting\EventProviderTests\" />
+    <Folder Include="APILayerTesting\" />
   </ItemGroup>
 </Project>

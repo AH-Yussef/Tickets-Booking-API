@@ -28,10 +28,10 @@ namespace TicketsBooking.APIs.Controllers
 
         [AllowAnonymous]
         [HttpPost(Router.EventProvider.Auth)]
-        public string Authenticate([FromBody] AuthCreds creds)
+        public async Task<IActionResult> Authenticate([FromBody] AuthCreds authCreds)
         {
-            var result = _eventProviderService.Authenticate(creds);
-            return result;
+            var result = await _eventProviderService.Authenticate(authCreds);
+            return NewResult(result);
         }
 
 

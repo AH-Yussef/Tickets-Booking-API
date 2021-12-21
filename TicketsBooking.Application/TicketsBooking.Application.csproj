@@ -28,6 +28,8 @@
     <None Remove="Components\EventProviders\DTOs\Commands\" />
     <None Remove="Components\Authentication\" />
     <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <None Remove="Components\Authentication\DTOs\" />
+    <None Remove="Components\Authentication\Vlidators\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Components\Events\DTOs\" />
@@ -39,5 +41,7 @@
     <Folder Include="Components\EventProviders\DTOs\Results\" />
     <Folder Include="Components\EventProviders\DTOs\Commands\" />
     <Folder Include="Components\Authentication\" />
+    <Folder Include="Components\Authentication\DTOs\" />
+    <Folder Include="Components\Authentication\Vlidators\" />
   </ItemGroup>
 </Project>

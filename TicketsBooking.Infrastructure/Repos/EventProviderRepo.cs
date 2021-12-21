@@ -6,11 +6,11 @@ using TicketsBooking.Domain.Entities;
 
 namespace TicketsBooking.Infrastructure.Repos
 {
-    public class EventProviderReop : IEventProviderRepo
+    public class EventProviderRepo : IEventProviderRepo
     {
         private readonly AppDbContext _dbContext;
 
-        public EventProviderReop(AppDbContext dbContext)
+        public EventProviderRepo(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -25,7 +25,7 @@ namespace TicketsBooking.Infrastructure.Repos
             throw new System.NotImplementedException();
         }
 
-        public EventProvider GetEventProvider(string email)
+        Task<EventProvider> IEventProviderRepo.GetEventProvider(string email)
         {
             throw new System.NotImplementedException();
         }

@@ -1,10 +1,6 @@
 ﻿using System.Net;
 using TicketsBooking.Application.Common.Responses;
-using MediatR;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace TicketsBooking.APIs.Setups.Bases
 {
@@ -27,6 +23,8 @@ namespace TicketsBooking.APIs.Setups.Bases
                     return new NotFoundObjectResult(response);
                 case HttpStatusCode.Accepted:
                     return new AcceptedResult(string.Empty, response);
+                case HttpStatusCode.UnprocessableEntity:
+                    return new UnprocessableEntityObjectResult(response);
                 default:
                     return new BadRequestObjectResult(response);
             }

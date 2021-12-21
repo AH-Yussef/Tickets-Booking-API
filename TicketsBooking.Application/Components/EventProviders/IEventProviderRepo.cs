@@ -10,6 +10,6 @@ namespace TicketsBooking.Application.Components.EventProviders
     {
         Task<bool> Register(RegisterOrgCommand command);
         Task<bool> DoesOrgAlreadyExist(string Name);
-        EventProvider GetEventProvider(string email);
+        Task<EventProvider> GetEventProvider(string email);
     }
 }

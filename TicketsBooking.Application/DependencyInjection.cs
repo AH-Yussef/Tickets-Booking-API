@@ -13,7 +13,6 @@ namespace TicketsBooking.Application
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-            services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddHttpContextAccessor();
             services.AddServicesOfAllTypes();
             services.AddTransient<Stopwatch>();
