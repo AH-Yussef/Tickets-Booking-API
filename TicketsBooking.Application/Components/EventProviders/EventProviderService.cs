@@ -19,13 +19,14 @@ namespace TicketsBooking.Application.Components.EventProviders
         private readonly IMapper _mapper;
         private readonly AbstractValidator<CreateEventProviderCommand> _createEventProviderCommandValidator;
         private readonly AbstractValidator<SetVerifiedCommand> _setVerifiedCommandValidator;
-
+        private readonly AbstractValidator<GetAllEventProvidersQuery> _getAllQueryValidator;
         public EventProviderService(IEventProviderRepo eventRepo, IMapper mapper)
         {
             _eventRepo = eventRepo;
             _mapper = mapper;
             _createEventProviderCommandValidator = new CreateEventProviderCommandValidator();
             _setVerifiedCommandValidator = new SetVerifiedCommandValidator();
+            _getAllQueryValidator = new GetAllQueryValidator();
         }
 
         public async Task<OutputResponse<bool>> Delete(string name)
@@ -84,6 +85,16 @@ namespace TicketsBooking.Application.Components.EventProviders
 
         public async Task<OutputResponse<List<EventProviderListedResult>>> GetAll(GetAllEventProvidersQuery query)
         {
+            var isValid = _getAllQueryValidator.Validate(query).IsValid;
+            if (!isValid)
+            {
+                return new OutputResponse<List<EventProviderListedResult>>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.UnprocessableEntity,
+                    Message = ResponseMessages.UnprocessableEntity,
+                };
+            }
             var eventProviders = await _eventRepo.GetAll(query);
             return new OutputResponse<List<EventProviderListedResult>>
             {
@@ -142,7 +153,7 @@ namespace TicketsBooking.Application.Components.EventProviders
                 };
             }
 
-            if (await _eventRepo.GetSingle(command.Name) == null)
+            if (await _eventRepo.GetSingle(command.Name) != null)
             {
                 return new OutputResponse<bool>
                 {
@@ -175,13 +186,13 @@ namespace TicketsBooking.Application.Components.EventProviders
                 };
             }
 
-            await _eventRepo.UpdateVerified(command);
+            bool doesExist = await _eventRepo.UpdateVerified(command);
             return new OutputResponse<bool>
             {
                 Success = true,
                 StatusCode = HttpStatusCode.Accepted,
                 Message = ResponseMessages.Success,
-                Model = true,
+                Model = doesExist,
             };
         }
     }

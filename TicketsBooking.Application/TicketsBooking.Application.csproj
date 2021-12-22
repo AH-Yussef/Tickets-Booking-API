@@ -37,6 +37,5 @@
     <Folder Include="Components\EventProviders\DTOs\Results\" />
     <Folder Include="Components\SocialMedia\" />
     <Folder Include="Components\SocialMedia\DTOs\" />
-    <Folder Include="Components\EventProviders\Validators\" />
   </ItemGroup>
 </Project>

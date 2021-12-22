@@ -42,7 +42,6 @@ E:\SWE\TicketsBooking.Crosscut\bin\Debug\net5.0\ref\TicketsBooking.Crosscut.dll
 E:\SWE\TicketsBooking.Crosscut\bin\Debug\net5.0\TicketsBooking.Crosscut.pdb
 E:\SWE\TicketsBooking.Crosscut\bin\Debug\net5.0\ar\TicketsBooking.Crosscut.resources.dll
 E:\SWE\TicketsBooking.Crosscut\bin\Debug\net5.0\en\TicketsBooking.Crosscut.resources.dll
-E:\SWE\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.csproj.AssemblyReference.cache
 E:\SWE\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.Resources.SharedResources.ar.resources
 E:\SWE\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.Resources.SharedResources.en.resources
 E:\SWE\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.csproj.GenerateResource.cache

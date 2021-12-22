@@ -9,7 +9,7 @@ namespace TicketsBooking.Application.Components.EventProviders.Validators
         public SetVerifiedCommandValidator()
         {
             RuleFor(c => c.Name).NotNull().NotEmpty();
-            RuleFor(c => c.Verified).NotNull();
+            RuleFor(c => c.Verified).NotNull().NotEmpty();
         }
     }
 }

@@ -50,6 +50,7 @@ namespace TicketsBooking.Infrastructure.Repos
         public async Task<bool> UpdateVerified(SetVerifiedCommand command)
         {
             var result = _dbContext.EventProviders.Find(command.Name);
+            if (result == null) return false;
             result.Verified = command.Verified;
             await _dbContext.SaveChangesAsync();
             return true;
