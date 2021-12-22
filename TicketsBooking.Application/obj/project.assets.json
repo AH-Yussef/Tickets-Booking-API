@@ -4442,32 +4442,34 @@
     ]
   },
   "packageFolders": {
-    "/Users/alihassan/.nuget/packages/": {}
+    "C:\\Users\\mohan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Application/TicketsBooking.Application.csproj",
+      "projectUniqueName": "E:\\SWE\\TicketsBooking.Application\\TicketsBooking.Application.csproj",
       "projectName": "TicketsBooking.Application",
-      "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Application/TicketsBooking.Application.csproj",
-      "packagesPath": "/Users/alihassan/.nuget/packages/",
-      "outputPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Application/obj/",
+      "projectPath": "E:\\SWE\\TicketsBooking.Application\\TicketsBooking.Application.csproj",
+      "packagesPath": "C:\\Users\\mohan\\.nuget\\packages\\",
+      "outputPath": "E:\\SWE\\TicketsBooking.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/alihassan/.config/NuGet/NuGet.Config"
+        "C:\\Users\\mohan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Domain/TicketsBooking.Domain.csproj": {
-              "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Domain/TicketsBooking.Domain.csproj"
+            "E:\\SWE\\TicketsBooking.Domain\\TicketsBooking.Domain.csproj": {
+              "projectPath": "E:\\SWE\\TicketsBooking.Domain\\TicketsBooking.Domain.csproj"
             }
           }
         }
@@ -4530,7 +4532,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.404/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

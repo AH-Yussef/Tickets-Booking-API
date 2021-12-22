@@ -30,7 +30,17 @@
       "ProjectGuid": "7c8f5b3b-2ef7-4074-9bad-aa4463bd3366",
       "DisplayName": "TicketsBooking.Crosscut",
       "ColorIndex": 5
+    },
+    "28ddaa76-a59c-4d85-bae4-dd6e08447e1c": {
+      "ProjectGuid": "28ddaa76-a59c-4d85-bae4-dd6e08447e1c",
+      "DisplayName": "TicketsBooking.Application",
+      "ColorIndex": 6
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
-  "NextColorIndex": 6
+  "NextColorIndex": 7
 }
