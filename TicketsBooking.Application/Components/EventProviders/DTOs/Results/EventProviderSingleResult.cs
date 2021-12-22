@@ -10,7 +10,6 @@ namespace TicketsBooking.Application.Components.EventProviders.DTOs.Results
     {
         public string Name { get; set; }
         public bool Verified { get; set; }
-        public string Address { get; set; }
         public string Email { get; set; }
         public string Bio { get; set; }
         public string WebsiteLink { get; set; }

@@ -1,10 +1,16 @@
 ﻿<Properties StartupConfiguration="{55CEFEE5-DB37-49F7-8512-77785319A1E2}|Default">
   <MonoDevelop.Ide.ItemProperties.TicketsBooking.APIs PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TicketsBooking.UnitTest/EventProviderServiceTests.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TicketsBooking.Application/Components/SocialMedia/DTOs/SocialMediaEntry.cs">
     <Files>
       <File FileName="TicketsBooking.APIs/Startup.cs" Line="1" Column="1" />
       <File FileName="TicketsBooking.UnitTest/EventProviderServiceTests.cs" Line="55" Column="101" />
-      <File FileName="TicketsBooking.Application/Components/EventProviders/EventProviderService.cs" Line="150" Column="15" />
+      <File FileName="TicketsBooking.Application/Components/EventProviders/EventProviderService.cs" />
+      <File FileName="TicketsBooking.Application/Components/EventProviders/Validators/CreateEventProviderCommandValidator.cs" Line="1" Column="1" />
+      <File FileName="TicketsBooking.Application/Components/EventProviders/DTOs/Commands/CreateEventProviderCommand.cs" Line="14" Column="51" />
+      <File FileName="TicketsBooking.Application/Components/EventProviders/DTOs/Results/EventProviderSingleResult.cs" Line="13" Column="1" />
+      <File FileName="TicketsBooking.Infrastructure/Persistence/Configurations/EventProviderConfig.cs" Line="1" Column="1" />
+      <File FileName="TicketsBooking.Domain/Entities/EventProvider.cs" Line="11" Column="1" />
+      <File FileName="TicketsBooking.Application/Components/SocialMedia/DTOs/SocialMediaEntry.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,32 +29,38 @@
             <Node name="TicketsBooking.Application" expanded="True">
               <Node name="Components" expanded="True">
                 <Node name="EventProviders" expanded="True">
+                  <Node name="DTOs" expanded="True">
+                    <Node name="Commands" expanded="True" />
+                    <Node name="Results" expanded="True" />
+                  </Node>
                   <Node name="Validators" expanded="True" />
                 </Node>
                 <Node name="SocialMedia" expanded="True">
-                  <Node name="DTOs" expanded="True" />
+                  <Node name="DTOs" expanded="True">
+                    <Node name="SocialMediaEntry.cs" selected="True" />
+                  </Node>
                 </Node>
               </Node>
             </Node>
             <Node name="TicketsBooking.Crosscut" expanded="True">
               <Node name="Constants" expanded="True" />
             </Node>
+            <Node name="TicketsBooking.Domain" expanded="True">
+              <Node name="Entities" expanded="True" />
+            </Node>
             <Node name="TicketsBooking.Infrastructure" expanded="True">
               <Node name="Persistence" expanded="True">
+                <Node name="Configurations" expanded="True" />
                 <Node name="Seeders" expanded="True" />
               </Node>
             </Node>
-            <Node name="TicketsBooking.UnitTest" expanded="True">
-              <Node name="EventProviderServiceTests.cs" selected="True" />
-            </Node>
+            <Node name="TicketsBooking.UnitTest" expanded="True" />
           </Node>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
-          <Node name="TicketsBooking" expanded="True" selected="True">
-            <Node name="TicketsBooking.UnitTest" expanded="True" />
-          </Node>
+          <Node name="TicketsBooking" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
