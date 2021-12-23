@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "mDQQiPgGstuXXZKhBID9bereJuA1P2SEkiTv0uZrBqKdl8BQK58BWmg2nd8OqBaNhDy6R2OSwNfq78XLPGvQfA==",
+=======
+  "dgSpecHash": "5BfZBKsSA/56QfdxcRwbS4xpSyJ4wK/gA7deJb9gfE7cPXtOnCrpuTJ5wHMvnuGhi+RPm6bFrZrZRflAV1dDfw==",
+>>>>>>> 0d7c3adc15c057f198bc33f54bac7013c2653f84
   "success": true,
   "projectFilePath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Application\\TicketsBooking.Application.csproj",
   "expectedPackageFiles": [

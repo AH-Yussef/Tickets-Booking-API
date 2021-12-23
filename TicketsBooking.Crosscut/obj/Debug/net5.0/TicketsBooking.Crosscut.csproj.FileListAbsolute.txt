@@ -36,6 +36,7 @@
 /Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/obj/Debug/net5.0/ref/TicketsBooking.Crosscut.dll
 /Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/obj/Debug/net5.0/TicketsBooking.Crosscut.pdb
 /Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/obj/Debug/net5.0/TicketsBooking.Crosscut.csproj.AssemblyReference.cache
+<<<<<<< HEAD
 E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\bin\Debug\net5.0\TicketsBooking.Crosscut.deps.json
 E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\bin\Debug\net5.0\TicketsBooking.Crosscut.dll
 E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\bin\Debug\net5.0\ref\TicketsBooking.Crosscut.dll
@@ -55,3 +56,7 @@ E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\obj\Debug\net5.0\en\TicketsBo
 E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.dll
 E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\obj\Debug\net5.0\ref\TicketsBooking.Crosscut.dll
 E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.pdb
+=======
+/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/obj/Debug/net5.0/ar/TicketsBooking.Crosscut.resources.cs
+/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/obj/Debug/net5.0/en/TicketsBooking.Crosscut.resources.cs
+>>>>>>> 0d7c3adc15c057f198bc33f54bac7013c2653f84

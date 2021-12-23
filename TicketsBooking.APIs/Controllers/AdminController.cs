@@ -17,7 +17,7 @@ namespace TicketsBooking.APIs.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost(Router.EventProvider.Auth)]
+        [HttpPost(Router.Admin.Auth)]
         public async Task<IActionResult> Authenticate([FromBody] AuthCreds authCreds)
         {
             var result = await _adminService.Authenticate(authCreds);

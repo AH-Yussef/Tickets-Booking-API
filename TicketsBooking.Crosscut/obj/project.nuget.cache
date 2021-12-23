@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "q2y1ugbrbPiyqzlyxlXbfSeinOjqX5XtNH4CyZY5Fz6F9z3sQpGt+FyAl7nx6gtYLU+eSRtWKEgkDNVHLXfNRA==",
+=======
+  "dgSpecHash": "i/oacqHCNiohUJJin+3RzfhIjSfLhZtGUcoJWxBv3HIS78RS5iuVqOsWn1uK0JUcyMgc9UlFyuWnfTBX8VwOzQ==",
+>>>>>>> 0d7c3adc15c057f198bc33f54bac7013c2653f84
   "success": true,
   "projectFilePath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj",
   "expectedPackageFiles": [

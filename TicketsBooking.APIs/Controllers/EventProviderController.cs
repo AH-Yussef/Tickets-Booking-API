@@ -27,7 +27,7 @@ namespace TicketsBooking.APIs.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet(Router.EventProvider.OrgAlreadyExist)]
+        [HttpGet(Router.EventProvider.EventProviderAlreadyExists)]
         public async Task<IActionResult> DoesOrgAlreadyExist([FromQuery] string name)
         {
             var result = await _eventProviderService.DoesEventProviderAlreadyExist(name);
