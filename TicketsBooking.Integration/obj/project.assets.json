@@ -5523,7 +5523,7 @@
       "outputPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Integration/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/alihassan/.config/NuGet/NuGet.Config"
+        "/Users/alihassan/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"

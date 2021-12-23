@@ -119,7 +119,7 @@ namespace TicketsBooking.Application.Components.EventProviders
                 };
             }
 
-            var doesExist = await _eventProviderRepo.GetSingle(name) == null;
+            var doesExist = await _eventProviderRepo.GetSingle(name) != null;
             return new OutputResponse<bool>
             {
                 Success = true,
