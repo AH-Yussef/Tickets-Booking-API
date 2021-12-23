@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "55cefee5-db37-49f7-8512-77785319a1e2": {
+      "ProjectGuid": "55cefee5-db37-49f7-8512-77785319a1e2",
+      "DisplayName": "TicketsBooking.APIs",
+      "ColorIndex": 0
+    },
+    "7f1c7bf2-989e-4500-89da-8958b0c3b5d9": {
+      "ProjectGuid": "7f1c7bf2-989e-4500-89da-8958b0c3b5d9",
+      "DisplayName": "TicketsBooking.UnitTest",
+      "ColorIndex": 1
+    },
+    "28ddaa76-a59c-4d85-bae4-dd6e08447e1c": {
+      "ProjectGuid": "28ddaa76-a59c-4d85-bae4-dd6e08447e1c",
+      "DisplayName": "TicketsBooking.Application",
+      "ColorIndex": 2
+    },
+    "cbc67a5e-16a5-4c9c-8137-e399ae567cca": {
+      "ProjectGuid": "cbc67a5e-16a5-4c9c-8137-e399ae567cca",
+      "DisplayName": "TicketsBooking.Infrastructure",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}
