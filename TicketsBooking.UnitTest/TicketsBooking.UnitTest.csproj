@@ -38,10 +38,14 @@
     <None Remove="AutoMoq" />
     <None Remove="ServideLayerTests\EventProviderTests\" />
     <None Remove="APILayerTesting\" />
+    <None Remove="RepoLayerTesting\" />
+    <None Remove="RepoLayerTesting\AdminTests\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ServideLayerTesting\" />
     <Folder Include="ServideLayerTesting\EventProviderTests\" />
     <Folder Include="APILayerTesting\" />
+    <Folder Include="RepoLayerTesting\" />
+    <Folder Include="RepoLayerTesting\AdminTests\" />
   </ItemGroup>
 </Project>

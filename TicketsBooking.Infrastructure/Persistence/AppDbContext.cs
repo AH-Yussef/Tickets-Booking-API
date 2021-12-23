@@ -14,6 +14,7 @@ namespace TicketsBooking.Infrastructure.Persistence
         //DbSets
         public DbSet<Event> Events { get; set; }
         public DbSet<EventProvider> EventProviders { get; set; }
+        public DbSet<Admin> Admins { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
 
         //Fluent API
