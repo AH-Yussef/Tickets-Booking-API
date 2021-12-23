@@ -48,7 +48,7 @@ namespace TicketsBooking.Application.Components.Admins
             {
                 _validator.Validate(authCreds);
                 var authUserResult = _mapper.Map<AuthedUserResult>(eventProvider);
-                authUserResult.Token = _tokenManager.GenerateToken(eventProvider, Roles.EventProvider);
+                authUserResult.Token = _tokenManager.GenerateToken(eventProvider, Roles.Admin);
 
                 return new OutputResponse<AuthedUserResult>
                 {

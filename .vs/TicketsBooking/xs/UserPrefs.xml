@@ -2,9 +2,9 @@
   <MonoDevelop.Ide.ItemProperties.TicketsBooking.APIs PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="TicketsBooking.Application/Components/EventProviders/EventProviderService.cs">
     <Files>
-      <File FileName="TicketsBooking.APIs/Setups/Bases/Router.cs" Line="1" Column="1" />
-      <File FileName="TicketsBooking.APIs/Controllers/EventProviderController.cs" Line="1" Column="1" />
-      <File FileName="TicketsBooking.Application/Components/EventProviders/EventProviderService.cs" Line="1" Column="1" />
+      <File FileName="TicketsBooking.APIs/Controllers/EventProviderController.cs" Line="80" Column="68" />
+      <File FileName="TicketsBooking.APIs/Setups/Bases/Router.cs" Line="28" Column="60" />
+      <File FileName="TicketsBooking.Application/Components/EventProviders/EventProviderService.cs" Line="222" Column="49" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,6 +19,7 @@
             </Node>
             <Node name="TicketsBooking.Application" expanded="True">
               <Node name="Components" expanded="True">
+                <Node name="Admins" expanded="True" />
                 <Node name="Authentication" expanded="True">
                   <Node name="Vlidators" expanded="True" />
                 </Node>

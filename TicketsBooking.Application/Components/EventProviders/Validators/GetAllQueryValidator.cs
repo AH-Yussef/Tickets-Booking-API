@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentValidation;
+﻿using FluentValidation;
 using TicketsBooking.Application.Components.EventProviders.DTOs.Queries;
 
 namespace TicketsBooking.Application.Components.EventProviders.Validators
@@ -14,7 +9,7 @@ namespace TicketsBooking.Application.Components.EventProviders.Validators
         {
             RuleFor(c => c.pageNumber).NotNull().NotEmpty();
             RuleFor(c => c.pageSize).NotNull().NotEmpty();
-            RuleFor(c => c.isVerified).NotNull().NotEmpty();
+            RuleFor(c => c.isVerified).NotNull();
         }
     }
 }

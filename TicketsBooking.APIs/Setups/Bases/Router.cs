@@ -25,11 +25,13 @@ namespace TicketsBooking.APIs.Setups.Bases
             public const string Delete = Prefix + "Delete";
             public const string SetVerified = Prefix + "SetVerified";
             public const string Auth = Prefix + "Auth";
+            public const string Approve = Prefix + "Approve";
+            public const string Decline = Prefix + "Decline";
         }
 
         public static class Admin
         {
-            private const string Prefix = Rule + "Admin";
+            private const string Prefix = Rule + "Admin/";
             public const string Auth = Prefix + "Auth";
         }
     }
