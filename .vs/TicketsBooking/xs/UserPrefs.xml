@@ -1,11 +1,9 @@
 ﻿<Properties StartupConfiguration="{55CEFEE5-DB37-49F7-8512-77785319A1E2}|Default">
   <MonoDevelop.Ide.ItemProperties.TicketsBooking.APIs PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TicketsBooking.UnitTest/RepoLayerTesting/AdminTests/AdminAuthTests.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TicketsBooking.Application/Components/EventProviders/EventProviderService.cs">
     <Files>
-      <File FileName="TicketsBooking.UnitTest/RepoLayerTesting/AdminTests/AdminAuthTests.cs" Line="12" Column="6" />
-      <File FileName="TicketsBooking.Infrastructure/Repos/AdminRepo.cs" Line="10" Column="1" />
-      <File FileName="TicketsBooking.Infrastructure/Persistence/Seeders/EventsSeeder.cs" Line="22" Column="1" />
-      <File FileName="TicketsBooking.Infrastructure/Persistence/AppDbContext.cs" Line="8" Column="30" />
+      <File FileName="TicketsBooking.Application/Components/EventProviders/EventProviderService.cs" Line="57" Column="91" />
+      <File FileName="TicketsBooking.APIs/Setups/Bases/CoreController.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,13 +13,17 @@
               <Node name="Controllers" expanded="True" />
               <Node name="Setups" expanded="True">
                 <Node name="Bases" expanded="True" />
+                <Node name="Builders" expanded="True" />
+                <Node name="Factory" expanded="True" />
+                <Node name="Services" expanded="True" />
+                <Node name="Settings" expanded="True" />
               </Node>
             </Node>
             <Node name="TicketsBooking.Application" expanded="True">
               <Node name="Components" expanded="True">
-                <Node name="Admins" expanded="True" />
-                <Node name="Authentication" expanded="True" />
-                <Node name="EventProviders" expanded="True" />
+                <Node name="EventProviders" expanded="True">
+                  <Node name="EventProviderService.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
             <Node name="TicketsBooking.Crosscut" expanded="True">
@@ -37,24 +39,13 @@
               </Node>
               <Node name="Repos" expanded="True" />
             </Node>
-            <Node name="TicketsBooking.UnitTest" expanded="True">
-              <Node name="RepoLayerTesting" expanded="True">
-                <Node name="AdminTests" expanded="True">
-                  <Node name="AdminAuthTests.cs" selected="True" />
-                </Node>
-              </Node>
-              <Node name="ServideLayerTesting" expanded="True">
-                <Node name="EventProviderTests" expanded="True" />
-              </Node>
-            </Node>
+            <Node name="TicketsBooking.UnitTest" expanded="True" />
           </Node>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
-          <Node name="TicketsBooking" expanded="True" selected="True">
-            <Node name="TicketsBooking.UnitTest" expanded="True" />
-          </Node>
+          <Node name="TicketsBooking" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
