@@ -158,7 +158,7 @@ namespace TicketsBooking.Application.Components.EventProviders
                 return new OutputResponse<bool>
                 {
                     Success = false,
-                    StatusCode = HttpStatusCode.NotFound,
+                    StatusCode = HttpStatusCode.BadRequest,
                     Message = ResponseMessages.Failure,
                 };
             }

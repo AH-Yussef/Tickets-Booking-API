@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using TicketsBooking.Infrastructure.Persistence;
 using TicketsBooking.Domain.Entities;
-using TicketsBooking.Application.Components.SocialMedia.DTOs;
 using TicketsBooking.Application.Components.EventProviders;
 using TicketsBooking.Application.Components.EventProviders.DTOs.Commands;
 using TicketsBooking.Application.Components.EventProviders.DTOs.Queries;
@@ -63,7 +62,6 @@ namespace TicketsBooking.Infrastructure.Repos
                 Name = command.Name,
                 Password = command.Password,
                 Email = command.Email,
-                Address = command.Address,
                 Bio = command.Bio,
                 WebsiteLink = command.WebsiteLink,
                 Verified = false,
