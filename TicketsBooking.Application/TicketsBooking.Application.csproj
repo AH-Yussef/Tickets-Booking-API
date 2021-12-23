@@ -31,6 +31,9 @@
     <None Remove="Components\Authentication\DTOs\" />
     <None Remove="Components\Authentication\Vlidators\" />
     <None Remove="Components\Admins\" />
+    <None Remove="Components\SocialMedias\" />
+    <None Remove="Components\SocialMedias\DTOs\" />
+    <None Remove="Components\EventProviders\Validators\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Components\Events\DTOs\" />
@@ -45,5 +48,8 @@
     <Folder Include="Components\Authentication\DTOs\" />
     <Folder Include="Components\Authentication\Vlidators\" />
     <Folder Include="Components\Admins\" />
+    <Folder Include="Components\SocialMedias\" />
+    <Folder Include="Components\SocialMedias\DTOs\" />
+    <Folder Include="Components\EventProviders\Validators\" />
   </ItemGroup>
 </Project>

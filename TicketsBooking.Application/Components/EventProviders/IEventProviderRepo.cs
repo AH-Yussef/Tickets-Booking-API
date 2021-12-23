@@ -1,6 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 using TicketsBooking.Application.Components.EventProviders.DTOs.Commands;
+using TicketsBooking.Application.Components.EventProviders.DTOs.Queries;
 using TicketsBooking.Domain.Entities;
 
 namespace TicketsBooking.Application.Components.EventProviders
@@ -8,8 +10,10 @@ namespace TicketsBooking.Application.Components.EventProviders
     [ScopedService]
     public interface IEventProviderRepo
     {
-        Task<bool> Register(RegisterOrgCommand command);
-        Task<bool> DoesOrgAlreadyExist(string Name);
-        Task<EventProvider> GetEventProvider(string email);
+        Task<bool> UpdateVerified(SetVerifiedCommand command);
+        Task<EventProvider> Create(CreateEventProviderCommand command);
+        Task<EventProvider> GetSingle(string name);
+        Task<bool> Delete(string name);
+        Task<List<EventProvider>> GetAll(GetAllEventProvidersQuery query);
     }
 }

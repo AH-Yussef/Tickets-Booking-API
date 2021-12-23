@@ -18,12 +18,51 @@ namespace TicketsBooking.APIs.Controllers
             _eventProviderService = eventProviderService;
         }
 
-        
         [AllowAnonymous]
         [HttpPost(Router.EventProvider.Register)]
-        public async Task<IActionResult> Register([FromForm] RegisterOrgCommand command)
+        public async Task<IActionResult> Register([FromForm] CreateEventProviderCommand command)
         {
-            throw new NotImplementedException();
+            var result = await _eventProviderService.Register(command);
+            return NewResult(result);
+        }
+
+        [AllowAnonymous]
+        [HttpGet(Router.EventProvider.OrgAlreadyExist)]
+        public async Task<IActionResult> DoesOrgAlreadyExist([FromQuery] string name)
+        {
+            var result = await _eventProviderService.DoesEventProviderAlreadyExist(name);
+            return NewResult(result);
+        }
+        [AllowAnonymous]
+        [HttpGet(Router.EventProvider.Delete)]
+        public async Task<IActionResult> Delete([FromQuery] string name)
+        {
+            var result = await _eventProviderService.Delete(name);
+            return NewResult(result);
+        }
+
+        [AllowAnonymous]
+        [HttpGet(Router.EventProvider.GetAll)]
+        public async Task<IActionResult> GetAll([FromBody] GetAllEventProvidersQuery query)
+        {
+            var result = await _eventProviderService.GetAll(query);
+            return NewResult(result);
+        }
+
+        [AllowAnonymous]
+        [HttpGet(Router.EventProvider.GetSingle)]
+        public async Task<IActionResult> GetSingle([FromQuery] string name)
+        {
+            var result = await _eventProviderService.GetSingle(name);
+            return NewResult(result);
+        }
+
+        [AllowAnonymous]
+        [HttpGet(Router.EventProvider.SetVerified)]
+        public async Task<IActionResult> SetVerified([FromQuery] SetVerifiedCommand command)
+        {
+            var result = await _eventProviderService.UpdateVerified(command);
+            return NewResult(result);
         }
 
         [AllowAnonymous]
@@ -32,14 +71,6 @@ namespace TicketsBooking.APIs.Controllers
         {
             var result = await _eventProviderService.Authenticate(authCreds);
             return NewResult(result);
-        }
-
-
-        [AllowAnonymous]
-        [HttpGet(Router.EventProvider.OrgAlreadyExist)]
-        public async Task<IActionResult> DoesOrgAlreadyExist([FromQuery] DoesOrgAlreadyExistQuery query)
-        {
-            throw new NotImplementedException();
         }
     }
 }

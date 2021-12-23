@@ -46,7 +46,7 @@ namespace TicketsBooking.UnitTest.ServiceLayerTesting.EventProviderTests
                 .Returns(authUserResult);
 
             mock.Mock<IEventProviderRepo>()
-                .Setup(e => e.GetEventProvider(authCreds.Email))
+                .Setup(e => e.GetSingle(authCreds.Email))
                 .Returns(Task.FromResult(eventProvider));
 
             mock.Mock<ITokenManager>()
@@ -61,7 +61,7 @@ namespace TicketsBooking.UnitTest.ServiceLayerTesting.EventProviderTests
                 .Verify(e => e.Map<AuthedUserResult>(eventProvider), Times.Once);
 
             mock.Mock<IEventProviderRepo>()
-                .Verify(x => x.GetEventProvider(authCreds.Email), Times.Once);
+                .Verify(x => x.GetSingle(authCreds.Email), Times.Once);
 
             mock.Mock<ITokenManager>()
                 .Verify(t => t.GenerateToken(eventProvider, Roles.EventProvider), Times.Once);
@@ -96,7 +96,7 @@ namespace TicketsBooking.UnitTest.ServiceLayerTesting.EventProviderTests
                 .Setup(e => e.Map<AuthedUserResult>(eventProvider));
 
             mock.Mock<IEventProviderRepo>()
-                .Setup(e => e.GetEventProvider(authCreds.Email))
+                .Setup(e => e.GetSingle(authCreds.Email))
                 .Returns(Task.FromResult(eventProvider));
 
             mock.Mock<ITokenManager>()
@@ -110,7 +110,7 @@ namespace TicketsBooking.UnitTest.ServiceLayerTesting.EventProviderTests
                 .Verify(e => e.Map<AuthedUserResult>(eventProvider), Times.Never);
 
             mock.Mock<IEventProviderRepo>()
-                .Verify(x => x.GetEventProvider(authCreds.Email), Times.Once);
+                .Verify(x => x.GetSingle(authCreds.Email), Times.Once);
 
             mock.Mock<ITokenManager>()
                 .Verify(t => t.GenerateToken(eventProvider, Roles.EventProvider), Times.Never);
@@ -143,7 +143,7 @@ namespace TicketsBooking.UnitTest.ServiceLayerTesting.EventProviderTests
                 .Setup(e => e.Map<AuthedUserResult>(eventProvider));
 
             mock.Mock<IEventProviderRepo>()
-                .Setup(e => e.GetEventProvider(authCreds.Email));
+                .Setup(e => e.GetSingle(authCreds.Email));
 
             mock.Mock<ITokenManager>()
                 .Setup(t => t.GenerateToken(eventProvider, Roles.EventProvider));
@@ -156,7 +156,7 @@ namespace TicketsBooking.UnitTest.ServiceLayerTesting.EventProviderTests
                 .Verify(e => e.Map<AuthedUserResult>(eventProvider), Times.Never);
 
             mock.Mock<IEventProviderRepo>()
-                .Verify(x => x.GetEventProvider(authCreds.Email), Times.Never);
+                .Verify(x => x.GetSingle(authCreds.Email), Times.Never);
 
             mock.Mock<ITokenManager>()
                 .Verify(t => t.GenerateToken(eventProvider, Roles.EventProvider), Times.Never);
