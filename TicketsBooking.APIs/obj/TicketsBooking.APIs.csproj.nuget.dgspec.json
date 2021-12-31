@@ -1,39 +1,41 @@
 {
   "format": 1,
   "restore": {
-    "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.APIs/TicketsBooking.APIs.csproj": {}
+    "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.APIs\\TicketsBooking.APIs.csproj": {}
   },
   "projects": {
-    "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.APIs/TicketsBooking.APIs.csproj": {
+    "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.APIs\\TicketsBooking.APIs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.APIs/TicketsBooking.APIs.csproj",
+        "projectUniqueName": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.APIs\\TicketsBooking.APIs.csproj",
         "projectName": "TicketsBooking.APIs",
-        "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.APIs/TicketsBooking.APIs.csproj",
-        "packagesPath": "/Users/alihassan/.nuget/packages/",
-        "outputPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.APIs/obj/",
+        "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.APIs\\TicketsBooking.APIs.csproj",
+        "packagesPath": "C:\\Users\\mohan\\.nuget\\packages\\",
+        "outputPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.APIs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/alihassan/.config/NuGet/NuGet.Config"
+          "C:\\Users\\mohan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Application/TicketsBooking.Application.csproj": {
-                "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Application/TicketsBooking.Application.csproj"
+              "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Application\\TicketsBooking.Application.csproj": {
+                "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Application\\TicketsBooking.Application.csproj"
               },
-              "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Infrastructure/TicketsBooking.Infrastructure.csproj": {
-                "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Infrastructure/TicketsBooking.Infrastructure.csproj"
+              "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Infrastructure\\TicketsBooking.Infrastructure.csproj": {
+                "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Infrastructure\\TicketsBooking.Infrastructure.csproj"
               },
-              "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Integration/TicketsBooking.Integration.csproj": {
-                "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Integration/TicketsBooking.Integration.csproj"
+              "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj": {
+                "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj"
               }
             }
           }
@@ -145,37 +147,39 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.404/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Application/TicketsBooking.Application.csproj": {
+    "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Application\\TicketsBooking.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Application/TicketsBooking.Application.csproj",
+        "projectUniqueName": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Application\\TicketsBooking.Application.csproj",
         "projectName": "TicketsBooking.Application",
-        "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Application/TicketsBooking.Application.csproj",
-        "packagesPath": "/Users/alihassan/.nuget/packages/",
-        "outputPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Application/obj/",
+        "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Application\\TicketsBooking.Application.csproj",
+        "packagesPath": "C:\\Users\\mohan\\.nuget\\packages\\",
+        "outputPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/alihassan/.config/NuGet/NuGet.Config"
+          "C:\\Users\\mohan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Domain/TicketsBooking.Domain.csproj": {
-                "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Domain/TicketsBooking.Domain.csproj"
+              "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Domain\\TicketsBooking.Domain.csproj": {
+                "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Domain\\TicketsBooking.Domain.csproj"
               },
-              "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Integration/TicketsBooking.Integration.csproj": {
-                "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Integration/TicketsBooking.Integration.csproj"
+              "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj": {
+                "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj"
               }
             }
           }
@@ -246,26 +250,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.404/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/TicketsBooking.Crosscut.csproj": {
+    "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/TicketsBooking.Crosscut.csproj",
+        "projectUniqueName": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj",
         "projectName": "TicketsBooking.Crosscut",
-        "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/TicketsBooking.Crosscut.csproj",
-        "packagesPath": "/Users/alihassan/.nuget/packages/",
-        "outputPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/obj/",
+        "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj",
+        "packagesPath": "C:\\Users\\mohan\\.nuget\\packages\\",
+        "outputPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/alihassan/.config/NuGet/NuGet.Config"
+          "C:\\Users\\mohan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -312,34 +318,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.404/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Domain/TicketsBooking.Domain.csproj": {
+    "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Domain\\TicketsBooking.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Domain/TicketsBooking.Domain.csproj",
+        "projectUniqueName": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Domain\\TicketsBooking.Domain.csproj",
         "projectName": "TicketsBooking.Domain",
-        "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Domain/TicketsBooking.Domain.csproj",
-        "packagesPath": "/Users/alihassan/.nuget/packages/",
-        "outputPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Domain/obj/",
+        "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Domain\\TicketsBooking.Domain.csproj",
+        "packagesPath": "C:\\Users\\mohan\\.nuget\\packages\\",
+        "outputPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/alihassan/.config/NuGet/NuGet.Config"
+          "C:\\Users\\mohan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/TicketsBooking.Crosscut.csproj": {
-                "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/TicketsBooking.Crosscut.csproj"
+              "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj": {
+                "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj"
               }
             }
           }
@@ -374,40 +382,42 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.404/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Infrastructure/TicketsBooking.Infrastructure.csproj": {
+    "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Infrastructure\\TicketsBooking.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Infrastructure/TicketsBooking.Infrastructure.csproj",
+        "projectUniqueName": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Infrastructure\\TicketsBooking.Infrastructure.csproj",
         "projectName": "TicketsBooking.Infrastructure",
-        "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Infrastructure/TicketsBooking.Infrastructure.csproj",
-        "packagesPath": "/Users/alihassan/.nuget/packages/",
-        "outputPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Infrastructure/obj/",
+        "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Infrastructure\\TicketsBooking.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\mohan\\.nuget\\packages\\",
+        "outputPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/alihassan/.config/NuGet/NuGet.Config"
+          "C:\\Users\\mohan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Application/TicketsBooking.Application.csproj": {
-                "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Application/TicketsBooking.Application.csproj"
+              "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Application\\TicketsBooking.Application.csproj": {
+                "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Application\\TicketsBooking.Application.csproj"
               },
-              "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Domain/TicketsBooking.Domain.csproj": {
-                "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Domain/TicketsBooking.Domain.csproj"
+              "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Domain\\TicketsBooking.Domain.csproj": {
+                "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Domain\\TicketsBooking.Domain.csproj"
               },
-              "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Integration/TicketsBooking.Integration.csproj": {
-                "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Integration/TicketsBooking.Integration.csproj"
+              "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj": {
+                "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj"
               }
             }
           }
@@ -550,34 +560,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.404/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Integration/TicketsBooking.Integration.csproj": {
+    "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Integration/TicketsBooking.Integration.csproj",
+        "projectUniqueName": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj",
         "projectName": "TicketsBooking.Integration",
-        "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Integration/TicketsBooking.Integration.csproj",
-        "packagesPath": "/Users/alihassan/.nuget/packages/",
-        "outputPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Integration/obj/",
+        "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj",
+        "packagesPath": "C:\\Users\\mohan\\.nuget\\packages\\",
+        "outputPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/alihassan/.config/NuGet/NuGet.Config"
+          "C:\\Users\\mohan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/TicketsBooking.Crosscut.csproj": {
-                "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/TicketsBooking.Crosscut.csproj"
+              "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj": {
+                "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj"
               }
             }
           }
@@ -672,7 +684,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.404/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
