@@ -16,6 +16,8 @@ namespace TicketsBooking.Infrastructure.Persistence
         public DbSet<Admin> Admins { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
 
+        public DbSet<Customer> Customers { get; set; }
+
         //Fluent API
         protected override void OnModelCreating(ModelBuilder builder)
         {

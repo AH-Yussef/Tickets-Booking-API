@@ -10,11 +10,11 @@
         "projectUniqueName": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj",
         "projectName": "TicketsBooking.Crosscut",
         "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj",
-        "packagesPath": "C:\\Users\\mohan\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\mosta\\.nuget\\packages\\",
         "outputPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mohan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mosta\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -78,11 +78,11 @@
         "projectUniqueName": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Domain\\TicketsBooking.Domain.csproj",
         "projectName": "TicketsBooking.Domain",
         "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Domain\\TicketsBooking.Domain.csproj",
-        "packagesPath": "C:\\Users\\mohan\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\mosta\\.nuget\\packages\\",
         "outputPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mohan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mosta\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

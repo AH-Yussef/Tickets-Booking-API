@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\TicketsBooking.Application",
+    "\\TicketsBooking.Application\\Components",
+    "\\TicketsBooking.Application\\Components\\EventProviders"
   ],
-  "SelectedNode": "\\TicketsBooking.sln",
+  "SelectedNode": "\\TicketsBooking.Application\\Components\\EventProviders\\EventProviderService.cs",
   "PreviewInSolutionExplorer": false
 }

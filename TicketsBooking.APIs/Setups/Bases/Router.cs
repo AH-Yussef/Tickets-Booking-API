@@ -34,5 +34,17 @@ namespace TicketsBooking.APIs.Setups.Bases
             private const string Prefix = Rule + "Admin/";
             public const string Auth = Prefix + "AuthAdmin";
         }
+
+        public static class Customer
+        {
+            private const string Prefix = Rule + "Customer/";
+            public const string Auth = Prefix + "AuthUser";
+            public const string Register = Prefix + "Register";
+            public const string GetAll = Prefix + "GetAll";
+            public const string GetSingle = Prefix + "GetSingle";
+            public const string Approve = Prefix + "Approve";
+            public const string UpdateInfo = Prefix + "UpdateInfo";
+            public const string Delete = Prefix + "Delete";
+        }
     }
 }

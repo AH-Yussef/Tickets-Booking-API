@@ -20,7 +20,22 @@
       "ProjectGuid": "cbc67a5e-16a5-4c9c-8137-e399ae567cca",
       "DisplayName": "TicketsBooking.Infrastructure",
       "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "be8d63b1-b57c-40dd-b195-563fa9993e7a": {
+      "ProjectGuid": "be8d63b1-b57c-40dd-b195-563fa9993e7a",
+      "DisplayName": "TicketsBooking.Domain",
+      "ColorIndex": 4
+    },
+    "7c8f5b3b-2ef7-4074-9bad-aa4463bd3366": {
+      "ProjectGuid": "7c8f5b3b-2ef7-4074-9bad-aa4463bd3366",
+      "DisplayName": "TicketsBooking.Crosscut",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 6
 }

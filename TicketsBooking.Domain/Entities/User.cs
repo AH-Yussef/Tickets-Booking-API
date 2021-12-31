@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace TicketsBooking.Domain.Entities
 {
     public class User
