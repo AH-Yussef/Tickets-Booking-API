@@ -7,5 +7,10 @@ namespace TicketsBooking.Domain.Entities
     {
         public string Name { get; set; }
         public string Role { get; set; }
+        public string ParticipantID { get; set; }
+        public string EventID { get; set; }
+        public string ImageURL { get; set; }
+        public string type  { get; set; }
+
     }
 }
