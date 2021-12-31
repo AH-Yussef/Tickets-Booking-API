@@ -16,9 +16,9 @@ namespace TicketsBooking.Application.Components.EventProviders
         Task<OutputResponse<AuthedUserResult>> Authenticate(AuthCreds authCreds);
         Task<OutputResponse<bool>> Register(CreateEventProviderCommand command);
         Task<OutputResponse<bool>> DoesEventProviderAlreadyExist(string query);
-        Task<OutputResponse<bool>> Delete(string name);
+        Task<OutputResponse<bool>> Decline(string name);
         Task<OutputResponse<List<EventProviderListedResult>>> GetAll(GetAllEventProvidersQuery query);
         Task<OutputResponse<EventProviderSingleResult>> GetSingle(string name);
-        Task<OutputResponse<bool>> UpdateVerified(SetVerifiedCommand command);
+        Task<OutputResponse<bool>> Approve(SetVerifiedCommand command);
     }
 }

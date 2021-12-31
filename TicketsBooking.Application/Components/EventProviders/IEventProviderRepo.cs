@@ -12,7 +12,8 @@ namespace TicketsBooking.Application.Components.EventProviders
     {
         Task<bool> UpdateVerified(SetVerifiedCommand command);
         Task<EventProvider> Create(CreateEventProviderCommand command);
-        Task<EventProvider> GetSingle(string name);
+        Task<EventProvider> GetSingleByName(string name);
+        Task<EventProvider> GetSingleByEmail(string email);
         Task<bool> Delete(string name);
         Task<List<EventProvider>> GetAll(GetAllEventProvidersQuery query);
     }

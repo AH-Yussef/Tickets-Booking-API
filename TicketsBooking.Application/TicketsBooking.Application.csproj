@@ -13,15 +13,13 @@
     <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
     <PackageReference Include="TanvirArjel.Extensions.Microsoft.DependencyInjection" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.8" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TicketsBooking.Domain\TicketsBooking.Domain.csproj" />
+    <ProjectReference Include="..\TicketsBooking.Integration\TicketsBooking.Integration.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Components\Events\DTOs\" />
-    <None Remove="Components\Events\DTOs\Results\" />
-    <None Remove="Components\Events\DTOs\Commands\" />
-    <None Remove="Components\Events\DTOs\Queries\" />
     <None Remove="Components\EventProviders\" />
     <None Remove="Components\EventProviders\DTOs\" />
     <None Remove="Components\EventProviders\DTOs\Results\" />
@@ -34,12 +32,9 @@
     <None Remove="Components\SocialMedias\" />
     <None Remove="Components\SocialMedias\DTOs\" />
     <None Remove="Components\EventProviders\Validators\" />
+    <None Remove="BCrypt.Net-Next" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Components\Events\DTOs\" />
-    <Folder Include="Components\Events\DTOs\Results\" />
-    <Folder Include="Components\Events\DTOs\Commands\" />
-    <Folder Include="Components\Events\DTOs\Queries\" />
     <Folder Include="Components\EventProviders\" />
     <Folder Include="Components\EventProviders\DTOs\" />
     <Folder Include="Components\EventProviders\DTOs\Results\" />

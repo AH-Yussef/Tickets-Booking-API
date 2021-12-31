@@ -21,9 +21,7 @@ namespace TicketsBooking.UnitTest.ServideLayerTesting.EventProviderTests
     public class EventProviderGetSingleTests
     {
         [Fact]
-        public async void
-
-            GetSingle_RecordExists()
+        public async void GetSingle_RecordExists()
         {
             using var mock = AutoMock.GetLoose();
             //Arange
@@ -35,7 +33,7 @@ namespace TicketsBooking.UnitTest.ServideLayerTesting.EventProviderTests
             };
 
             mock.Mock<IEventProviderRepo>()
-                .Setup(repo => repo.GetSingle(fakeName))
+                .Setup(repo => repo.GetSingleByName(fakeName))
                 .Returns(Task.FromResult(fakeEventProvider));
 
             mock.Mock<IMapper>()
@@ -56,7 +54,7 @@ namespace TicketsBooking.UnitTest.ServideLayerTesting.EventProviderTests
 
             //Assert
             mock.Mock<IEventProviderRepo>()
-                .Verify(repo => repo.GetSingle(fakeName), Times.Once);
+                .Verify(repo => repo.GetSingleByName(fakeName), Times.Once);
 
             mock.Mock<IMapper>()
                 .Verify(mapper => mapper.Map<EventProviderSingleResult>(fakeEventProvider), Times.Once);
@@ -81,8 +79,7 @@ namespace TicketsBooking.UnitTest.ServideLayerTesting.EventProviderTests
             };
 
             mock.Mock<IEventProviderRepo>()
-                .Setup(repo => repo.GetSingle(fakeName))
-                //.Returns<EventProvider>(null); //fix
+                .Setup(repo => repo.GetSingleByName(fakeName))
                 .Returns(Task.FromResult((EventProvider)null));
 
             mock.Mock<IMapper>()
@@ -103,7 +100,7 @@ namespace TicketsBooking.UnitTest.ServideLayerTesting.EventProviderTests
 
             //Assert
             mock.Mock<IEventProviderRepo>()
-                .Verify(repo => repo.GetSingle(fakeName), Times.Once);
+                .Verify(repo => repo.GetSingleByName(fakeName), Times.Once);
 
             mock.Mock<IMapper>()
                 .Verify(mapper => mapper.Map<EventProviderSingleResult>(fakeEventProvider), Times.Never);
@@ -128,7 +125,7 @@ namespace TicketsBooking.UnitTest.ServideLayerTesting.EventProviderTests
             };
 
             mock.Mock<IEventProviderRepo>()
-                .Setup(repo => repo.GetSingle(fakeName))
+                .Setup(repo => repo.GetSingleByName(fakeName))
                 .Returns(Task.FromResult(fakeEventProvider));
 
             mock.Mock<IMapper>()
@@ -149,7 +146,7 @@ namespace TicketsBooking.UnitTest.ServideLayerTesting.EventProviderTests
 
             //Assert
             mock.Mock<IEventProviderRepo>()
-                .Verify(repo => repo.GetSingle(fakeName), Times.Never);
+                .Verify(repo => repo.GetSingleByName(fakeName), Times.Never);
 
             mock.Mock<IMapper>()
                 .Verify(mapper => mapper.Map<EventProviderSingleResult>(fakeEventProvider), Times.Never);

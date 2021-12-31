@@ -14,7 +14,7 @@ namespace TicketsBooking.UnitTest.RepoLayerTesting.EventProviderTests
         {
             //Arrange
             var options = new DbContextOptionsBuilder<AppDbContext>()
-            .UseInMemoryDatabase(databaseName: "TicketsBookingDb")
+            .UseInMemoryDatabase(databaseName: "TicketsBookingDb_3")
             .Options;
 
             using var context = new AppDbContext(options);

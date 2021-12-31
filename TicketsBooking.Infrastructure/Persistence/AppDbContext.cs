@@ -12,7 +12,6 @@ namespace TicketsBooking.Infrastructure.Persistence
         }
 
         //DbSets
-        public DbSet<Event> Events { get; set; }
         public DbSet<EventProvider> EventProviders { get; set; }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
@@ -21,7 +20,7 @@ namespace TicketsBooking.Infrastructure.Persistence
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.ApplyConfigurationsFromAssembly(Assembly.GetAssembly(typeof(EventConfig)));
+            builder.ApplyConfigurationsFromAssembly(Assembly.GetAssembly(typeof(EventProviderConfig)));
         }
     }
 }

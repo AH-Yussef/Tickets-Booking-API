@@ -41,15 +41,14 @@ namespace TicketsBooking.Infrastructure.Repos
             return await result.ToListAsync();
         }
 
-        public async Task<EventProvider> GetSingle(string name)
+        public async Task<EventProvider> GetSingleByName(string name)
         {
-            return await _dbContext.EventProviders.FindAsync(name);
+            return await _dbContext.EventProviders.FindAsync(name.ToLower());
         }
 
         public async Task<bool> UpdateVerified(SetVerifiedCommand command)
         {
-            var result = _dbContext.EventProviders.Find(command.Name);
-            if (result == null) return false;
+            var result = _dbContext.EventProviders.Find(command.Name.ToLower());
             result.Verified = command.Verified;
             await _dbContext.SaveChangesAsync();
             return true;
@@ -59,27 +58,38 @@ namespace TicketsBooking.Infrastructure.Repos
         {
             var newEventProvider = new EventProvider
             {
-                Name = command.Name,
-                Password = command.Password,
-                Email = command.Email,
+                Name = command.Name.ToLower(),
+                Password = BCrypt.Net.BCrypt.HashPassword(command.Password),
+                Email = command.Email.ToLower(),
                 Bio = command.Bio,
                 WebsiteLink = command.WebsiteLink,
                 Verified = false,
             };
-            foreach (var entry in command.SocialMedias)
+
+            if (command.SocialMedias != null)
             {
-                var newSocialMedia = new SocialMedia
+                newEventProvider.SocialMedias = new List<SocialMedia>();
+                foreach (var entry in command.SocialMedias)
                 {
-                    Type = entry.Type,
-                    Link = entry.Link,
-                };
-                newEventProvider.SocialMedias.Add(newSocialMedia);
+                    if (entry.Link == null) continue;
+                    var newSocialMedia = new SocialMedia
+                    {
+                        Type = entry.Type,
+                        Link = entry.Link,
+                    };
+                    newEventProvider.SocialMedias.Add(newSocialMedia);
+                }
             }
 
             await _dbContext.EventProviders.AddAsync(newEventProvider);
             await _dbContext.SaveChangesAsync();
 
             return newEventProvider;
+        }
+
+        public async Task<EventProvider> GetSingleByEmail(string email)
+        {
+            return await _dbContext.EventProviders.FirstOrDefaultAsync(eventProvider => eventProvider.Email == email.ToLower());
         }
     }
 }

@@ -4231,38 +4231,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mohan\\.nuget\\packages\\": {}
+    "/Users/alihassan/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Domain\\TicketsBooking.Domain.csproj",
+      "projectUniqueName": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Domain/TicketsBooking.Domain.csproj",
       "projectName": "TicketsBooking.Domain",
-      "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Domain\\TicketsBooking.Domain.csproj",
-      "packagesPath": "C:\\Users\\mohan\\.nuget\\packages\\",
-      "outputPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Domain\\obj\\",
+      "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Domain/TicketsBooking.Domain.csproj",
+      "packagesPath": "/Users/alihassan/.nuget/packages/",
+      "outputPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-<<<<<<< HEAD
-        "C:\\Users\\mohan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-=======
-        "/Users/alihassan/.nuget/NuGet/NuGet.Config"
->>>>>>> 0d7c3adc15c057f198bc33f54bac7013c2653f84
+        "/Users/alihassan/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj": {
-              "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj"
+            "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/TicketsBooking.Crosscut.csproj": {
+              "projectPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/TicketsBooking.Crosscut.csproj"
             }
           }
         }
@@ -4297,8 +4291,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.404/RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file /Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Domain/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

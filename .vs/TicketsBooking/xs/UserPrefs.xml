@@ -1,10 +1,13 @@
 ﻿<Properties StartupConfiguration="{55CEFEE5-DB37-49F7-8512-77785319A1E2}|Default">
   <MonoDevelop.Ide.ItemProperties.TicketsBooking.APIs PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TicketsBooking.Application/Components/EventProviders/EventProviderService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TicketsBooking.Application/Components/Authentication/TokenManager.cs">
     <Files>
-      <File FileName="TicketsBooking.APIs/Controllers/EventProviderController.cs" Line="80" Column="68" />
-      <File FileName="TicketsBooking.APIs/Setups/Bases/Router.cs" Line="28" Column="60" />
-      <File FileName="TicketsBooking.Application/Components/EventProviders/EventProviderService.cs" Line="222" Column="49" />
+      <File FileName="TicketsBooking.UnitTest/RepoLayerTesting/EventProviderTests/EventProviderCreateTests.cs" Line="26" Column="47" />
+      <File FileName="TicketsBooking.UnitTest/RepoLayerTesting/EventProviderTests/EventProviderDeclineTests.cs" Line="1" Column="1" />
+      <File FileName="TicketsBooking.UnitTest/ServideLayerTesting/EventProviderTests/EventProviderAuthTests.cs" Line="258" Column="44" />
+      <File FileName="TicketsBooking.UnitTest/APILayerTesting/EventProviderAPITests/EventProviderAuthTests.cs" Line="1" Column="1" />
+      <File FileName="TicketsBooking.APIs/Controllers/EventProviderController.cs" Line="39" Column="1" />
+      <File FileName="TicketsBooking.Application/Components/Authentication/TokenManager.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,70 +15,16 @@
           <Node name="TicketsBooking" expanded="True">
             <Node name="TicketsBooking.APIs" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Setups" expanded="True">
-                <Node name="Bases" expanded="True" />
-              </Node>
-              <Node name="appsettings.json" expanded="True" />
             </Node>
-            <Node name="TicketsBooking.Application" expanded="True">
-              <Node name="Components" expanded="True">
-                <Node name="Admins" expanded="True" />
-                <Node name="Authentication" expanded="True">
-                  <Node name="Vlidators" expanded="True" />
-                </Node>
-                <Node name="EventProviders" expanded="True">
-                  <Node name="DTOs" expanded="True">
-                    <Node name="Commands" expanded="True" />
-                    <Node name="Queries" expanded="True" />
-                    <Node name="Results" expanded="True" />
-                  </Node>
-                  <Node name="Validators" expanded="True" />
-                  <Node name="EventProviderService.cs" selected="True" />
-                </Node>
-                <Node name="SocialMedias" expanded="True">
-                  <Node name="DTOs" expanded="True" />
-                </Node>
-              </Node>
-            </Node>
-            <Node name="TicketsBooking.Crosscut" expanded="True">
-              <Node name="Constants" expanded="True" />
-            </Node>
-            <Node name="TicketsBooking.Domain" expanded="True">
-              <Node name="Entities" expanded="True" />
-            </Node>
-            <Node name="TicketsBooking.Infrastructure" expanded="True">
-              <Node name="Persistence" expanded="True" />
-              <Node name="Repos" expanded="True" />
-            </Node>
-            <Node name="TicketsBooking.UnitTest" expanded="True">
-              <Node name="APILayerTesting" expanded="True" />
-              <Node name="RepoLayerTesting" expanded="True">
-                <Node name="AdminTests" expanded="True" />
-              </Node>
-              <Node name="ServideLayerTesting" expanded="True">
-                <Node name="EventProviderTests" expanded="True" />
-              </Node>
-            </Node>
+            <Node name="TicketsBooking.Application" expanded="True" />
+            <Node name="TicketsBooking.Crosscut" expanded="True" />
           </Node>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
           <Node name="TicketsBooking" expanded="True" selected="True">
-            <Node name="TicketsBooking.UnitTest" expanded="True">
-              <Node name="TicketsBooking.UnitTest" expanded="True">
-                <Node name="EventProviderServiceTests" expanded="True" />
-              </Node>
-              <Node name="TicketsBooking.UnitTest.APILayerTesting" expanded="True">
-                <Node name="EventProviderControllerTests" expanded="True" />
-              </Node>
-              <Node name="TicketsBooking.UnitTest.RepoLayerTesting.AdminTests" expanded="True">
-                <Node name="AdminAuthTests" expanded="True" />
-              </Node>
-              <Node name="TicketsBooking.UnitTest.ServiceLayerTesting.EventProviderTests" expanded="True">
-                <Node name="EventProviderAuthTests" expanded="True" />
-              </Node>
-            </Node>
+            <Node name="TicketsBooking.UnitTest" expanded="True" />
           </Node>
         </State>
       </Pad>

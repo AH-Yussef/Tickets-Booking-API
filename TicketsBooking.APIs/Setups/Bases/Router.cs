@@ -32,7 +32,7 @@ namespace TicketsBooking.APIs.Setups.Bases
         public static class Admin
         {
             private const string Prefix = Rule + "Admin/";
-            public const string Auth = Prefix + "Auth";
+            public const string Auth = Prefix + "AuthAdmin";
         }
     }
 }

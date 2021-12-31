@@ -14,6 +14,7 @@ using TicketsBooking.Crosscut.Constants;
 using TicketsBooking.Domain.Entities;
 using Xunit;
 using TicketsBooking.Application.Components.Authentication.Vlidators;
+using BC = BCrypt.Net.BCrypt;
 
 namespace TicketsBooking.UnitTest.ServiceLayerTesting.EventProviderTests
 {
@@ -30,6 +31,8 @@ namespace TicketsBooking.UnitTest.ServiceLayerTesting.EventProviderTests
                 Password = "123456789aH",
             };
             var eventProvider = FakeEventProvider;
+            eventProvider.Verified = true;
+
             var authUserResult = FakeAuthedUserResult(eventProvider);
 
             var expectedOutput = new OutputResponse<AuthedUserResult>
@@ -46,7 +49,7 @@ namespace TicketsBooking.UnitTest.ServiceLayerTesting.EventProviderTests
                 .Returns(authUserResult);
 
             mock.Mock<IEventProviderRepo>()
-                .Setup(e => e.GetSingle(authCreds.Email))
+                .Setup(e => e.GetSingleByEmail(authCreds.Email))
                 .Returns(Task.FromResult(eventProvider));
 
             mock.Mock<ITokenManager>()
@@ -61,7 +64,7 @@ namespace TicketsBooking.UnitTest.ServiceLayerTesting.EventProviderTests
                 .Verify(e => e.Map<AuthedUserResult>(eventProvider), Times.Once);
 
             mock.Mock<IEventProviderRepo>()
-                .Verify(x => x.GetSingle(authCreds.Email), Times.Once);
+                .Verify(x => x.GetSingleByEmail(authCreds.Email), Times.Once);
 
             mock.Mock<ITokenManager>()
                 .Verify(t => t.GenerateToken(eventProvider, Roles.EventProvider), Times.Once);
@@ -82,12 +85,13 @@ namespace TicketsBooking.UnitTest.ServiceLayerTesting.EventProviderTests
             using var mock = AutoMock.GetLoose();
             //Arrange
             var eventProvider = FakeEventProvider;
+            eventProvider.Verified = false;
 
             var expectedOutput = new OutputResponse<AuthedUserResult>
             {
                 Success = false,
                 StatusCode = HttpStatusCode.Unauthorized,
-                Message = ResponseMessages.Unauthenticated,
+                Message = ResponseMessages.Unauthorized,
                 Model = null,
             };
 
@@ -96,7 +100,7 @@ namespace TicketsBooking.UnitTest.ServiceLayerTesting.EventProviderTests
                 .Setup(e => e.Map<AuthedUserResult>(eventProvider));
 
             mock.Mock<IEventProviderRepo>()
-                .Setup(e => e.GetSingle(authCreds.Email))
+                .Setup(e => e.GetSingleByEmail(authCreds.Email))
                 .Returns(Task.FromResult(eventProvider));
 
             mock.Mock<ITokenManager>()
@@ -110,7 +114,7 @@ namespace TicketsBooking.UnitTest.ServiceLayerTesting.EventProviderTests
                 .Verify(e => e.Map<AuthedUserResult>(eventProvider), Times.Never);
 
             mock.Mock<IEventProviderRepo>()
-                .Verify(x => x.GetSingle(authCreds.Email), Times.Once);
+                .Verify(x => x.GetSingleByEmail(authCreds.Email), Times.Once);
 
             mock.Mock<ITokenManager>()
                 .Verify(t => t.GenerateToken(eventProvider, Roles.EventProvider), Times.Never);
@@ -143,7 +147,7 @@ namespace TicketsBooking.UnitTest.ServiceLayerTesting.EventProviderTests
                 .Setup(e => e.Map<AuthedUserResult>(eventProvider));
 
             mock.Mock<IEventProviderRepo>()
-                .Setup(e => e.GetSingle(authCreds.Email));
+                .Setup(e => e.GetSingleByName(authCreds.Email));
 
             mock.Mock<ITokenManager>()
                 .Setup(t => t.GenerateToken(eventProvider, Roles.EventProvider));
@@ -156,7 +160,7 @@ namespace TicketsBooking.UnitTest.ServiceLayerTesting.EventProviderTests
                 .Verify(e => e.Map<AuthedUserResult>(eventProvider), Times.Never);
 
             mock.Mock<IEventProviderRepo>()
-                .Verify(x => x.GetSingle(authCreds.Email), Times.Never);
+                .Verify(x => x.GetSingleByName(authCreds.Email), Times.Never);
 
             mock.Mock<ITokenManager>()
                 .Verify(t => t.GenerateToken(eventProvider, Roles.EventProvider), Times.Never);
@@ -207,7 +211,7 @@ namespace TicketsBooking.UnitTest.ServiceLayerTesting.EventProviderTests
         {
             Name = "Test org",
             Email = "test@test.com",
-            Password = "123456789aH"
+            Password = BC.HashPassword("123456789aH"),
         };
 
         public class AuthFailureTestData : IEnumerable<object[]>

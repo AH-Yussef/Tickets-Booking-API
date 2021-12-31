@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using AutoMapper;
 using TicketsBooking.Application.Common.Mappings;
-using TicketsBooking.Application.Components.SocialMedia.DTOs;
+using TicketsBooking.Application.Components.SocialMedias.DTOs;
 using TicketsBooking.Domain.Entities;
 
 namespace TicketsBooking.Application.Components.EventProviders.DTOs.Results

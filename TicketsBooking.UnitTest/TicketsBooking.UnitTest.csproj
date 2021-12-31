@@ -20,6 +20,7 @@
     </PackageReference>
     <PackageReference Include="Moq" Version="4.16.1" />
     <PackageReference Include="Autofac.Extras.Moq" Version="6.1.0" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,12 +38,11 @@
     <None Remove="AutoFixture.AutoMoq" />
     <None Remove="AutoMoq" />
     <None Remove="ServideLayerTests\EventProviderTests\" />
-    <None Remove="APILayerTesting\" />
     <None Remove="RepoLayerTesting\" />
     <None Remove="RepoLayerTesting\AdminTests\" />
+    <None Remove="BCrypt.Net-Next" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="APILayerTesting\" />
     <Folder Include="RepoLayerTesting\AdminTests\" />
   </ItemGroup>
 </Project>

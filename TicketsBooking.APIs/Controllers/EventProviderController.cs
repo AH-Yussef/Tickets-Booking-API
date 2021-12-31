@@ -29,17 +29,9 @@ namespace TicketsBooking.APIs.Controllers
 
         [AllowAnonymous]
         [HttpGet(Router.EventProvider.EventProviderAlreadyExists)]
-        public async Task<IActionResult> DoesOrgAlreadyExist([FromQuery] string name)
+        public async Task<IActionResult> DoesEventProviderAlreadyExist([FromQuery] string name)
         {
             var result = await _eventProviderService.DoesEventProviderAlreadyExist(name);
-            return NewResult(result);
-        }
-
-        [Authorize(Roles = "Admin")]
-        [HttpGet(Router.EventProvider.Delete)]
-        public async Task<IActionResult> Delete([FromQuery] string name)
-        {
-            var result = await _eventProviderService.Delete(name);
             return NewResult(result);
         }
 
@@ -63,7 +55,7 @@ namespace TicketsBooking.APIs.Controllers
         [HttpPost(Router.EventProvider.SetVerified)]
         public async Task<IActionResult> SetVerified([FromQuery] SetVerifiedCommand command)
         {
-            var result = await _eventProviderService.UpdateVerified(command);
+            var result = await _eventProviderService.Approve(command);
             return NewResult(result);
         }
 
@@ -77,7 +69,7 @@ namespace TicketsBooking.APIs.Controllers
                 Verified = true,
             };
 
-            var result = await _eventProviderService.UpdateVerified(command);
+            var result = await _eventProviderService.Approve(command);
             return NewResult(result);
         }
 
@@ -85,7 +77,7 @@ namespace TicketsBooking.APIs.Controllers
         [HttpPost(Router.EventProvider.Decline)]
         public async Task<IActionResult> Decline([FromQuery] string name)
         {
-            var result = await _eventProviderService.Delete(name);
+            var result = await _eventProviderService.Decline(name);
             return NewResult(result);
         }
 

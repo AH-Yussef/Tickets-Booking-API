@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using TicketsBooking.Application.Components.SocialMedia.DTOs;
+using TicketsBooking.Application.Components.SocialMedias.DTOs;
 
 namespace TicketsBooking.Application.Components.EventProviders.DTOs.Commands
 {
