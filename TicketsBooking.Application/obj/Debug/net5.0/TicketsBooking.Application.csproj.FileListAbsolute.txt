@@ -59,3 +59,11 @@ E:\SWE\Tickets-Booking-API\TicketsBooking.Application\obj\Debug\net5.0\TicketsBo
 E:\SWE\Tickets-Booking-API\TicketsBooking.Application\obj\Debug\net5.0\TicketsBooking.Application.dll
 E:\SWE\Tickets-Booking-API\TicketsBooking.Application\obj\Debug\net5.0\ref\TicketsBooking.Application.dll
 E:\SWE\Tickets-Booking-API\TicketsBooking.Application\obj\Debug\net5.0\TicketsBooking.Application.pdb
+D:\Event branch\TicketsBooking.Application\obj\Debug\net5.0\TicketsBooking.Application.csproj.AssemblyReference.cache
+D:\Event branch\TicketsBooking.Application\obj\Debug\net5.0\TicketsBooking.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Event branch\TicketsBooking.Application\obj\Debug\net5.0\TicketsBooking.Application.AssemblyInfoInputs.cache
+D:\Event branch\TicketsBooking.Application\obj\Debug\net5.0\TicketsBooking.Application.AssemblyInfo.cs
+D:\Event branch\TicketsBooking.Application\obj\Debug\net5.0\TicketsBooking.Application.csproj.CoreCompileInputs.cache
+D:\Event branch\TicketsBooking.Application\obj\Debug\net5.0\TicketsBooking.Application.dll
+D:\Event branch\TicketsBooking.Application\obj\Debug\net5.0\ref\TicketsBooking.Application.dll
+D:\Event branch\TicketsBooking.Application\obj\Debug\net5.0\TicketsBooking.Application.pdb

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj": {}
+    "D:\\Event branch\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj": {}
   },
   "projects": {
-    "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj": {
+    "D:\\Event branch\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj",
+        "projectUniqueName": "D:\\Event branch\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj",
         "projectName": "TicketsBooking.Crosscut",
-        "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj",
-        "packagesPath": "C:\\Users\\mohan\\.nuget\\packages\\",
-        "outputPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\obj\\",
+        "projectPath": "D:\\Event branch\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj",
+        "packagesPath": "C:\\Users\\Carnival Stores\\.nuget\\packages\\",
+        "outputPath": "D:\\Event branch\\TicketsBooking.Crosscut\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mohan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Carnival Stores\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -72,17 +72,17 @@
         }
       }
     },
-    "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj": {
+    "D:\\Event branch\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj",
+        "projectUniqueName": "D:\\Event branch\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj",
         "projectName": "TicketsBooking.Integration",
-        "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj",
-        "packagesPath": "C:\\Users\\mohan\\.nuget\\packages\\",
-        "outputPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\obj\\",
+        "projectPath": "D:\\Event branch\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj",
+        "packagesPath": "C:\\Users\\Carnival Stores\\.nuget\\packages\\",
+        "outputPath": "D:\\Event branch\\TicketsBooking.Integration\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mohan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Carnival Stores\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -96,8 +96,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj": {
-                "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj"
+              "D:\\Event branch\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj": {
+                "projectPath": "D:\\Event branch\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj"
               }
             }
           }

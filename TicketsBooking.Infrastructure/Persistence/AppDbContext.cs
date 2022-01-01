@@ -2,6 +2,8 @@
 using TicketsBooking.Domain.Entities;
 using TicketsBooking.Infrastructure.Persistence.Configurations;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+using System;
 
 namespace TicketsBooking.Infrastructure.Persistence
 {
@@ -25,6 +27,11 @@ namespace TicketsBooking.Infrastructure.Persistence
         {
             base.OnModelCreating(builder);
             builder.ApplyConfigurationsFromAssembly(Assembly.GetAssembly(typeof(EventProviderConfig)));
+        }
+
+        internal Task SaveChangesAsync()
+        {
+            throw new NotImplementedException();
         }
     }
 }

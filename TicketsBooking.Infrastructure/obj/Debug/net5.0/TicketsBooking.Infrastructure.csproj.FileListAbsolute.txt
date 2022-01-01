@@ -76,3 +76,11 @@ E:\SWE\Tickets-Booking-API\TicketsBooking.Infrastructure\obj\Debug\net5.0\Ticket
 E:\SWE\Tickets-Booking-API\TicketsBooking.Infrastructure\obj\Debug\net5.0\ref\TicketsBooking.Infrastructure.dll
 E:\SWE\Tickets-Booking-API\TicketsBooking.Infrastructure\obj\Debug\net5.0\TicketsBooking.Infrastructure.pdb
 E:\SWE\Tickets-Booking-API\TicketsBooking.Infrastructure\obj\Debug\net5.0\TicketsBooking.Infrastructure.genruntimeconfig.cache
+D:\Event branch\TicketsBooking.Infrastructure\obj\Debug\net5.0\TicketsBooking.Infrastructure.csproj.AssemblyReference.cache
+D:\Event branch\TicketsBooking.Infrastructure\obj\Debug\net5.0\TicketsBooking.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Event branch\TicketsBooking.Infrastructure\obj\Debug\net5.0\TicketsBooking.Infrastructure.AssemblyInfoInputs.cache
+D:\Event branch\TicketsBooking.Infrastructure\obj\Debug\net5.0\TicketsBooking.Infrastructure.AssemblyInfo.cs
+D:\Event branch\TicketsBooking.Infrastructure\obj\Debug\net5.0\TicketsBooking.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Event branch\TicketsBooking.Infrastructure\obj\Debug\net5.0\TicketsBooking.Infrastructure.dll
+D:\Event branch\TicketsBooking.Infrastructure\obj\Debug\net5.0\ref\TicketsBooking.Infrastructure.dll
+D:\Event branch\TicketsBooking.Infrastructure\obj\Debug\net5.0\TicketsBooking.Infrastructure.pdb

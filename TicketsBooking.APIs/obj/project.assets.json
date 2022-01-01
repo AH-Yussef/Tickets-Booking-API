@@ -10637,19 +10637,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mohan\\.nuget\\packages\\": {}
+    "C:\\Users\\Carnival Stores\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.APIs\\TicketsBooking.APIs.csproj",
+      "projectUniqueName": "D:\\Event branch\\TicketsBooking.APIs\\TicketsBooking.APIs.csproj",
       "projectName": "TicketsBooking.APIs",
-      "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.APIs\\TicketsBooking.APIs.csproj",
-      "packagesPath": "C:\\Users\\mohan\\.nuget\\packages\\",
-      "outputPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.APIs\\obj\\",
+      "projectPath": "D:\\Event branch\\TicketsBooking.APIs\\TicketsBooking.APIs.csproj",
+      "packagesPath": "C:\\Users\\Carnival Stores\\.nuget\\packages\\",
+      "outputPath": "D:\\Event branch\\TicketsBooking.APIs\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mohan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Carnival Stores\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10663,14 +10663,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Application\\TicketsBooking.Application.csproj": {
-              "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Application\\TicketsBooking.Application.csproj"
+            "D:\\Event branch\\TicketsBooking.Application\\TicketsBooking.Application.csproj": {
+              "projectPath": "D:\\Event branch\\TicketsBooking.Application\\TicketsBooking.Application.csproj"
             },
-            "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Infrastructure\\TicketsBooking.Infrastructure.csproj": {
-              "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Infrastructure\\TicketsBooking.Infrastructure.csproj"
+            "D:\\Event branch\\TicketsBooking.Infrastructure\\TicketsBooking.Infrastructure.csproj": {
+              "projectPath": "D:\\Event branch\\TicketsBooking.Infrastructure\\TicketsBooking.Infrastructure.csproj"
             },
-            "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj": {
-              "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj"
+            "D:\\Event branch\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj": {
+              "projectPath": "D:\\Event branch\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj"
             }
           }
         }

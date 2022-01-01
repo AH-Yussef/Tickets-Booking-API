@@ -28,7 +28,7 @@ namespace TicketsBooking.Infrastructure.Repos
             Event eventRelation = new Event
             {
                 // creating id by concat the provider name with the event name
-                EventID = command.Provider.Name + command.Title,
+                EventID = command.ProviderName + command.Title,
                 Title = command.Title,
                 Description = command.Description,
                 Created = command.Created,
@@ -49,7 +49,7 @@ namespace TicketsBooking.Infrastructure.Repos
             {
                 EventTag et = new EventTag
                 {
-                    EventId = command.Provider.Name + command.Title,
+                    EventId = command.ProviderName + command.Title,
                     keyword = tag.keyword,
                     tag = tag,
                     eventRelation = eventRelation
@@ -105,6 +105,14 @@ namespace TicketsBooking.Infrastructure.Repos
                 .Include(e => e.Tags)
                 .Include(e => e.Provider)
                 .FirstOrDefaultAsync(e => e.EventID == EventID);
+        }
+
+        public async Task<bool> UpdateAccepted(SetAcceptedCommand command)
+        {
+            var result = _dbContext.Events.Find(command.ID.ToLower());
+            result.Accepted = command.Accepted;
+            await _dbContext.SaveChangesAsync();
+            return true;
         }
 
         public Task<Event> Update(UpdateEventCommand command)

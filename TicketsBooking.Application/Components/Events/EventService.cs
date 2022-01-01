@@ -26,6 +26,7 @@ namespace TicketsBooking.Application.Components.Events
         private readonly ITokenManager _tokenManager;
         private readonly IMailService _mailSerivce;
         private readonly AbstractValidator<CreateNewEventCommand> _createEventCommandValidator;
+        private readonly AbstractValidator<SetAcceptedCommand> _SetAcceptedCommandValidator;
         private readonly AbstractValidator<GetAllEventsQuery> _getAllQueryValidator;
         private readonly AbstractValidator<AuthCreds> _authCredsValidator;
         public EventService(IEventRepo eventRepo, ITokenManager tokenManager,
@@ -53,7 +54,7 @@ namespace TicketsBooking.Application.Components.Events
                     Message = ResponseMessages.UnprocessableEntity,
                 };
             }
-            string NewEventID = command.Provider.Name + command.Title;
+            string NewEventID = command.ProviderName + command.Title;
             // event already exists
             if (await _eventRepo.GetSingle(NewEventID) != null)
             {
@@ -177,6 +178,76 @@ namespace TicketsBooking.Application.Components.Events
                 Model = _mapper.Map<EventSingleResult>(e), 
             };
         }
+
+        public async Task<OutputResponse<bool>> Accept(SetAcceptedCommand command)
+        {
+            var isValid = _SetAcceptedCommandValidator.Validate(command).IsValid;
+            if (!isValid)
+            {
+                return new OutputResponse<bool>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.UnprocessableEntity,
+                    Message = ResponseMessages.UnprocessableEntity,
+                };
+            }
+
+            var eventID = await _eventRepo.GetSingle(command.ID);
+            if (eventID == null)
+            {
+                return new OutputResponse<bool>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.NotFound,
+                    Message = ResponseMessages.Failure,
+                    Model = false,
+                };
+            }
+
+            await _eventRepo.UpdateAccepted(command);
+            await sendApproveEmail(eventID.Provider.Email);
+            return new OutputResponse<bool>
+            {
+                Success = true,
+                StatusCode = HttpStatusCode.Accepted,
+                Message = ResponseMessages.Success,
+                Model = true,
+            };
+        }
+
+        public async Task<OutputResponse<bool>> Decline(SetAcceptedCommand command)
+        {
+            if (string.IsNullOrEmpty(command.ID))
+            {
+                return new OutputResponse<bool>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.UnprocessableEntity,
+                    Message = ResponseMessages.UnprocessableEntity,
+                };
+            }
+
+            var eventID = await _eventRepo.GetSingle(command.ID);
+            if (eventID == null)
+            {
+                return new OutputResponse<bool>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.NotFound,
+                    Message = ResponseMessages.Failure,
+                };
+            }
+
+            await _eventRepo.Delete(command.ID);
+            await sendDeclineEmail(eventID.Provider.Email);
+            return new OutputResponse<bool>
+            {
+                Success = true,
+                StatusCode = HttpStatusCode.Accepted,
+                Message = ResponseMessages.Success,
+            };
+        }
+
 
         public Task<OutputResponse<EventSingleResult>> Update(UpdateEventCommand command)
         {

@@ -17,6 +17,7 @@ namespace TicketsBooking.Application.Components.Events
         Task<Event> Create(CreateNewEventCommand command);
         Task<bool> Delete(string EventID);
         Task<Event> Update(UpdateEventCommand command);
+        Task<bool> UpdateAccepted(SetAcceptedCommand command);
         Task<List<Event>> GetAll(GetAllEventsQuery query);
         Task<Event> GetSingle(string EventID);
     }
