@@ -30,7 +30,12 @@
       "ProjectGuid": "be8d63b1-b57c-40dd-b195-563fa9993e7a",
       "DisplayName": "TicketsBooking.Domain",
       "ColorIndex": 4
+    },
+    "7c8f5b3b-2ef7-4074-9bad-aa4463bd3366": {
+      "ProjectGuid": "7c8f5b3b-2ef7-4074-9bad-aa4463bd3366",
+      "DisplayName": "TicketsBooking.Crosscut",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 5
+  "NextColorIndex": 6
 }

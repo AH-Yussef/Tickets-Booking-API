@@ -10,8 +10,15 @@ namespace TicketsBooking.APIs.Setups.Bases
 
         public static class Event
         {
-            private const string Prefix = Rule + "Events";
+            private const string Prefix = Rule + "Events/";
             public const string List = Prefix;
+            public const string Create = Prefix + "Create";
+            public const string Delete = Prefix + "Delete";
+            public const string GetAll = Prefix + "GetAll";
+            public const string GetSingle = Prefix + "GetSingle";
+            public const string Accept = Prefix + "Accept";
+            public const string Decline = Prefix + "Decline";
+
         }
 
         public static class EventProvider
@@ -28,7 +35,7 @@ namespace TicketsBooking.APIs.Setups.Bases
             public const string Approve = Prefix + "Approve";
             public const string Decline = Prefix + "Decline";
         }
-
+        
         public static class Admin
         {
             private const string Prefix = Rule + "Admin/";

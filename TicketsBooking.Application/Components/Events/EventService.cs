@@ -68,6 +68,7 @@ namespace TicketsBooking.Application.Components.Events
             // after verifying that the event doesn't exist before
             // we create the event entry and send an email to the organization
             await _eventRepo.Create(command);
+            //var prov = 
             await sendPendingRequestEmail(command.Provider.Email);
             return new OutputResponse<bool>
             {
@@ -167,6 +168,10 @@ namespace TicketsBooking.Application.Components.Events
                     Model = null,
                 };
             }
+            EventSingleResult esr = new EventSingleResult
+            {
+
+            };
             return new OutputResponse<EventSingleResult>
             {
                 Success = true,
@@ -175,7 +180,8 @@ namespace TicketsBooking.Application.Components.Events
                 // not sure if it works needs to be checked
                 // if not, the mapping can be done easily by hand using a simple foreach loop
                 // can be replaced by an extra method that takes an event and returns an EventSingleResult
-                Model = _mapper.Map<EventSingleResult>(e), 
+                // Model = _mapper.Map<EventSingleResult>(e), 
+                Model = esr
             };
         }
 

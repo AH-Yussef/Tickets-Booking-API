@@ -6205,6 +6205,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "CorePush >= 3.0.4",
+      "FluentValidation >= 10.3.3",
       "MailKit >= 3.0.0",
       "Mailjet.Api >= 2.0.1",
       "Microsoft.AspNetCore.Http >= 2.2.2",
@@ -6224,19 +6225,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Carnival Stores\\.nuget\\packages\\": {}
+    "C:\\Users\\mohan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Event branch\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj",
+      "projectUniqueName": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj",
       "projectName": "TicketsBooking.Integration",
-      "projectPath": "D:\\Event branch\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj",
-      "packagesPath": "C:\\Users\\Carnival Stores\\.nuget\\packages\\",
-      "outputPath": "D:\\Event branch\\TicketsBooking.Integration\\obj\\",
+      "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj",
+      "packagesPath": "C:\\Users\\mohan\\.nuget\\packages\\",
+      "outputPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Carnival Stores\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mohan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6250,8 +6251,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Event branch\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj": {
-              "projectPath": "D:\\Event branch\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj"
+            "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj": {
+              "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj"
             }
           }
         }
@@ -6269,6 +6270,10 @@
           "CorePush": {
             "target": "Package",
             "version": "[3.0.4, )"
+          },
+          "FluentValidation": {
+            "target": "Package",
+            "version": "[10.3.3, )"
           },
           "MailKit": {
             "target": "Package",

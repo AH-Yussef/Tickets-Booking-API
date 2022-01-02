@@ -3737,6 +3737,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Bogus": "33.0.2",
+          "FluentValidation": "10.3.3",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.8",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.8",
           "Microsoft.EntityFrameworkCore.Analyzers": "5.0.8",
@@ -3775,6 +3776,7 @@
           "AutoMapper": "10.1.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
           "BCrypt.Net-Next": "4.0.2",
+          "FluentValidation": "10.3.3",
           "FluentValidation.DependencyInjectionExtensions": "10.3.3",
           "MediatR": "9.0.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "9.0.0",
@@ -3811,6 +3813,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "FluentValidation": "10.3.3",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.8",
           "TicketsBooking.Crosscut": "1.0.0"
         },
@@ -3828,6 +3831,7 @@
           "AutoMapper": "10.1.1",
           "BCrypt.Net-Next": "4.0.2",
           "Bogus": "33.0.2",
+          "FluentValidation": "10.3.3",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.8",
           "Microsoft.AspNetCore.Http": "2.2.2",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
@@ -3866,6 +3870,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "CorePush": "3.0.4",
+          "FluentValidation": "10.3.3",
           "MailKit": "3.0.0",
           "Mailjet.Api": "2.0.1",
           "Microsoft.AspNetCore.Http": "2.2.2",
@@ -11875,6 +11880,7 @@
     "net5.0": [
       "Autofac.Extras.Moq >= 6.1.0",
       "BCrypt.Net-Next >= 4.0.2",
+      "FluentValidation >= 10.3.3",
       "Microsoft.NET.Test.Sdk >= 16.10.0",
       "Moq >= 4.16.1",
       "TicketsBooking.APIs >= 1.0.0",
@@ -11890,19 +11896,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Carnival Stores\\.nuget\\packages\\": {}
+    "C:\\Users\\mohan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Event branch\\TicketsBooking.UnitTest\\TicketsBooking.UnitTest.csproj",
+      "projectUniqueName": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.UnitTest\\TicketsBooking.UnitTest.csproj",
       "projectName": "TicketsBooking.UnitTest",
-      "projectPath": "D:\\Event branch\\TicketsBooking.UnitTest\\TicketsBooking.UnitTest.csproj",
-      "packagesPath": "C:\\Users\\Carnival Stores\\.nuget\\packages\\",
-      "outputPath": "D:\\Event branch\\TicketsBooking.UnitTest\\obj\\",
+      "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.UnitTest\\TicketsBooking.UnitTest.csproj",
+      "packagesPath": "C:\\Users\\mohan\\.nuget\\packages\\",
+      "outputPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.UnitTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Carnival Stores\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mohan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11916,23 +11922,23 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Event branch\\TicketsBooking.APIs\\TicketsBooking.APIs.csproj": {
-              "projectPath": "D:\\Event branch\\TicketsBooking.APIs\\TicketsBooking.APIs.csproj"
+            "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.APIs\\TicketsBooking.APIs.csproj": {
+              "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.APIs\\TicketsBooking.APIs.csproj"
             },
-            "D:\\Event branch\\TicketsBooking.Application\\TicketsBooking.Application.csproj": {
-              "projectPath": "D:\\Event branch\\TicketsBooking.Application\\TicketsBooking.Application.csproj"
+            "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Application\\TicketsBooking.Application.csproj": {
+              "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Application\\TicketsBooking.Application.csproj"
             },
-            "D:\\Event branch\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj": {
-              "projectPath": "D:\\Event branch\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj"
+            "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj": {
+              "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut\\TicketsBooking.Crosscut.csproj"
             },
-            "D:\\Event branch\\TicketsBooking.Domain\\TicketsBooking.Domain.csproj": {
-              "projectPath": "D:\\Event branch\\TicketsBooking.Domain\\TicketsBooking.Domain.csproj"
+            "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Domain\\TicketsBooking.Domain.csproj": {
+              "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Domain\\TicketsBooking.Domain.csproj"
             },
-            "D:\\Event branch\\TicketsBooking.Infrastructure\\TicketsBooking.Infrastructure.csproj": {
-              "projectPath": "D:\\Event branch\\TicketsBooking.Infrastructure\\TicketsBooking.Infrastructure.csproj"
+            "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Infrastructure\\TicketsBooking.Infrastructure.csproj": {
+              "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Infrastructure\\TicketsBooking.Infrastructure.csproj"
             },
-            "D:\\Event branch\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj": {
-              "projectPath": "D:\\Event branch\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj"
+            "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj": {
+              "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj"
             }
           }
         }
@@ -11954,6 +11960,10 @@
           "BCrypt.Net-Next": {
             "target": "Package",
             "version": "[4.0.2, )"
+          },
+          "FluentValidation": {
+            "target": "Package",
+            "version": "[10.3.3, )"
           },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",

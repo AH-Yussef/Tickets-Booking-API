@@ -3352,6 +3352,7 @@
           "AutoMapper": "10.1.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
           "BCrypt.Net-Next": "4.0.2",
+          "FluentValidation": "10.3.3",
           "FluentValidation.DependencyInjectionExtensions": "10.3.3",
           "MediatR": "9.0.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "9.0.0",
@@ -3388,6 +3389,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "FluentValidation": "10.3.3",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.8",
           "TicketsBooking.Crosscut": "1.0.0"
         },
@@ -3405,6 +3407,7 @@
           "AutoMapper": "10.1.1",
           "BCrypt.Net-Next": "4.0.2",
           "Bogus": "33.0.2",
+          "FluentValidation": "10.3.3",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.8",
           "Microsoft.AspNetCore.Http": "2.2.2",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
@@ -3443,6 +3446,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "CorePush": "3.0.4",
+          "FluentValidation": "10.3.3",
           "MailKit": "3.0.0",
           "Mailjet.Api": "2.0.1",
           "Microsoft.AspNetCore.Http": "2.2.2",
@@ -10613,6 +10617,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "Bogus >= 33.0.2",
+      "FluentValidation >= 10.3.3",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.8",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.8",
       "Microsoft.EntityFrameworkCore.Analyzers >= 5.0.8",
@@ -10637,19 +10642,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Carnival Stores\\.nuget\\packages\\": {}
+    "C:\\Users\\mohan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Event branch\\TicketsBooking.APIs\\TicketsBooking.APIs.csproj",
+      "projectUniqueName": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.APIs\\TicketsBooking.APIs.csproj",
       "projectName": "TicketsBooking.APIs",
-      "projectPath": "D:\\Event branch\\TicketsBooking.APIs\\TicketsBooking.APIs.csproj",
-      "packagesPath": "C:\\Users\\Carnival Stores\\.nuget\\packages\\",
-      "outputPath": "D:\\Event branch\\TicketsBooking.APIs\\obj\\",
+      "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.APIs\\TicketsBooking.APIs.csproj",
+      "packagesPath": "C:\\Users\\mohan\\.nuget\\packages\\",
+      "outputPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.APIs\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Carnival Stores\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mohan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10663,14 +10668,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Event branch\\TicketsBooking.Application\\TicketsBooking.Application.csproj": {
-              "projectPath": "D:\\Event branch\\TicketsBooking.Application\\TicketsBooking.Application.csproj"
+            "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Application\\TicketsBooking.Application.csproj": {
+              "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Application\\TicketsBooking.Application.csproj"
             },
-            "D:\\Event branch\\TicketsBooking.Infrastructure\\TicketsBooking.Infrastructure.csproj": {
-              "projectPath": "D:\\Event branch\\TicketsBooking.Infrastructure\\TicketsBooking.Infrastructure.csproj"
+            "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Infrastructure\\TicketsBooking.Infrastructure.csproj": {
+              "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Infrastructure\\TicketsBooking.Infrastructure.csproj"
             },
-            "D:\\Event branch\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj": {
-              "projectPath": "D:\\Event branch\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj"
+            "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj": {
+              "projectPath": "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration\\TicketsBooking.Integration.csproj"
             }
           }
         }
@@ -10688,6 +10693,10 @@
           "Bogus": {
             "target": "Package",
             "version": "[33.0.2, )"
+          },
+          "FluentValidation": {
+            "target": "Package",
+            "version": "[10.3.3, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",

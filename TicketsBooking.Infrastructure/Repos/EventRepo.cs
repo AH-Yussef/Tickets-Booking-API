@@ -29,6 +29,7 @@ namespace TicketsBooking.Infrastructure.Repos
             {
                 // creating id by concat the provider name with the event name
                 EventID = command.ProviderName + command.Title,
+                Provider = await _dbContext.EventProviders.FindAsync(command.ProviderName),
                 Title = command.Title,
                 Description = command.Description,
                 Created = command.Created,
@@ -36,17 +37,41 @@ namespace TicketsBooking.Infrastructure.Repos
                 BoughtTickets = command.BoughtTickets,
                 ReservationDueDate = command.ReservationDueDate,
                 Location = command.Location,
-                Category = command.Category,
-                SubCategory = command.SubCategory,
                 Accepted = command.Accepted,
-                participants = command.Participants,
-            };
+                // could need more work possibly if custom tags
+                //participants = command.Participants,
+                Category = await _dbContext.Tags
+                .Include(x => x.events)
+                .FirstOrDefaultAsync(y => y.keyword==command.Category),
+                SubCategory = await _dbContext.Tags
+                .Include(x => x.events)
+                .FirstOrDefaultAsync(y => y.keyword == command.SubCategory)
+                //
 
-            // create EventTags from the tag given in the command
-            List<Tag> tags = (List<Tag>)command.Tags;
-            List<EventTag> eventTagList = new List<EventTag>();
-            foreach (Tag tag in tags)
+            };
+            List<Participant> pl = new List<Participant>();
+            foreach(var pe in command.Participants)
             {
+                Participant p = new Participant
+                {
+                    Name = pe.Name,
+                    Role = pe.Role,
+                    Team = pe.Team,
+                };
+                pl.Add(p);
+            }
+            eventRelation.participants = pl;
+            // then add tag
+            // source https://www.thereformedprogrammer.net/updating-many-to-many-relationships-in-entity-framework-core/
+            List<EventTag> etl = new List<EventTag>();
+            foreach(string s in command.Tags)
+            {
+                // do we need to add include here?
+                //Tag tag = await _dbContext.Tags.FindAsync(t);
+                Tag tag = await _dbContext.Tags
+                    .Include(x => x.events)
+                    .FirstOrDefaultAsync(y => y.keyword == s);
+
                 EventTag et = new EventTag
                 {
                     EventId = command.ProviderName + command.Title,
@@ -54,10 +79,10 @@ namespace TicketsBooking.Infrastructure.Repos
                     tag = tag,
                     eventRelation = eventRelation
                 };
-                eventTagList.Add(et);
+                etl.Add(et);
             }
-            // fill the tags event tag
-            eventRelation.Tags = eventTagList;
+            eventRelation.Tags = etl;
+
             await _dbContext.Events.AddAsync(eventRelation);
             await _dbContext.SaveChangesAsync();
 
@@ -89,7 +114,7 @@ namespace TicketsBooking.Infrastructure.Repos
             string searchTarget = query.Query;
             if (!string.IsNullOrEmpty(searchTarget))
             {
-                result = result.Where(record => record.Title.Contains(searchTarget));
+                result = result.Where(record => record.EventID.Contains(searchTarget));
             }
             // pull the events having the same accepted status as the query
             result = result.Where(record => record.Accepted == query.Accepted);
