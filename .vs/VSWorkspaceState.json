@@ -3,8 +3,11 @@
     "",
     "\\TicketsBooking.Application",
     "\\TicketsBooking.Application\\Components",
-    "\\TicketsBooking.Application\\Components\\EventProviders"
+    "\\TicketsBooking.Application\\Components\\Customers",
+    "\\TicketsBooking.Application\\Components\\EventProviders",
+    "\\TicketsBooking.UnitTest",
+    "\\TicketsBooking.UnitTest\\RepoLayerTesting\\CustomerTests"
   ],
-  "SelectedNode": "\\TicketsBooking.Application\\Components\\EventProviders\\EventProviderService.cs",
+  "SelectedNode": "\\TicketsBooking.sln",
   "PreviewInSolutionExplorer": false
 }

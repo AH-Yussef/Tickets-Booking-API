@@ -17,7 +17,6 @@ namespace TicketsBooking.Application.Components.Customers
     {
         Task<Customer> Register(RegisterCustomerCommand command);
         Task<List<Customer>> GetAll(GetAllUsersQuery query);
-        Task<Customer> GetSingleByName(string name);
         Task<Customer> GetSingleByEmail(string email);
         // when a user registers an email is sent to his email with an approving link
         // when he clicks on it the account gets approved and he can log in next time

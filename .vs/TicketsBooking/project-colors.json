@@ -35,7 +35,12 @@
       "ProjectGuid": "7c8f5b3b-2ef7-4074-9bad-aa4463bd3366",
       "DisplayName": "TicketsBooking.Crosscut",
       "ColorIndex": 5
+    },
+    "15878a6c-00e8-4da7-bf38-35f8fc6a64c4": {
+      "ProjectGuid": "15878a6c-00e8-4da7-bf38-35f8fc6a64c4",
+      "DisplayName": "TicketsBooking.Integration",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 6
+  "NextColorIndex": 7
 }

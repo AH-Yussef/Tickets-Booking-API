@@ -37,16 +37,9 @@ namespace TicketsBooking.Infrastructure.Repos
             if (!string.IsNullOrEmpty(searchTarget))
             {
                 result = result.Where(record => record.Name.Contains(searchTarget));
-                return null;
             }
             result = result.Skip((query.pageNumber - 1) * query.pageSize).Take(query.pageSize);
             return await result.ToListAsync();
-        }
-
-        public async Task<Customer> GetSingleByName(string name)
-        {
-            return await _dbContext.Customers.FirstOrDefaultAsync(customer => customer.Name == name.ToLower());
-
         }
         public async Task<Customer> GetSingleByEmail(string email)
         {
@@ -76,8 +69,8 @@ namespace TicketsBooking.Infrastructure.Repos
 
         public async Task<bool> Delete(string Email)
         {
-            var entity = _dbContext.EventProviders.Find(Email);
-            _dbContext.EventProviders.Remove(entity);
+            var entity = _dbContext.Customers.Find(Email);
+            _dbContext.Customers.Remove(entity);
             await _dbContext.SaveChangesAsync();
             return true;
         }
