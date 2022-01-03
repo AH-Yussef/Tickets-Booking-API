@@ -13,9 +13,9 @@ namespace TicketsBooking.Infrastructure.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Participant> builder)
         {
-            builder.HasKey(p => p.ParticipantID);
+            builder.HasKey(p => p.Id);
 
-            builder.Property(p => p.ParticipantID)
+            builder.Property(p => p.Id)
                 .IsRequired();
 
             builder.Property(p => p.Name)
@@ -25,13 +25,6 @@ namespace TicketsBooking.Infrastructure.Persistence.Configurations
             builder.Property(p => p.Role)
             .HasMaxLength(100)
             .IsRequired();
-
-            builder.Property(p => p.ImageURL);
-
-            builder.Property(p => p.Team)
-                .HasMaxLength(50)
-                .IsRequired();
-
             
         }
     }

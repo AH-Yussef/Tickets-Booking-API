@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "TicketsBooking.Domain/1.0.0": {
         "dependencies": {
+          "FluentValidation": "10.3.3",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.8",
           "TicketsBooking.Crosscut": "1.0.0"
         },

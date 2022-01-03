@@ -9,6 +9,7 @@
       "TicketsBooking.Integration/1.0.0": {
         "dependencies": {
           "CorePush": "3.0.4",
+          "FluentValidation": "10.3.3",
           "MailKit": "3.0.0",
           "Mailjet.Api": "2.0.1",
           "Microsoft.AspNetCore.Http": "2.2.2",

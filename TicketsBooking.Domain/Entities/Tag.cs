@@ -7,9 +7,9 @@ using TicketsBooking.Domain.Common;
 
 namespace TicketsBooking.Domain.Entities
 {
-    public class Tag : EditableEntity
+    public class Tag
     {
-        public string keyword { get; set; }
-        public ICollection<EventTag> events { get; set; }
+        public string Keyword { get; set; }
+        public ICollection<Event> Events { get; set; }
     }
 }

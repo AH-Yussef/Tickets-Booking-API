@@ -13,16 +13,11 @@ namespace TicketsBooking.Infrastructure.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Tag> builder)
         {
-            builder.HasKey(tag => tag.keyword);
+            builder.HasKey(tag => tag.Keyword);
 
-            builder.Property(tag => tag.keyword)
+            builder.Property(tag => tag.Keyword)
                 .HasMaxLength(50)
                 .IsRequired();
-
-            // many to many in EventTag
-            // has to be checked again
-            //builder.HasMany(tag => tag.events)
-               // .WithMany(eventRelation => eventRelation.Tags);
         }
     }
 }

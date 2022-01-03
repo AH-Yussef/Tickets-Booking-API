@@ -1,13 +1,10 @@
 ﻿<Properties StartupConfiguration="{55CEFEE5-DB37-49F7-8512-77785319A1E2}|Default">
   <MonoDevelop.Ide.ItemProperties.TicketsBooking.APIs PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TicketsBooking.Application/Components/Authentication/TokenManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TicketsBooking.Application/Components/Participants/DTOs/ParticipantEntry.cs">
     <Files>
-      <File FileName="TicketsBooking.UnitTest/RepoLayerTesting/EventProviderTests/EventProviderCreateTests.cs" Line="26" Column="47" />
-      <File FileName="TicketsBooking.UnitTest/RepoLayerTesting/EventProviderTests/EventProviderDeclineTests.cs" Line="1" Column="1" />
-      <File FileName="TicketsBooking.UnitTest/ServideLayerTesting/EventProviderTests/EventProviderAuthTests.cs" Line="258" Column="44" />
-      <File FileName="TicketsBooking.UnitTest/APILayerTesting/EventProviderAPITests/EventProviderAuthTests.cs" Line="1" Column="1" />
-      <File FileName="TicketsBooking.APIs/Controllers/EventProviderController.cs" Line="39" Column="1" />
-      <File FileName="TicketsBooking.Application/Components/Authentication/TokenManager.cs" Line="1" Column="1" />
+      <File FileName="TicketsBooking.Infrastructure/Repos/EventRepo.cs" Line="50" Column="59" />
+      <File FileName="TicketsBooking.Application/Components/Events/DTOs/Commands/CreateNewEventCommand.cs" Line="12" Column="12" />
+      <File FileName="TicketsBooking.Application/Components/Participants/DTOs/ParticipantEntry.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,16 +12,43 @@
           <Node name="TicketsBooking" expanded="True">
             <Node name="TicketsBooking.APIs" expanded="True">
               <Node name="Controllers" expanded="True" />
+              <Node name="Setups" expanded="True">
+                <Node name="Bases" expanded="True" />
+              </Node>
             </Node>
-            <Node name="TicketsBooking.Application" expanded="True" />
-            <Node name="TicketsBooking.Crosscut" expanded="True" />
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="TicketsBooking" expanded="True" selected="True">
-            <Node name="TicketsBooking.UnitTest" expanded="True" />
+            <Node name="TicketsBooking.Application" expanded="True">
+              <Node name="Components" expanded="True">
+                <Node name="Events" expanded="True">
+                  <Node name="DTOs" expanded="True">
+                    <Node name="Commands" expanded="True" />
+                    <Node name="Results" expanded="True" />
+                  </Node>
+                  <Node name="Validators" expanded="True" />
+                </Node>
+                <Node name="Participants" expanded="True">
+                  <Node name="DTOs" expanded="True">
+                    <Node name="ParticipantEntry.cs" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="TicketsBooking.Crosscut" expanded="True">
+              <Node name="Constants" expanded="True" />
+            </Node>
+            <Node name="TicketsBooking.Domain" expanded="True">
+              <Node name="Entities" expanded="True" />
+            </Node>
+            <Node name="TicketsBooking.Infrastructure" expanded="True">
+              <Node name="Persistence" expanded="True">
+                <Node name="Configurations" expanded="True" />
+              </Node>
+              <Node name="Repos" expanded="True" />
+            </Node>
+            <Node name="TicketsBooking.UnitTest" expanded="True">
+              <Node name="RepoLayerTesting" expanded="True">
+                <Node name="AdminTests" expanded="True" />
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>

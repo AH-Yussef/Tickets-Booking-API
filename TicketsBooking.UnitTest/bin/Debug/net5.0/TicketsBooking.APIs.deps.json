@@ -34,6 +34,7 @@
       "TicketsBooking.APIs/1.0.0": {
         "dependencies": {
           "Bogus": "33.0.2",
+          "FluentValidation": "10.3.3",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.8",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.8",
           "Microsoft.EntityFrameworkCore.Analyzers": "5.0.8",
@@ -2718,6 +2719,7 @@
           "AutoMapper": "10.1.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
           "BCrypt.Net-Next": "4.0.2",
+          "FluentValidation": "10.3.3",
           "FluentValidation.DependencyInjectionExtensions": "10.3.3",
           "MediatR": "9.0.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "9.0.0",
@@ -2758,6 +2760,7 @@
       },
       "TicketsBooking.Domain/1.0.0": {
         "dependencies": {
+          "FluentValidation": "10.3.3",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.8",
           "TicketsBooking.Crosscut": "1.0.0"
         },
@@ -2773,6 +2776,7 @@
           "AutoMapper": "10.1.1",
           "BCrypt.Net-Next": "4.0.2",
           "Bogus": "33.0.2",
+          "FluentValidation": "10.3.3",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.8",
           "Microsoft.AspNetCore.Http": "2.2.2",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
@@ -2809,6 +2813,7 @@
       "TicketsBooking.Integration/1.0.0": {
         "dependencies": {
           "CorePush": "3.0.4",
+          "FluentValidation": "10.3.3",
           "MailKit": "3.0.0",
           "Mailjet.Api": "2.0.1",
           "Microsoft.AspNetCore.Http": "2.2.2",

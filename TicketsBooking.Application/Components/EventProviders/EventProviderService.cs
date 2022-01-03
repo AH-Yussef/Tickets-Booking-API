@@ -199,6 +199,7 @@ namespace TicketsBooking.Application.Components.EventProviders
 
         public async Task<OutputResponse<bool>> Register(CreateEventProviderCommand command)
         {
+            Console.WriteLine("\n\n\n\n\n\n\n\n");
             var isValid = _createEventProviderCommandValidator.Validate(command).IsValid;
             if (!isValid)
             {
@@ -210,6 +211,7 @@ namespace TicketsBooking.Application.Components.EventProviders
                 };
             }
 
+            Console.WriteLine("registering");
             if (await _eventProviderRepo.GetSingleByName(command.Name) != null)
             {
                 return new OutputResponse<bool>
@@ -220,6 +222,7 @@ namespace TicketsBooking.Application.Components.EventProviders
                 };
             }
 
+            Console.WriteLine("success");
             await _eventProviderRepo.Create(command);
             await sendPendingRequestEmail(command.Email);
             return new OutputResponse<bool>

@@ -10,9 +10,10 @@ namespace TicketsBooking.Application.Components.Participants.DTOs
         public string Name { get; set; }
         public string Role { get; set; }
         public string Team { get; set; }
+
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<ParticipantEntry, Event>().ReverseMap();
+            profile.CreateMap<ParticipantEntry, Participant>().ReverseMap();
         }
     }
 }

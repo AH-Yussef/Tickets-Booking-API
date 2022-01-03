@@ -7,16 +7,15 @@ namespace TicketsBooking.Application.Components.Events.Validators
     {
         public CreateEventCommandValidator()
         {
-            RuleFor(c => c.Title).NotNull().NotEmpty();
-            RuleFor(c => c.Description).NotNull().NotEmpty();
-            RuleFor(c => c.AllTickets).NotNull().NotNull();
-            RuleFor(c => c.BoughtTickets).NotNull().NotEmpty();
-            RuleFor(c => c.ReservationDueDate).NotNull().NotEmpty();
-            RuleFor(c => c.Location).NotNull().NotEmpty();
-            RuleFor(c => c.Category).NotNull().NotEmpty();
-            RuleFor(c => c.SubCategory).NotNull().NotEmpty();
-            RuleFor(c => c.Accepted).NotNull().NotEmpty();
-            RuleFor(c => c.Participants).NotNull().NotEmpty();
+            RuleFor(c => c.Title).NotNull();
+            RuleFor(c => c.Description).NotNull();
+            RuleFor(c => c.AllTickets).NotNull();
+            RuleFor(c => c.SingleTicketPrice).NotNull();
+            RuleFor(c => c.ReservationDueDate).NotNull();
+            RuleFor(c => c.Location).NotNull();
+            RuleFor(c => c.Category).NotNull();
+            RuleFor(c => c.SubCategory).NotNull();
+            RuleFor(c => c.Participants).NotNull();
         }
     }
 }

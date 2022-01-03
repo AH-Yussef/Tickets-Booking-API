@@ -20,8 +20,6 @@ namespace TicketsBooking.Infrastructure.Persistence
         public DbSet<Event> Events { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Participant> Participants { get; set; }
-        public DbSet<EventTag> EventTags { get; set; }
-
         public DbSet<Customer> Customers { get; set; }
 
         //Fluent API
@@ -29,11 +27,6 @@ namespace TicketsBooking.Infrastructure.Persistence
         {
             base.OnModelCreating(builder);
             builder.ApplyConfigurationsFromAssembly(Assembly.GetAssembly(typeof(EventProviderConfig)));
-        }
-
-        internal Task SaveChangesAsync()
-        {
-            throw new NotImplementedException();
         }
     }
 }

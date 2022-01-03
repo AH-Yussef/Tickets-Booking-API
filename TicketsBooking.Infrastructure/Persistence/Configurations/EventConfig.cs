@@ -9,63 +9,45 @@ namespace TicketsBooking.Infrastructure.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Event> builder)
         {
-            builder.HasKey(eventRelation => eventRelation.EventID);
+            builder.HasKey(eventEntity => eventEntity.EventID);
+            builder.Property(eventEntity => eventEntity.EventID)
+                            .HasMaxLength(200);
 
-            builder.Property(eventRelation => eventRelation.EventID)
+            builder.Property(eventEntity => eventEntity.EventID)
                 .IsRequired();
 
-            builder.Property(eventRelation => eventRelation.Title)
+            builder.Property(eventEntity => eventEntity.Title)
                 .HasMaxLength(100)
                 .IsRequired();
 
-            builder.Property(eventRelation => eventRelation.Description)
+            builder.Property(eventEntity => eventEntity.Description)
                 .HasMaxLength(300);
 
-            builder.Property(eventRelation => eventRelation.Created)
-                .HasDefaultValue(DateTime.UtcNow)
+            builder.Property(eventEntity => eventEntity.dateTime)
                 .IsRequired();
 
-            builder.Property(eventRelation => eventRelation.AllTickets)
+            builder.Property(eventEntity => eventEntity.AllTickets)
                 .HasDefaultValue(0)
                 .IsRequired();
 
-            builder.Property(eventRelation => eventRelation.BoughtTickets)
+            builder.Property(eventEntity => eventEntity.BoughtTickets)
                 .HasDefaultValue(0)
                 .IsRequired();
 
-            builder.Property(eventRelation => eventRelation.ReservationDueDate)
+            builder.Property(eventEntity => eventEntity.ReservationDueDate)
                 .IsRequired();
 
-            builder.Property(eventRelation => eventRelation.Location)
+            builder.Property(eventEntity => eventEntity.Location)
                 .HasMaxLength(100)
                 .IsRequired();
 
-            builder.HasOne(eventRelation => eventRelation.Category)
-                .WithMany()
-                .IsRequired()
-                .OnDelete(DeleteBehavior.Cascade);
-
-            builder.HasOne(eventRelation => eventRelation.SubCategory)
-                .WithMany()
-                .IsRequired()
-                .OnDelete(DeleteBehavior.Cascade);
-
-            builder.HasMany(eventRelation => eventRelation.participants)
+            builder.HasMany(eventRelation => eventRelation.Participants)
                 .WithOne()
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(eventRelation => eventRelation.Provider)
                 .WithMany()
                 .OnDelete(DeleteBehavior.Cascade);
-            
-
-            // many to many implemented in EventTagConfig file
-            // has to be checked again
-           // builder.HasMany(eventRelation => eventRelation.Tags)
-             //   .WithMany(tag => tag.events);
-                
-
-
         }
         
 

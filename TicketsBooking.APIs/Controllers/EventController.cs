@@ -17,7 +17,8 @@ namespace TicketsBooking.APIs.Controllers
         {
             _eventService = eventService;
         }
-        [Authorize(Roles = "EventProvider")]
+
+        [AllowAnonymous]
         [HttpPost(Router.Event.Create)]
         public async Task<IActionResult> Create([FromForm] CreateNewEventCommand command)
         {
@@ -31,16 +32,18 @@ namespace TicketsBooking.APIs.Controllers
             var result = await _eventService.Delete(eventID);
             return NewResult(result);
         }
-        [Authorize(Roles = "Admin")]
-        [HttpPost(Router.Event.GetAll)]
+
+        [AllowAnonymous]
+        [HttpGet(Router.Event.GetAll)]
         public async Task<IActionResult> GetAll([FromQuery] GetAllEventsQuery query)
         {
             var result = await _eventService.GetAll(query);
             return NewResult(result);
         }
-        [Authorize(Roles = "EventProvider")]
-        [HttpPost(Router.Event.GetSingle)]
-        public async Task<IActionResult> GetSingle([FromForm] string eventID)
+
+        [AllowAnonymous]
+        [HttpGet(Router.Event.GetSingle)]
+        public async Task<IActionResult> GetSingle([FromQuery] string eventID)
         {
             var result = await _eventService.GetSingle(eventID);
             return NewResult(result);
