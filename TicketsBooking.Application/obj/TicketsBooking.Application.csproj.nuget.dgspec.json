@@ -57,6 +57,10 @@
               "target": "Package",
               "version": "[4.0.2, )"
             },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.3, )"
+            },
             "FluentValidation.DependencyInjectionExtensions": {
               "target": "Package",
               "version": "[10.3.3, )"
@@ -209,6 +213,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.3, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.8, )"
@@ -274,6 +282,10 @@
             "CorePush": {
               "target": "Package",
               "version": "[3.0.4, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.3, )"
             },
             "MailKit": {
               "target": "Package",

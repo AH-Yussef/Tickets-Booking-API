@@ -10,6 +10,6 @@ namespace TicketsBooking.Domain.Entities
     public class Tag : EditableEntity
     {
         public string keyword { get; set; }
-        public ICollection<Event> events { get; set; }
+        public ICollection<EventTag> events { get; set; }
     }
 }

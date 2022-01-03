@@ -112,6 +112,10 @@
               "target": "Package",
               "version": "[3.0.4, )"
             },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.3, )"
+            },
             "MailKit": {
               "target": "Package",
               "version": "[3.0.0, )"
