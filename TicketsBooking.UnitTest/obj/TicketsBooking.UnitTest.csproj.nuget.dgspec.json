@@ -52,6 +52,10 @@
               "target": "Package",
               "version": "[33.0.2, )"
             },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.3, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[5.0.8, )"
@@ -201,6 +205,10 @@
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[4.0.2, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.3, )"
             },
             "FluentValidation.DependencyInjectionExtensions": {
               "target": "Package",
@@ -354,6 +362,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.3, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.8, )"
@@ -433,6 +445,10 @@
             "Bogus": {
               "target": "Package",
               "version": "[33.0.2, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.3, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -596,6 +612,10 @@
               "target": "Package",
               "version": "[3.0.4, )"
             },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.3, )"
+            },
             "MailKit": {
               "target": "Package",
               "version": "[3.0.0, )"
@@ -736,6 +756,10 @@
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[4.0.2, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.3, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",

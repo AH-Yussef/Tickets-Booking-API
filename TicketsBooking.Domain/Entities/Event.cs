@@ -6,6 +6,7 @@ namespace TicketsBooking.Domain.Entities
 {
     public class Event : EditableEntity
     {
+        public EventProvider Provider { get; set; }
         public string EventID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
@@ -17,7 +18,7 @@ namespace TicketsBooking.Domain.Entities
         public Tag Category { get; set; }
         public Tag SubCategory { get; set; }
         public bool Accepted { get; set; }
-        public ICollection<Tag> Tags { get; set; }
+        public ICollection<EventTag> Tags { get; set; }
         public ICollection<Participant> participants { get; set; }
 
 

@@ -2,6 +2,8 @@
 using TicketsBooking.Domain.Entities;
 using TicketsBooking.Infrastructure.Persistence.Configurations;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+using System;
 
 namespace TicketsBooking.Infrastructure.Persistence
 {
@@ -15,6 +17,10 @@ namespace TicketsBooking.Infrastructure.Persistence
         public DbSet<EventProvider> EventProviders { get; set; }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
+        public DbSet<Event> Events { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<Participant> Participants { get; set; }
+        public DbSet<EventTag> EventTags { get; set; }
 
         public DbSet<Customer> Customers { get; set; }
 
@@ -23,6 +29,11 @@ namespace TicketsBooking.Infrastructure.Persistence
         {
             base.OnModelCreating(builder);
             builder.ApplyConfigurationsFromAssembly(Assembly.GetAssembly(typeof(EventProviderConfig)));
+        }
+
+        internal Task SaveChangesAsync()
+        {
+            throw new NotImplementedException();
         }
     }
 }
