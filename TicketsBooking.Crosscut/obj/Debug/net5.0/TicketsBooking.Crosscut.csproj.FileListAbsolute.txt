@@ -1,18 +1,18 @@
-D:\Event branch\TicketsBooking.Crosscut\bin\Debug\net5.0\TicketsBooking.Crosscut.deps.json
-D:\Event branch\TicketsBooking.Crosscut\bin\Debug\net5.0\TicketsBooking.Crosscut.dll
-D:\Event branch\TicketsBooking.Crosscut\bin\Debug\net5.0\ref\TicketsBooking.Crosscut.dll
-D:\Event branch\TicketsBooking.Crosscut\bin\Debug\net5.0\TicketsBooking.Crosscut.pdb
-D:\Event branch\TicketsBooking.Crosscut\bin\Debug\net5.0\ar\TicketsBooking.Crosscut.resources.dll
-D:\Event branch\TicketsBooking.Crosscut\bin\Debug\net5.0\en\TicketsBooking.Crosscut.resources.dll
-D:\Event branch\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.Resources.SharedResources.ar.resources
-D:\Event branch\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.Resources.SharedResources.en.resources
-D:\Event branch\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.csproj.GenerateResource.cache
-D:\Event branch\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.GeneratedMSBuildEditorConfig.editorconfig
-D:\Event branch\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.AssemblyInfoInputs.cache
-D:\Event branch\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.AssemblyInfo.cs
-D:\Event branch\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.csproj.CoreCompileInputs.cache
-D:\Event branch\TicketsBooking.Crosscut\obj\Debug\net5.0\ar\TicketsBooking.Crosscut.resources.dll
-D:\Event branch\TicketsBooking.Crosscut\obj\Debug\net5.0\en\TicketsBooking.Crosscut.resources.dll
-D:\Event branch\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.dll
-D:\Event branch\TicketsBooking.Crosscut\obj\Debug\net5.0\ref\TicketsBooking.Crosscut.dll
-D:\Event branch\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.pdb
+E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\bin\Debug\net5.0\TicketsBooking.Crosscut.deps.json
+E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\bin\Debug\net5.0\TicketsBooking.Crosscut.dll
+E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\bin\Debug\net5.0\ref\TicketsBooking.Crosscut.dll
+E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\bin\Debug\net5.0\TicketsBooking.Crosscut.pdb
+E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\bin\Debug\net5.0\ar\TicketsBooking.Crosscut.resources.dll
+E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\bin\Debug\net5.0\en\TicketsBooking.Crosscut.resources.dll
+E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.Resources.SharedResources.ar.resources
+E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.Resources.SharedResources.en.resources
+E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.csproj.GenerateResource.cache
+E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.GeneratedMSBuildEditorConfig.editorconfig
+E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.AssemblyInfoInputs.cache
+E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.AssemblyInfo.cs
+E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.csproj.CoreCompileInputs.cache
+E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\obj\Debug\net5.0\ar\TicketsBooking.Crosscut.resources.dll
+E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\obj\Debug\net5.0\en\TicketsBooking.Crosscut.resources.dll
+E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.dll
+E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\obj\Debug\net5.0\ref\TicketsBooking.Crosscut.dll
+E:\SWE\Tickets-Booking-API\TicketsBooking.Crosscut\obj\Debug\net5.0\TicketsBooking.Crosscut.pdb

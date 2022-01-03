@@ -44,20 +44,3 @@ E:\SWE\Tickets-Booking-API\TicketsBooking.Integration\obj\Debug\net5.0\TicketsBo
 E:\SWE\Tickets-Booking-API\TicketsBooking.Integration\obj\Debug\net5.0\TicketsBooking.Integration.dll
 E:\SWE\Tickets-Booking-API\TicketsBooking.Integration\obj\Debug\net5.0\ref\TicketsBooking.Integration.dll
 E:\SWE\Tickets-Booking-API\TicketsBooking.Integration\obj\Debug\net5.0\TicketsBooking.Integration.pdb
-D:\Event branch\TicketsBooking.Integration\bin\Debug\net5.0\TicketsBooking.Integration.deps.json
-D:\Event branch\TicketsBooking.Integration\bin\Debug\net5.0\TicketsBooking.Integration.dll
-D:\Event branch\TicketsBooking.Integration\bin\Debug\net5.0\ref\TicketsBooking.Integration.dll
-D:\Event branch\TicketsBooking.Integration\bin\Debug\net5.0\TicketsBooking.Integration.pdb
-D:\Event branch\TicketsBooking.Integration\bin\Debug\net5.0\TicketsBooking.Crosscut.dll
-D:\Event branch\TicketsBooking.Integration\bin\Debug\net5.0\TicketsBooking.Crosscut.pdb
-D:\Event branch\TicketsBooking.Integration\bin\Debug\net5.0\ar\TicketsBooking.Crosscut.resources.dll
-D:\Event branch\TicketsBooking.Integration\bin\Debug\net5.0\en\TicketsBooking.Crosscut.resources.dll
-D:\Event branch\TicketsBooking.Integration\obj\Debug\net5.0\TicketsBooking.Integration.csproj.AssemblyReference.cache
-D:\Event branch\TicketsBooking.Integration\obj\Debug\net5.0\TicketsBooking.Integration.GeneratedMSBuildEditorConfig.editorconfig
-D:\Event branch\TicketsBooking.Integration\obj\Debug\net5.0\TicketsBooking.Integration.AssemblyInfoInputs.cache
-D:\Event branch\TicketsBooking.Integration\obj\Debug\net5.0\TicketsBooking.Integration.AssemblyInfo.cs
-D:\Event branch\TicketsBooking.Integration\obj\Debug\net5.0\TicketsBooking.Integration.csproj.CoreCompileInputs.cache
-D:\Event branch\TicketsBooking.Integration\obj\Debug\net5.0\TicketsBooking.Integration.csproj.CopyComplete
-D:\Event branch\TicketsBooking.Integration\obj\Debug\net5.0\TicketsBooking.Integration.dll
-D:\Event branch\TicketsBooking.Integration\obj\Debug\net5.0\ref\TicketsBooking.Integration.dll
-D:\Event branch\TicketsBooking.Integration\obj\Debug\net5.0\TicketsBooking.Integration.pdb

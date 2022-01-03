@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\Carnival Stores\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Carnival Stores\\.nuget\\packages"
+      "C:\\Users\\mosta\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\mosta\\.nuget\\packages"
     ]
   }
 }

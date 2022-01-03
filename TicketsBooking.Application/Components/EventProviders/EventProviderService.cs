@@ -4,6 +4,7 @@ using System.Net;
 using System.Threading.Tasks;
 using AutoMapper;
 using FluentValidation;
+using TicketsBooking.Domain.Entities;
 using TicketsBooking.Application.Common.Responses;
 using TicketsBooking.Application.Components.Authentication;
 using TicketsBooking.Application.Components.Authentication.DTOs;
@@ -15,6 +16,7 @@ using TicketsBooking.Application.Components.EventProviders.Validators;
 using TicketsBooking.Crosscut.Constants;
 using TicketsBooking.Integration.Email;
 using TicketsBooking.Integration.Email.Models;
+
 using BC = BCrypt.Net.BCrypt;
 
 namespace TicketsBooking.Application.Components.EventProviders

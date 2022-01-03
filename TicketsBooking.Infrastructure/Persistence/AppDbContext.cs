@@ -22,6 +22,8 @@ namespace TicketsBooking.Infrastructure.Persistence
         public DbSet<Participant> Participants { get; set; }
         public DbSet<EventTag> EventTags { get; set; }
 
+        public DbSet<Customer> Customers { get; set; }
+
         //Fluent API
         protected override void OnModelCreating(ModelBuilder builder)
         {
