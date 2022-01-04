@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using TicketsBooking.Application.Common.Responses;
 using TicketsBooking.Application.Components.Events;
 using TicketsBooking.Application.Components.Events.DTOs.Commands;
 using TicketsBooking.Application.Components.Events.DTOs.Queries;
-using TicketsBooking.Application.Components.Events.DTOs.Results;
 using TicketsBooking.Domain.Entities;
 using TicketsBooking.Infrastructure.Persistence;
 
@@ -25,29 +22,26 @@ namespace TicketsBooking.Infrastructure.Repos
 
         public async Task<Event> Create(CreateNewEventCommand command)
         {
+            string eventID = command.ProviderName + command.Title;
             Event newEvent = new Event
             {
                 // creating id by concat the provider name with the event name
-                EventID = command.ProviderName + command.Title,
+                EventID = eventID.ToLower(),
                 Provider = await _dbContext.EventProviders.FindAsync(command.ProviderName),
                 Title = command.Title,
                 Description = command.Description,
                 AllTickets = command.AllTickets,
                 SingleTicketPrice = command.SingleTicketPrice,
+                dateTime = command.DateTime,
                 ReservationDueDate = command.ReservationDueDate,
                 Location = command.Location,
                 Accepted = false,
-                // could need more work possibly if custom tags
-                //Category = await _dbContext.Tags.FirstOrDefaultAsync(y => y.keyword == command.Category),
-                //SubCategory = await _dbContext.Tags.FirstOrDefaultAsync(y => y.keyword == command.SubCategory),
                 Category = command.Category,
                 SubCategory = command.SubCategory,
                 Tags = new List<Tag>(),
                 Participants = new List<Participant>()
             };
 
-            Console.WriteLine("\n\n\n\n");
-            Console.WriteLine(command.Participants.Count);
             foreach (var participantEntry in command.Participants)
             {
                 var attributes = participantEntry.Split('/');
@@ -62,25 +56,15 @@ namespace TicketsBooking.Infrastructure.Repos
                 };
                 newEvent.Participants.Add(participant);
             }
-            // then add tag
-            // source https://www.thereformedprogrammer.net/updating-many-to-many-relationships-in-entity-framework-core/
+
             command.Tags.Add(command.Category);
             command.Tags.Add(command.SubCategory);
             foreach (string tagKeyword in command.Tags)
             {
-                //Tag tag = await _dbContext.Tags.FirstOrDefaultAsync(y => y.keyword == s);
-
-                //EventTag et = new EventTag
-                //{
-                //    EventId = command.ProviderName + command.Title,
-                //    Keyword = tag.keyword,
-                //    Tag = tag,
-                //    Event = newEvent
-                //};
-                var tagToAdd = _dbContext.Tags.Find(tagKeyword);
+                var tagToAdd = _dbContext.Tags.Find(tagKeyword.ToLower());
                 if (tagToAdd == null)
                 {
-                    tagToAdd = new Tag { Keyword = tagKeyword };
+                    tagToAdd = new Tag { Keyword = tagKeyword.ToLower() };
                 }
                 newEvent.Tags.Add(tagToAdd);
             }
@@ -93,31 +77,29 @@ namespace TicketsBooking.Infrastructure.Repos
 
         public async Task<bool> Delete(string EventID)
         {
-            //throw new NotImplementedException();
             var entity = await _dbContext.Events.FindAsync(EventID);
-            //var entity = entities.Find(e => e.EventID == EventID); // ?? not sure
-
             _dbContext.Events.Remove(entity);
-
             await _dbContext.SaveChangesAsync();
-            // because we used on cascade delete then the appropriate entries will get
-            // deleted automatically from EventTag table
             return true;
         }
 
         public async Task<List<Event>> GetAll(GetAllEventsQuery query)
         {
             var result = _dbContext.Events
-                //.Include(e => e.Tags)
                 .Include(e => e.Provider)
                 .AsQueryable();
+
+            if (!string.IsNullOrEmpty(query.ProviderName))
+            {
+                result = result.Where(record => record.Provider.Name.Equals(query.ProviderName));
+            }
 
             string searchTarget = query.Query;
             if (!string.IsNullOrEmpty(searchTarget))
             {
                 result = result.Where(record => record.EventID.Contains(searchTarget));
             }
-            // pull the events having the same accepted status as the query
+
             result = result.Where(record => record.Accepted == query.Accepted);
             result = result.Skip((query.PageNumber - 1) * query.PageSize).Take(query.PageSize);
             return await result.ToListAsync();
@@ -125,9 +107,7 @@ namespace TicketsBooking.Infrastructure.Repos
 
         public async Task<Event> GetSingle(string EventID)
         {
-            // var entities = await _dbContext.Events.Include(e => e.Tags).ToListAsync();// ?? not sure
-            //var entity = entities.FirstOrDefault(e => e.EventID == EventID); 
-            return await _dbContext.Events.Where(e => e.EventID == EventID)
+            return await _dbContext.Events.Where(e => e.EventID == EventID.ToLower())
                 .Include(e => e.Tags)
                 .Include(e => e.Provider)
                 .Include(e => e.Participants)
@@ -140,12 +120,6 @@ namespace TicketsBooking.Infrastructure.Repos
             result.Accepted = command.Accepted;
             await _dbContext.SaveChangesAsync();
             return true;
-        }
-
-        public Task<Event> Update(UpdateEventCommand command)
-        {
-            throw new NotImplementedException();
-
         }
     }
 }

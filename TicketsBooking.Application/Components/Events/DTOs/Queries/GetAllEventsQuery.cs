@@ -13,6 +13,6 @@ namespace TicketsBooking.Application.Components.Events.DTOs.Queries
         public int PageNumber { get; set; }
         public int PageSize { get; set; }
         public string Query { get; set; }
-        public ICollection<string> Tags { get; set; }
+        public string ProviderName { get; set; }
     }
 }

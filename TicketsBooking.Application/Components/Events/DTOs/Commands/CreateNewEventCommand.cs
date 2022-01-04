@@ -15,7 +15,7 @@ namespace TicketsBooking.Application.Components.Events.DTOs.Commands
         public string Title { get; set; }
         public string Description { get; set; }
         public string Location { get; set; }
-        public DateTime dateTime { get; set; }
+        public DateTime DateTime { get; set; }
         public int AllTickets { get; set; }
         public float SingleTicketPrice { get; set; }
         public DateTime ReservationDueDate { get; set; }

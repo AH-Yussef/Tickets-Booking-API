@@ -8,6 +8,7 @@ using TicketsBooking.Application.Common.Responses;
 using TicketsBooking.Application.Components.Authentication;
 using TicketsBooking.Application.Components.Authentication.DTOs;
 using TicketsBooking.Application.Components.Authentication.Vlidators;
+using TicketsBooking.Application.Components.EventProviders;
 using TicketsBooking.Application.Components.Events.DTOs.Commands;
 using TicketsBooking.Application.Components.Events.DTOs.Queries;
 using TicketsBooking.Application.Components.Events.DTOs.Results;
@@ -22,6 +23,7 @@ namespace TicketsBooking.Application.Components.Events
     public class EventService : IEventService
     {
         private readonly IEventRepo _eventRepo;
+        private readonly IEventProviderRepo _eventProviderRepo;
         private readonly IMapper _mapper;
         private readonly ITokenManager _tokenManager;
         private readonly IMailService _mailSerivce;
@@ -29,10 +31,11 @@ namespace TicketsBooking.Application.Components.Events
         private readonly AbstractValidator<SetAcceptedCommand> _SetAcceptedCommandValidator;
         private readonly AbstractValidator<GetAllEventsQuery> _getAllQueryValidator;
         private readonly AbstractValidator<AuthCreds> _authCredsValidator;
-        public EventService(IEventRepo eventRepo, ITokenManager tokenManager,
+        public EventService(IEventRepo eventRepo, IEventProviderRepo eventProviderRepo ,ITokenManager tokenManager,
                             IMapper mapper, IMailService mailService)
         {
             _eventRepo = eventRepo;
+            _eventProviderRepo = eventProviderRepo;
             _mapper = mapper;
             _tokenManager = tokenManager;
             _mailSerivce = mailService;
@@ -65,11 +68,10 @@ namespace TicketsBooking.Application.Components.Events
                     Message = ResponseMessages.Failure,
                 };
             }
-            // after verifying that the event doesn't exist before
-            // we create the event entry and send an email to the organization
+
             await _eventRepo.Create(command);
-            //var prov = 
-            //await sendPendingRequestEmail(command.Provider.Email);
+            var eventProvider = await _eventProviderRepo.GetSingleByName(command.ProviderName);
+            await SendPendingRequestEmail(eventProvider.Email);
             return new OutputResponse<bool>
             {
                 Success = true,
@@ -185,8 +187,13 @@ namespace TicketsBooking.Application.Components.Events
             };
         }
 
-        public async Task<OutputResponse<bool>> Accept(SetAcceptedCommand command)
+        public async Task<OutputResponse<bool>> Accept(string eventId)
         {
+            var command = new SetAcceptedCommand
+            {
+                ID = eventId,
+                Accepted = true,
+            };
             var isValid = _SetAcceptedCommandValidator.Validate(command).IsValid;
             if (!isValid)
             {
@@ -198,8 +205,8 @@ namespace TicketsBooking.Application.Components.Events
                 };
             }
 
-            var eventID = await _eventRepo.GetSingle(command.ID);
-            if (eventID == null)
+            var eventEntity = await _eventRepo.GetSingle(eventId);
+            if (eventEntity == null)
             {
                 return new OutputResponse<bool>
                 {
@@ -211,7 +218,7 @@ namespace TicketsBooking.Application.Components.Events
             }
 
             await _eventRepo.UpdateAccepted(command);
-            await sendApproveEmail(eventID.Provider.Email);
+            await SendApproveEmail(eventEntity.Provider.Email);
             return new OutputResponse<bool>
             {
                 Success = true,
@@ -221,9 +228,9 @@ namespace TicketsBooking.Application.Components.Events
             };
         }
 
-        public async Task<OutputResponse<bool>> Decline(SetAcceptedCommand command)
+        public async Task<OutputResponse<bool>> Decline(string eventId)
         {
-            if (string.IsNullOrEmpty(command.ID))
+            if (string.IsNullOrEmpty(eventId))
             {
                 return new OutputResponse<bool>
                 {
@@ -233,8 +240,8 @@ namespace TicketsBooking.Application.Components.Events
                 };
             }
 
-            var eventID = await _eventRepo.GetSingle(command.ID);
-            if (eventID == null)
+            var eventEntity = await _eventRepo.GetSingle(eventId);
+            if (eventEntity == null)
             {
                 return new OutputResponse<bool>
                 {
@@ -244,8 +251,8 @@ namespace TicketsBooking.Application.Components.Events
                 };
             }
 
-            await _eventRepo.Delete(command.ID);
-            await sendDeclineEmail(eventID.Provider.Email);
+            await _eventRepo.Delete(eventId);
+            await SendDeclineEmail(eventEntity.Provider.Email);
             return new OutputResponse<bool>
             {
                 Success = true,
@@ -260,7 +267,7 @@ namespace TicketsBooking.Application.Components.Events
             throw new NotImplementedException();
         }
         // used for sending emails concerning the proposal result
-        private async Task sendApproveEmail(string destinationEmail)
+        private async Task SendApproveEmail(string destinationEmail)
         {
             var mailModel = new MailModel
             {
@@ -271,24 +278,24 @@ namespace TicketsBooking.Application.Components.Events
             await _mailSerivce.SendEmailAsync(mailModel);
         }
 
-        private async Task sendDeclineEmail(string destinationEmail)
+        private async Task SendDeclineEmail(string destinationEmail)
         {
             var mailModel = new MailModel
             {
                 ToEmail = destinationEmail,
                 Subject = "Sorry, Your request has been DECLINED",
-                Body = "Sadly, Your proposal hasn't met our acceptance standards.",
+                Body = "Sadly, Your Event proposal hasn't met our acceptance standards.",
             };
             await _mailSerivce.SendEmailAsync(mailModel);
         }
 
-        private async Task sendPendingRequestEmail(string destinationEmail)
+        private async Task SendPendingRequestEmail(string destinationEmail)
         {
             var mailModel = new MailModel
             {
                 ToEmail = destinationEmail,
                 Subject = "Your proposal has been received successfully",
-                Body = "Your proposal is being processed..We will get back to you in 24 hours.",
+                Body = "Your proposal is being processed..We will get back to you in 8 hours.",
             };
             await _mailSerivce.SendEmailAsync(mailModel);
         }

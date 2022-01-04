@@ -1,10 +1,17 @@
 ﻿<Properties StartupConfiguration="{55CEFEE5-DB37-49F7-8512-77785319A1E2}|Default">
   <MonoDevelop.Ide.ItemProperties.TicketsBooking.APIs PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TicketsBooking.Application/Components/Participants/DTOs/ParticipantEntry.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TicketsBooking.Application/Components/EventProviders/EventProviderService.cs">
     <Files>
-      <File FileName="TicketsBooking.Infrastructure/Repos/EventRepo.cs" Line="50" Column="59" />
-      <File FileName="TicketsBooking.Application/Components/Events/DTOs/Commands/CreateNewEventCommand.cs" Line="12" Column="12" />
-      <File FileName="TicketsBooking.Application/Components/Participants/DTOs/ParticipantEntry.cs" Line="1" Column="1" />
+      <File FileName="TicketsBooking.Application/Components/Events/DTOs/Queries/GetAllEventsQuery.cs" Line="15" Column="28" />
+      <File FileName="TicketsBooking.Application/Components/Events/EventService.cs" Line="298" Column="87" />
+      <File FileName="TicketsBooking.Infrastructure/Repos/EventRepo.cs" Line="14" Column="37" />
+      <File FileName="TicketsBooking.Application/Components/Events/DTOs/Commands/SetAcceptedCommand.cs" Line="9" Column="18" />
+      <File FileName="TicketsBooking.APIs/Controllers/EventController.cs" Line="21" Column="48" />
+      <File FileName="TicketsBooking.Application/Components/Events/IEventRepo.cs" Line="19" Column="1" />
+      <File FileName="TicketsBooking.APIs/Controllers/AdminController.cs" Line="1" Column="1" />
+      <File FileName="TicketsBooking.APIs/Controllers/EventProviderController.cs" Line="88" Column="59" />
+      <File FileName="TicketsBooking.Application/Components/Authentication/DTOs/AuthCreds.cs" Line="6" Column="18" />
+      <File FileName="TicketsBooking.Application/Components/EventProviders/EventProviderService.cs" Line="47" Column="61" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,22 +19,18 @@
           <Node name="TicketsBooking" expanded="True">
             <Node name="TicketsBooking.APIs" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Setups" expanded="True">
-                <Node name="Bases" expanded="True" />
-              </Node>
             </Node>
             <Node name="TicketsBooking.Application" expanded="True">
               <Node name="Components" expanded="True">
+                <Node name="Authentication" expanded="True">
+                  <Node name="DTOs" expanded="True" />
+                </Node>
+                <Node name="EventProviders" expanded="True">
+                  <Node name="EventProviderService.cs" selected="True" />
+                </Node>
                 <Node name="Events" expanded="True">
                   <Node name="DTOs" expanded="True">
                     <Node name="Commands" expanded="True" />
-                    <Node name="Results" expanded="True" />
-                  </Node>
-                  <Node name="Validators" expanded="True" />
-                </Node>
-                <Node name="Participants" expanded="True">
-                  <Node name="DTOs" expanded="True">
-                    <Node name="ParticipantEntry.cs" selected="True" />
                   </Node>
                 </Node>
               </Node>

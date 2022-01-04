@@ -18,14 +18,15 @@ namespace TicketsBooking.APIs.Controllers
             _eventService = eventService;
         }
 
-        [AllowAnonymous]
+        [Authorize(Roles = "EventProvider,Admin")]
         [HttpPost(Router.Event.Create)]
         public async Task<IActionResult> Create([FromForm] CreateNewEventCommand command)
         {
             var result = await _eventService.Create(command);
             return NewResult(result);
         }
-        [Authorize(Roles = "EventProvider")]
+
+        [Authorize(Roles = "EventProvider,Admin")]
         [HttpPost(Router.Event.Delete)]
         public async Task<IActionResult> Delete([FromQuery] string eventID)
         {
@@ -48,18 +49,20 @@ namespace TicketsBooking.APIs.Controllers
             var result = await _eventService.GetSingle(eventID);
             return NewResult(result);
         }
+
         [Authorize(Roles = "Admin")]
         [HttpPost(Router.Event.Accept)]
-        public async Task<IActionResult> Accept([FromForm] SetAcceptedCommand command)
+        public async Task<IActionResult> Accept([FromQuery] string eventId)
         {
-            var result = await _eventService.Accept(command);
+            var result = await _eventService.Accept(eventId);
             return NewResult(result);
         }
-        [Authorize(Roles = "EventProvider")]
+
+        [Authorize(Roles = "Admin")]
         [HttpPost(Router.Event.Decline)]
-        public async Task<IActionResult> Decline([FromForm] SetAcceptedCommand command)
+        public async Task<IActionResult> Decline([FromQuery] string eventId)
         {
-            var result = await _eventService.Decline(command);
+            var result = await _eventService.Decline(eventId);
             return NewResult(result);
         }
     }
