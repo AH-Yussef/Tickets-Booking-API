@@ -22,6 +22,9 @@
     <PackageReference Include="Moq" Version="4.16.1" />
     <PackageReference Include="Autofac.Extras.Moq" Version="6.1.0" />
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
+    <PackageReference Include="FluentAssertions" Version="6.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="5.0.13" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
   </ItemGroup>
 
   <ItemGroup>
@@ -42,8 +45,15 @@
     <None Remove="RepoLayerTesting\" />
     <None Remove="RepoLayerTesting\AdminTests\" />
     <None Remove="BCrypt.Net-Next" />
+    <None Remove="ServideLayerTesting\EventTests\" />
+    <None Remove="RepoLayerTesting\EventTests\" />
+    <None Remove="FluentAssertions" />
+    <None Remove="Microsoft.AspNetCore.Mvc.Testing" />
+    <None Remove="Microsoft.AspNet.WebApi.Client" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="RepoLayerTesting\AdminTests\" />
+    <Folder Include="ServideLayerTesting\EventTests\" />
+    <Folder Include="RepoLayerTesting\EventTests\" />
   </ItemGroup>
 </Project>

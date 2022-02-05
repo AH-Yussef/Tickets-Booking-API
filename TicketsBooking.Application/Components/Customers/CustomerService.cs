@@ -84,9 +84,10 @@ namespace TicketsBooking.Application.Components.Customers
                 Model = null,
             };
         }
-        public async Task<OutputResponse<bool>> Approve(string Email)
+
+        public async Task<OutputResponse<bool>> Approve(AcceptCustomerCommand command)
         {
-            if (string.IsNullOrEmpty(Email))
+            if (string.IsNullOrEmpty(command.Email) || string.IsNullOrEmpty(command.Token))
             {
                 return new OutputResponse<bool>
                 {
@@ -96,7 +97,7 @@ namespace TicketsBooking.Application.Components.Customers
                 };
             }
 
-            var customer = await _customerRepo.GetSingleByEmail(Email);
+            var customer = await _customerRepo.GetSingleByEmail(command.Email);
             if (customer == null)
             {
                 return new OutputResponse<bool>
@@ -107,7 +108,20 @@ namespace TicketsBooking.Application.Components.Customers
                     Model = false,
                 };
             }
-            await _customerRepo.Approve(Email);
+
+            var isValidToken = customer.ValidationToken.Equals(command.Token);
+            if (!isValidToken)
+            {
+                return new OutputResponse<bool>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.Unauthorized,
+                    Message = ResponseMessages.Failure,
+                    Model = false,
+                };
+            }
+
+            await _customerRepo.Approve(command.Email);
             return new OutputResponse<bool>
             {
                 Success = true,
@@ -116,6 +130,7 @@ namespace TicketsBooking.Application.Components.Customers
                 Model = true,
             };
         }
+
         public async Task<OutputResponse<bool>> Delete(string Email)
         {
             if (string.IsNullOrEmpty(Email))
@@ -227,8 +242,8 @@ namespace TicketsBooking.Application.Components.Customers
                 };
             }
 
-            await _customerRepo.Register(command);
-            await sendActivateAccountEmail(command.Email);
+            var newCustomer = await _customerRepo.Register(command);
+            await SendActivateAccountEmail(newCustomer);
             return new OutputResponse<bool>
             {
                 Success = true,
@@ -237,22 +252,17 @@ namespace TicketsBooking.Application.Components.Customers
                 Model = true,
             };
         }
-        public Task<OutputResponse<Customer>> UpdateInfo()
-        {
-            throw new NotImplementedException();
-        }
-        private async Task sendActivateAccountEmail(string destinationEmail)
+
+        private async Task SendActivateAccountEmail(Customer customer)
         {
             var mailModel = new MailModel
             {
-                ToEmail = destinationEmail,
+                ToEmail = customer.Email,
                 Subject = "Tazkara account activation mail",
                 Body = "Your account in Tazkara has been created and is pending your activation...\n" +
-                "Please click on the link bellow to activate your account",
-                // WHERE IS THE LINK !!!?
+                $"Please click <a href='http://localhost:8888/api/v1/Customer/Approve?Email={customer.Email}&Token={customer.ValidationToken}'>here</a> to activate your account",
             };
             await _mailSerivce.SendEmailAsync(mailModel);
         }
-
     }
 }

@@ -8,7 +8,7 @@ namespace TicketsBooking.Domain.Entities
 {
     public class Customer : User
     {
-        //public List<string> Intrests { get; set; }
         public bool Accepted { get; set; }
+        public string ValidationToken { get; set; }
     }
 }

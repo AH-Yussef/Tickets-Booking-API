@@ -757,9 +757,21 @@
               "target": "Package",
               "version": "[4.0.2, )"
             },
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.3.0, )"
+            },
             "FluentValidation": {
               "target": "Package",
               "version": "[10.3.3, )"
+            },
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[5.0.13, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",

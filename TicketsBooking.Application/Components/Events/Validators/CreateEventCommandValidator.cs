@@ -7,6 +7,7 @@ namespace TicketsBooking.Application.Components.Events.Validators
     {
         public CreateEventCommandValidator()
         {
+            RuleFor(c => c.ProviderName).NotNull();
             RuleFor(c => c.Title).NotNull();
             RuleFor(c => c.Description).NotNull();
             RuleFor(c => c.AllTickets).NotNull();
@@ -16,6 +17,7 @@ namespace TicketsBooking.Application.Components.Events.Validators
             RuleFor(c => c.Category).NotNull();
             RuleFor(c => c.SubCategory).NotNull();
             RuleFor(c => c.Participants).NotNull();
+            RuleFor(c => c.Tags).NotNull();
         }
     }
 }

@@ -28,7 +28,7 @@ namespace TicketsBooking.APIs.Controllers
         }
         [AllowAnonymous]
         [HttpPost(Router.Customer.Register)]
-        public async Task<IActionResult> Register([FromForm] RegisterCustomerCommand command)
+        public async Task<IActionResult> Register([FromBody] RegisterCustomerCommand command)
         {
             var result = await _customerService.Register(command);
             return NewResult(result);
@@ -50,10 +50,11 @@ namespace TicketsBooking.APIs.Controllers
             return NewResult(result);
         }
 
-        [HttpPost(Router.Customer.Approve)]
-        public async Task<IActionResult> Approve([FromQuery] string Email)
+        [AllowAnonymous]
+        [HttpGet(Router.Customer.Approve)]
+        public async Task<IActionResult> Approve([FromQuery] AcceptCustomerCommand command)
         {
-            var result = await _customerService.Approve(Email);
+            var result = await _customerService.Approve(command);
             return NewResult(result);
         }
 

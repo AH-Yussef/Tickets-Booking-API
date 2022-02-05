@@ -1,33 +1,17 @@
 ﻿<Properties StartupConfiguration="{55CEFEE5-DB37-49F7-8512-77785319A1E2}|Default">
   <MonoDevelop.Ide.ItemProperties.TicketsBooking.APIs PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TicketsBooking.Application/Components/EventProviders/EventProviderService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TicketsBooking.UnitTest/ServideLayerTesting/EventTests/EventCreateTests.cs">
     <Files>
-      <File FileName="TicketsBooking.Application/Components/Events/DTOs/Queries/GetAllEventsQuery.cs" Line="15" Column="28" />
-      <File FileName="TicketsBooking.Application/Components/Events/EventService.cs" Line="298" Column="87" />
-      <File FileName="TicketsBooking.Infrastructure/Repos/EventRepo.cs" Line="14" Column="37" />
-      <File FileName="TicketsBooking.Application/Components/Events/DTOs/Commands/SetAcceptedCommand.cs" Line="9" Column="18" />
-      <File FileName="TicketsBooking.APIs/Controllers/EventController.cs" Line="21" Column="48" />
-      <File FileName="TicketsBooking.Application/Components/Events/IEventRepo.cs" Line="19" Column="1" />
-      <File FileName="TicketsBooking.APIs/Controllers/AdminController.cs" Line="1" Column="1" />
-      <File FileName="TicketsBooking.APIs/Controllers/EventProviderController.cs" Line="88" Column="59" />
-      <File FileName="TicketsBooking.Application/Components/Authentication/DTOs/AuthCreds.cs" Line="6" Column="18" />
-      <File FileName="TicketsBooking.Application/Components/EventProviders/EventProviderService.cs" Line="47" Column="61" />
+      <File FileName="TicketsBooking.Application/Components/Events/DTOs/Commands/CreateNewEventCommand.cs" Line="19" Column="40" />
+      <File FileName="TicketsBooking.Application/Components/Events/Validators/CreateEventCommandValidator.cs" Line="1" Column="1" />
+      <File FileName="TicketsBooking.UnitTest/ServideLayerTesting/EventTests/EventCreateTests.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TicketsBooking" expanded="True">
-            <Node name="TicketsBooking.APIs" expanded="True">
-              <Node name="Controllers" expanded="True" />
-            </Node>
             <Node name="TicketsBooking.Application" expanded="True">
               <Node name="Components" expanded="True">
-                <Node name="Authentication" expanded="True">
-                  <Node name="DTOs" expanded="True" />
-                </Node>
-                <Node name="EventProviders" expanded="True">
-                  <Node name="EventProviderService.cs" selected="True" />
-                </Node>
                 <Node name="Events" expanded="True">
                   <Node name="DTOs" expanded="True">
                     <Node name="Commands" expanded="True" />
@@ -35,23 +19,21 @@
                 </Node>
               </Node>
             </Node>
-            <Node name="TicketsBooking.Crosscut" expanded="True">
-              <Node name="Constants" expanded="True" />
-            </Node>
-            <Node name="TicketsBooking.Domain" expanded="True">
-              <Node name="Entities" expanded="True" />
-            </Node>
-            <Node name="TicketsBooking.Infrastructure" expanded="True">
-              <Node name="Persistence" expanded="True">
-                <Node name="Configurations" expanded="True" />
-              </Node>
-              <Node name="Repos" expanded="True" />
-            </Node>
             <Node name="TicketsBooking.UnitTest" expanded="True">
-              <Node name="RepoLayerTesting" expanded="True">
-                <Node name="AdminTests" expanded="True" />
+              <Node name="ServideLayerTesting" expanded="True">
+                <Node name="CustomerTests" expanded="True" />
+                <Node name="EventTests" expanded="True">
+                  <Node name="EventCreateTests.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="TicketsBooking" expanded="True" selected="True">
+            <Node name="TicketsBooking.UnitTest" expanded="True" />
           </Node>
         </State>
       </Pad>

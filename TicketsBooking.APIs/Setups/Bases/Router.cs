@@ -50,7 +50,6 @@ namespace TicketsBooking.APIs.Setups.Bases
             public const string GetAll = Prefix + "GetAll";
             public const string GetSingle = Prefix + "GetSingle";
             public const string Approve = Prefix + "Approve";
-            public const string UpdateInfo = Prefix + "UpdateInfo";
             public const string Delete = Prefix + "Delete";
         }
     }

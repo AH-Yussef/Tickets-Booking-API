@@ -17,10 +17,12 @@ namespace TicketsBooking.Infrastructure.Repos
     public class CustomerRepo : ICustomerRepo
     {
         private readonly AppDbContext _dbContext;
+        private readonly Random _random;
 
         public CustomerRepo(AppDbContext dbContext)
         {
             _dbContext = dbContext;
+            _random = new Random();
         }
         public async Task<bool> Approve(string Email)
         {
@@ -53,7 +55,8 @@ namespace TicketsBooking.Infrastructure.Repos
                 Name = command.Name.ToLower(),
                 Password = BCrypt.Net.BCrypt.HashPassword(command.Password),
                 Email = command.Email.ToLower(),
-                Accepted = false
+                Accepted = false,
+                ValidationToken = generateRandomValidationToken(),
             };
 
             await _dbContext.Customers.AddAsync(newCustomer);
@@ -73,6 +76,13 @@ namespace TicketsBooking.Infrastructure.Repos
             _dbContext.Customers.Remove(entity);
             await _dbContext.SaveChangesAsync();
             return true;
+        }
+
+        private string generateRandomValidationToken()
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, 20)
+                .Select(s => s[_random.Next(s.Length)]).ToArray());
         }
     }
 }

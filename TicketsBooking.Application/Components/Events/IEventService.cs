@@ -19,8 +19,5 @@ namespace TicketsBooking.Application.Components.Events
         public Task<OutputResponse<EventSingleResult>> GetSingle(string EventID);
         public Task<OutputResponse<bool>> Accept(string eventId);
         public Task<OutputResponse<bool>> Decline(string eventId);
-
-
-
     }
 }

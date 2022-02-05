@@ -19,6 +19,8 @@ namespace TicketsBooking.Infrastructure.Persistence.Configurations
                    .HasMaxLength(100)
                    .IsRequired();
 
+            builder.Property(customer => customer.ValidationToken)
+                   .HasMaxLength(30);
         }
     }
 }

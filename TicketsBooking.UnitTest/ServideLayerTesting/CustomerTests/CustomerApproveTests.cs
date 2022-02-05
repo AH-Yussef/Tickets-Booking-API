@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TicketsBooking.Application.Common.Responses;
 using TicketsBooking.Application.Components.Customers;
+using TicketsBooking.Application.Components.Customers.DTOs.Command;
 using TicketsBooking.Crosscut.Constants;
 using TicketsBooking.Domain.Entities;
 using Xunit;
@@ -22,6 +23,11 @@ namespace TicketsBooking.UnitTest.ServideLayerTesting.CustomerTests
             using var mock = AutoMock.GetLoose();
             //Arange
             string fakeEmail = null;
+            var fakeCommand = new AcceptCustomerCommand
+            {
+                Email = fakeEmail,
+                Token = "123456789",
+            };
 
             mock.Mock<ICustomerRepo>()
                 .Setup(repo => repo.Approve(fakeEmail))
@@ -39,7 +45,7 @@ namespace TicketsBooking.UnitTest.ServideLayerTesting.CustomerTests
                 Message = ResponseMessages.UnprocessableEntity,
             };
             //Act
-            var actualResponse = await customerService.Approve(fakeEmail);
+            var actualResponse = await customerService.Approve(fakeCommand);
 
             //Assert
             mock.Mock<ICustomerRepo>()
@@ -60,6 +66,11 @@ namespace TicketsBooking.UnitTest.ServideLayerTesting.CustomerTests
             using var mock = AutoMock.GetLoose();
             //Arange
             var fakeEmail = "LOL";
+            var fakeCommand = new AcceptCustomerCommand
+            {
+                Email = fakeEmail,
+                Token = "123456789",
+            };
 
             mock.Mock<ICustomerRepo>()
                 .Setup(repo => repo.Approve(fakeEmail))
@@ -79,7 +90,7 @@ namespace TicketsBooking.UnitTest.ServideLayerTesting.CustomerTests
                 Model = false,
             };
             //Act
-            var actualResponse = await customerService.Approve(fakeEmail);
+            var actualResponse = await customerService.Approve(fakeCommand);
 
             //Assert
             mock.Mock<ICustomerRepo>()
@@ -100,6 +111,11 @@ namespace TicketsBooking.UnitTest.ServideLayerTesting.CustomerTests
             using var mock = AutoMock.GetLoose();
             //Arange
             var fakeEmail = "LOL";
+            var fakeCommand = new AcceptCustomerCommand
+            {
+                Email = fakeEmail,
+                Token = "123456789",
+            };
 
             mock.Mock<ICustomerRepo>()
                 .Setup(repo => repo.Approve(fakeEmail))
@@ -111,7 +127,8 @@ namespace TicketsBooking.UnitTest.ServideLayerTesting.CustomerTests
                 {
                     Name = "LOL",
                     Email = "LOL@test.com",
-                })); ;
+                    ValidationToken = "123456789"
+                }));; ;
 
             var customerService = mock.Create<CustomerService>();
 
@@ -123,7 +140,7 @@ namespace TicketsBooking.UnitTest.ServideLayerTesting.CustomerTests
                 Model = true,
             };
             //Act
-            var actualResponse = await customerService.Approve(fakeEmail);
+            var actualResponse = await customerService.Approve(fakeCommand);
 
             //Assert
             mock.Mock<ICustomerRepo>()

@@ -69,6 +69,10 @@ namespace TicketsBooking.Infrastructure.Persistence.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
 
+                    b.Property<string>("ValidationToken")
+                        .HasMaxLength(30)
+                        .HasColumnType("varchar(30)");
+
                     b.HasKey("Email");
 
                     b.ToTable("Customers");
@@ -180,9 +184,7 @@ namespace TicketsBooking.Infrastructure.Persistence.Migrations
                         .HasColumnType("varchar(100)");
 
                     b.Property<string>("Team")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 

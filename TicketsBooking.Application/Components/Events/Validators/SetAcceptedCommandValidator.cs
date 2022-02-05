@@ -8,8 +8,8 @@ namespace TicketsBooking.Application.Components.Events.Validators
     {
         public SetAcceptedCommandValidator()
         {
-            RuleFor(c => c.ID).NotNull().NotEmpty();
-            RuleFor(c => c.Accepted).NotNull();
+            RuleFor(c => c.ID).NotNull();
+            RuleFor(c => c.Accepted).NotEmpty();
         }
     }
 }

@@ -6,7 +6,6 @@ using AutoMapper;
 using FluentValidation;
 using TicketsBooking.Application.Common.Responses;
 using TicketsBooking.Application.Components.Authentication;
-using TicketsBooking.Application.Components.Authentication.DTOs;
 using TicketsBooking.Application.Components.Authentication.Vlidators;
 using TicketsBooking.Application.Components.EventProviders;
 using TicketsBooking.Application.Components.Events.DTOs.Commands;
@@ -28,7 +27,6 @@ namespace TicketsBooking.Application.Components.Events
         private readonly ITokenManager _tokenManager;
         private readonly IMailService _mailSerivce;
         private readonly AbstractValidator<CreateNewEventCommand> _createEventCommandValidator;
-        private readonly AbstractValidator<SetAcceptedCommand> _SetAcceptedCommandValidator;
         private readonly AbstractValidator<GetAllEventsQuery> _getAllQueryValidator;
         private readonly AbstractValidator<AuthCreds> _authCredsValidator;
         public EventService(IEventRepo eventRepo, IEventProviderRepo eventProviderRepo ,ITokenManager tokenManager,
@@ -40,7 +38,6 @@ namespace TicketsBooking.Application.Components.Events
             _tokenManager = tokenManager;
             _mailSerivce = mailService;
             _createEventCommandValidator = new CreateEventCommandValidator();
-            //_setVerifiedCommandValidator = new SetVerifiedCommandValidator();
             _getAllQueryValidator = new GetAllEventQueryValidator();
             _authCredsValidator = new AuthCredsValidator();
         }
@@ -136,9 +133,6 @@ namespace TicketsBooking.Application.Components.Events
                 Success = true,
                 StatusCode = HttpStatusCode.Accepted,
                 Message = ResponseMessages.Success,
-                // not sure if it works needs to be checked
-                // if not, the mapping can be done easily by hand using a simple foreach loop
-                // can be replaced by an extra method that takes an event and returns an EventListedResult
                 Model = _mapper.Map<List<EventListedResult>>(e),
             };
 
@@ -189,13 +183,7 @@ namespace TicketsBooking.Application.Components.Events
 
         public async Task<OutputResponse<bool>> Accept(string eventId)
         {
-            var command = new SetAcceptedCommand
-            {
-                ID = eventId,
-                Accepted = true,
-            };
-            var isValid = _SetAcceptedCommandValidator.Validate(command).IsValid;
-            if (!isValid)
+            if (string.IsNullOrEmpty(eventId))
             {
                 return new OutputResponse<bool>
                 {
@@ -216,6 +204,12 @@ namespace TicketsBooking.Application.Components.Events
                     Model = false,
                 };
             }
+
+            var command = new SetAcceptedCommand
+            {
+                ID = eventId,
+                Accepted = true,
+            };
 
             await _eventRepo.UpdateAccepted(command);
             await SendApproveEmail(eventEntity.Provider.Email);

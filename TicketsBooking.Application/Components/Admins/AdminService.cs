@@ -42,13 +42,15 @@ namespace TicketsBooking.Application.Components.Admins
                 };
             }
 
-            var eventProvider = await _adminRepo.GetSingle(authCreds.Email);
-
-            if (eventProvider != null && authCreds.Password == eventProvider.Password)
+            var admin = await _adminRepo.GetSingle(authCreds.Email);
+            Console.WriteLine(authCreds.Email);
+            Console.WriteLine("\n\n\n\n");
+            Console.WriteLine(admin);
+            if (admin != null && authCreds.Password == admin.Password)
             {
                 _validator.Validate(authCreds);
-                var authUserResult = _mapper.Map<AuthedUserResult>(eventProvider);
-                authUserResult.Token = _tokenManager.GenerateToken(eventProvider, Roles.Admin);
+                var authUserResult = _mapper.Map<AuthedUserResult>(admin);
+                authUserResult.Token = _tokenManager.GenerateToken(admin, Roles.Admin);
 
                 return new OutputResponse<AuthedUserResult>
                 {
