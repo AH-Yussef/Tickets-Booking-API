@@ -29,5 +29,13 @@ namespace TicketsBooking.APIs.Controllers
             return NewResult(result);
         }
 
+        [AllowAnonymous]
+        [HttpPost(Router.Purchase.GetSingle)]
+        public async Task<IActionResult> GetSingle([FromQuery] string purchaseID)
+        {
+            var result = await _purchaseService.GetSingle(purchaseID);
+            return NewResult(result);
+        }
+
     }
 }

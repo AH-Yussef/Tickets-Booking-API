@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using TicketsBooking.Application.Components.Purchases;
 using TicketsBooking.Application.Components.Purchases.DTOs.Commands;
+using TicketsBooking.Application.Components.Purchases.DTOs.RepoDTO;
 using TicketsBooking.Domain.Entities;
 using TicketsBooking.Infrastructure.Persistence;
 
@@ -53,18 +54,100 @@ namespace TicketsBooking.Infrastructure.Repos
 
         }
 
-        public Task<List<Purchase>> GetAll(string CustomerID)
+        /*public async Task<List<Purchase>> GetAll(string CustomerID)
         {
-            throw new NotImplementedException();
+            Customer customer = await _dbContext.Customers
+                .Include(c => c.Purchases)
+                .FirstOrDefaultAsync(c => c.Email == CustomerID);
+            
+            List<Event> eventsList = _dbContext.Events
+                .Include(c => c.Purchases)
+                .Where(e => e.Purchases.Intersect(customer.Purchases).Count() != 0).ToList();
+            
+            PurchaseRepoDTO purchaseRepoDTO = new PurchaseRepoDTO();
+            List<PurchaseRepoDTO> purListDTO = new List<PurchaseRepoDTO>();
+
+            foreach (Event e  )
+
+            return customer.Purchases.ToList();
+        }*/
+        public async Task<List<Purchase>> GetAll(string CustomerID)
+        {
+            Customer customer = await _dbContext.Customers
+               .Include(c => c.Purchases)
+               .FirstOrDefaultAsync(c => c.Email == CustomerID);
+
+            List<Event> eventsList = _dbContext.Events.Include(e => e.Purchases).AsQueryable().ToList();
+
+            List<PurchaseRepoDTO> purchaseRepoDTOs = new List<PurchaseRepoDTO>();
+
+            foreach(Event e in eventsList)
+            {
+                foreach(Purchase purchase in customer.Purchases)
+                {
+                    if()
+                }
+            }
         }
 
-        public async Task<Purchase> GetSingle(string purchaseID)
+        public async Task<PurchaseRepoDTO> GetSingle(string purchaseID)
         {
-            /*     return await _dbContext.Purchases
-                     .Include(p => p.eventObject)
-                     .Include(p => p.customerObject)
-                     .FirstOrDefaultAsync(p => p.PurchaseID == purchaseID);*/
-            throw new NotImplementedException();
+                
+            Purchase obj =  await _dbContext.Purchases
+                     .FirstOrDefaultAsync(p => p.PurchaseID == purchaseID);
+
+            if (obj == null)
+            {
+                return null;
+            }
+
+
+            PurchaseRepoDTO dto = new PurchaseRepoDTO
+            {
+                PurchaseID = obj.PurchaseID,
+                ReservationDate = obj.ReservationDate,
+                TicketsCount = obj.TicketsCount,
+                SingleTicketCost = obj.SingleTicketCost,
+            };
+
+            List<Event> events = _dbContext.Events.AsQueryable().ToList();
+            List<Customer> customers = _dbContext.Customers.AsQueryable().ToList();
+            bool isFound = false;
+            foreach (Event e in events)
+            {
+                foreach(Purchase p in e.Purchases)
+                {
+                    if (p.PurchaseID == purchaseID)
+                    {
+                        isFound = true;
+                        dto.EventID = e.EventID;
+                        break;
+                    }
+                }
+                if (isFound)
+                {
+                    break;
+                }
+            }
+            
+            isFound = false;
+            foreach (Customer customer in customers) 
+            {
+                foreach (Purchase p in customer.Purchases)
+                {
+                    if(p.PurchaseID == purchaseID)
+                    {
+                        isFound=true;
+                        dto.CustomerID = customer.Email;
+                        break;
+                    }
+                }
+                if (isFound)
+                {
+                    break;
+                }
+            }
+            return dto;
         }
     }
 }

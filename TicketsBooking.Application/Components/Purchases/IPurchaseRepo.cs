@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TicketsBooking.Domain.Entities;
 using TicketsBooking.Application.Components.Purchases.DTOs.Commands;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;
+using TicketsBooking.Application.Components.Purchases.DTOs.RepoDTO;
 
 namespace TicketsBooking.Application.Components.Purchases
 {
@@ -13,7 +14,7 @@ namespace TicketsBooking.Application.Components.Purchases
     public interface IPurchaseRepo
     {
         public Task<Purchase> CreateNewPurchase(CreateNewPurchaseCommand command);
-        public Task<Purchase> GetSingle(string purchaseID);
+        public Task<PurchaseRepoDTO> GetSingle(string purchaseID);
         public Task<List<Purchase>> GetAll(string CustomerID);
     }
 }

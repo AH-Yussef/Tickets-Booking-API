@@ -9,6 +9,7 @@ using FluentValidation;
 using TicketsBooking.Application.Common.Responses;
 using TicketsBooking.Application.Components.Authentication;
 using TicketsBooking.Application.Components.Purchases.DTOs.Commands;
+using TicketsBooking.Application.Components.Purchases.DTOs.RepoDTO;
 using TicketsBooking.Application.Components.Purchases.DTOs.Results;
 using TicketsBooking.Application.Components.Purchases.Validators;
 using TicketsBooking.Crosscut.Constants;
@@ -84,9 +85,26 @@ namespace TicketsBooking.Application.Components.Purchases
             };
         }
 
-        public Task<OutputResponse<PurchaseSingleResult>> GetAll(string customerID)
+        public async Task<OutputResponse<PurchaseSingleResult>> GetAll(string customerID)
         {
-            throw new NotImplementedException();
+            var isValid = !string.IsNullOrEmpty(customerID);
+            if (!isValid)
+            {
+                return new OutputResponse<List<EventListedResult>>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.UnprocessableEntity,
+                    Message = ResponseMessages.UnprocessableEntity,
+                };
+            }
+            var e = await _eventRepo.GetAll(query);
+            return new OutputResponse<List<EventListedResult>>
+            {
+                Success = true,
+                StatusCode = HttpStatusCode.Accepted,
+                Message = ResponseMessages.Success,
+                Model = _mapper.Map<List<EventListedResult>>(e),
+            };
         }
 
         public async Task<OutputResponse<PurchaseSingleResult>> GetSingle(string purchaseID)
@@ -102,7 +120,7 @@ namespace TicketsBooking.Application.Components.Purchases
                 };
             }
 
-            Purchase purchase = await _purchaseRepo.GetSingle(purchaseID);
+            PurchaseRepoDTO purchase = await _purchaseRepo.GetSingle(purchaseID);
             if (purchase == null)
             {
                 return new OutputResponse<PurchaseSingleResult>
@@ -119,7 +137,9 @@ namespace TicketsBooking.Application.Components.Purchases
                 PurchaseID = purchase.PurchaseID,
                 ReservationDate = purchase.ReservationDate,
                 TicketCount = purchase.TicketsCount,
-                SingleTicketCost = purchase.SingleTicketCost
+                SingleTicketCost = purchase.SingleTicketCost,
+                CustomerID = purchase.CustomerID,
+                EventID = purchase.EventID,
             };
             //var result = _mapper.Map<EventSingleResult>(eventRecord);
             //result.Tags.Clear();
@@ -134,7 +154,7 @@ namespace TicketsBooking.Application.Components.Purchases
                 Success = true,
                 StatusCode = HttpStatusCode.Accepted,
                 Message = ResponseMessages.Success,
-                //Model = result,
+                Model = singleResult,
             };
         }
     }

@@ -59,7 +59,8 @@ namespace TicketsBooking.APIs.Setups.Bases
             private const string Prefix = Rule + "Purchases/";
             public const string List = Prefix;
             public const string Create = Prefix + "Create";
-            
+            public const string GetSingle = Prefix + "GetSingle";
+
         }
     }
 }
