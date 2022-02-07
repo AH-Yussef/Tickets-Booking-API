@@ -85,25 +85,37 @@ namespace TicketsBooking.Application.Components.Purchases
             };
         }
 
-        public async Task<OutputResponse<PurchaseSingleResult>> GetAll(string customerID)
+        public async Task<OutputResponse<List<PurchaseSingleResult>>> GetAll(string customerID)
         {
             var isValid = !string.IsNullOrEmpty(customerID);
             if (!isValid)
             {
-                return new OutputResponse<List<EventListedResult>>
+                return new OutputResponse<List<PurchaseSingleResult>>
                 {
                     Success = false,
                     StatusCode = HttpStatusCode.UnprocessableEntity,
                     Message = ResponseMessages.UnprocessableEntity,
                 };
             }
-            var e = await _eventRepo.GetAll(query);
-            return new OutputResponse<List<EventListedResult>>
+            var ListDTO = await _purchaseRepo.GetAll(customerID);
+            List<PurchaseSingleResult> psrl = new List<PurchaseSingleResult>();
+            foreach(var item in ListDTO)
+            {
+                psrl.Add(new PurchaseSingleResult { 
+                    PurchaseID = item.PurchaseID,
+                    CustomerID = customerID,
+                    EventID = item.EventID,
+                    TicketCount = item.TicketsCount,
+                    ReservationDate = item.ReservationDate,
+                    SingleTicketCost = item.SingleTicketCost
+                });
+            }
+            return new OutputResponse<List<PurchaseSingleResult>>
             {
                 Success = true,
                 StatusCode = HttpStatusCode.Accepted,
                 Message = ResponseMessages.Success,
-                Model = _mapper.Map<List<EventListedResult>>(e),
+                Model = psrl,
             };
         }
 

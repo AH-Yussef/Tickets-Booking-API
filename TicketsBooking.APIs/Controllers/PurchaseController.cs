@@ -37,5 +37,13 @@ namespace TicketsBooking.APIs.Controllers
             return NewResult(result);
         }
 
+        [AllowAnonymous]
+        [HttpPost(Router.Purchase.GetAll)]
+        public async Task<IActionResult> GetAll([FromQuery] string customerID)
+        {
+            var result = await _purchaseService.GetAll(customerID);
+            return NewResult(result);
+        }
+
     }
 }

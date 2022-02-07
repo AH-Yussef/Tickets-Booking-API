@@ -71,23 +71,40 @@ namespace TicketsBooking.Infrastructure.Repos
 
             return customer.Purchases.ToList();
         }*/
-        public async Task<List<Purchase>> GetAll(string CustomerID)
+        public async Task<List<PurchaseRepoDTO>> GetAll(string CustomerID)
         {
             Customer customer = await _dbContext.Customers
                .Include(c => c.Purchases)
                .FirstOrDefaultAsync(c => c.Email == CustomerID);
 
-            List<Event> eventsList = _dbContext.Events.Include(e => e.Purchases).AsQueryable().ToList();
+            List<Event> eventsList = _dbContext.Events
+                .Include(e => e.Purchases)
+                .AsQueryable().ToList();
 
             List<PurchaseRepoDTO> purchaseRepoDTOs = new List<PurchaseRepoDTO>();
 
             foreach(Event e in eventsList)
             {
-                foreach(Purchase purchase in customer.Purchases)
+                foreach(Purchase ep in e.Purchases)
                 {
-                    if()
+                    foreach(Purchase ec in customer.Purchases)
+                    {
+                        if(ec.PurchaseID == ep.PurchaseID)
+                        {
+                            purchaseRepoDTOs.Add(new PurchaseRepoDTO
+                            {
+                                PurchaseID = ep.PurchaseID,
+                                EventID = e.EventID,
+                                CustomerID = CustomerID,
+                                TicketsCount = ep.TicketsCount,
+                                ReservationDate = ep.ReservationDate,
+                                SingleTicketCost = ep.SingleTicketCost,
+                            });
+                        }
+                    }
                 }
             }
+            return purchaseRepoDTOs;
         }
 
         public async Task<PurchaseRepoDTO> GetSingle(string purchaseID)
