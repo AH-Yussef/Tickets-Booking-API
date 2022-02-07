@@ -293,6 +293,56 @@ namespace TicketsBooking.Application.Components.Events
             };
             await _mailSerivce.SendEmailAsync(mailModel);
         }
+
+        public async Task<OutputResponse<List<EventListedResult>>> Filter(string query)
+        {
+            var isValid = !string.IsNullOrEmpty(query);
+            if (!isValid)
+            {
+                return new OutputResponse<List<EventListedResult>>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.UnprocessableEntity,
+                    Message = ResponseMessages.UnprocessableEntity,
+                };
+            }
+            var e = await _eventRepo.Filter(query);
+            return new OutputResponse<List<EventListedResult>>
+            {
+                Success = true,
+                StatusCode = HttpStatusCode.Accepted,
+                Message = ResponseMessages.Success,
+                Model = _mapper.Map<List<EventListedResult>>(e),
+            };
+
+
+            throw new NotImplementedException();
+        }
+
+        public async Task<OutputResponse<List<EventListedResult>>> Search(string query)
+        {
+            var isValid = !string.IsNullOrEmpty(query);
+            if (!isValid)
+            {
+                return new OutputResponse<List<EventListedResult>>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.UnprocessableEntity,
+                    Message = ResponseMessages.UnprocessableEntity,
+                };
+            }
+            var e = await _eventRepo.Search(query);
+            return new OutputResponse<List<EventListedResult>>
+            {
+                Success = true,
+                StatusCode = HttpStatusCode.Accepted,
+                Message = ResponseMessages.Success,
+                Model = _mapper.Map<List<EventListedResult>>(e),
+            };
+
+
+            throw new NotImplementedException();
+        }
     }
 
 }

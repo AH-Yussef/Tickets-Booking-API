@@ -18,6 +18,8 @@ namespace TicketsBooking.APIs.Setups.Bases
             public const string GetSingle = Prefix + "GetSingle";
             public const string Accept = Prefix + "Accept";
             public const string Decline = Prefix + "Decline";
+            public const string Filter = Prefix + "Filter";
+            public const string Search = Prefix + "Search";
 
         }
 
@@ -51,6 +53,13 @@ namespace TicketsBooking.APIs.Setups.Bases
             public const string GetSingle = Prefix + "GetSingle";
             public const string Approve = Prefix + "Approve";
             public const string Delete = Prefix + "Delete";
+        }
+        public static class Purchase
+        {
+            private const string Prefix = Rule + "Purchases/";
+            public const string List = Prefix;
+            public const string Create = Prefix + "Create";
+            
         }
     }
 }

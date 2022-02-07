@@ -11,15 +11,16 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TicketsBooking.APIs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.APIs", "TicketsBooking.APIs.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TicketsBooking.APIs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\shehab\\OneDrive\\Desktop\\Tickets-Booking-API\\TicketsBooking.APIs", "TicketsBooking.APIs.csproj", "0")]
 [assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TicketsBooking.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" +
-    "", "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Application", "TicketsBooking.Application.csproj", "0")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TicketsBooking.Crosscut, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut", "TicketsBooking.Crosscut.csproj", "0")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TicketsBooking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Domain", "TicketsBooking.Domain.csproj", "0")]
+    "", "C:\\Users\\shehab\\OneDrive\\Desktop\\Tickets-Booking-API\\TicketsBooking.Application", "TicketsBooking.Application.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TicketsBooking.Crosscut, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\shehab\\OneDrive\\Desktop\\Tickets-Booking-API\\TicketsBooking.Crosscut", "TicketsBooking.Crosscut.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TicketsBooking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\shehab\\OneDrive\\Desktop\\Tickets-Booking-API\\TicketsBooking.Domain", "TicketsBooking.Domain.csproj", "0")]
 [assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TicketsBooking.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=n" +
-    "ull", "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Infrastructure", "TicketsBooking.Infrastructure.csproj", "0")]
+    "ull", "C:\\Users\\shehab\\OneDrive\\Desktop\\Tickets-Booking-API\\TicketsBooking.Infrastructur" +
+    "e", "TicketsBooking.Infrastructure.csproj", "0")]
 [assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TicketsBooking.Integration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" +
-    "", "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Integration", "TicketsBooking.Integration.csproj", "0")]
+    "", "C:\\Users\\shehab\\OneDrive\\Desktop\\Tickets-Booking-API\\TicketsBooking.Integration", "TicketsBooking.Integration.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("TicketsBooking.UnitTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

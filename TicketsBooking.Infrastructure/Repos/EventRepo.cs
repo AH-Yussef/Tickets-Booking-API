@@ -83,6 +83,32 @@ namespace TicketsBooking.Infrastructure.Repos
             return true;
         }
 
+        public async Task<List<Event>> Filter(string query)
+        {
+            var result = _dbContext.Events
+                .Include(e => e.Provider)
+                .Include(e=> e.Tags)
+                .AsQueryable();
+
+            string[] tags = query.Split(" "); 
+            HashSet<Event> events = new HashSet<Event>();
+            foreach (Event e in result)
+            {
+                foreach (Tag tag in e.Tags)
+                {
+                    foreach(string queryTag in tags)
+                    {
+                        if (tag.Keyword == queryTag)
+                        {
+                            events.Add(e);
+                        }
+                    }
+                }
+            }
+            var resultList = new List<Event>(events);
+           return resultList;
+        }
+
         public async Task<List<Event>> GetAll(GetAllEventsQuery query)
         {
             var result = _dbContext.Events
@@ -113,6 +139,39 @@ namespace TicketsBooking.Infrastructure.Repos
                 .Include(e => e.Participants)
                 .FirstOrDefaultAsync(e => e.EventID == EventID);
         }
+
+        public async Task<List<Event>> Search(string query)
+        {
+            List<string> queryWords = query.Split(" ").ToList();
+            HashSet<Event> result = new HashSet<Event>();
+            var events = _dbContext.Events
+                .Include(e => e.Provider)
+                .Include(e => e.Tags)
+                .AsQueryable();
+            foreach (Event e in events)
+            {
+                List<string> target = new List<string>();
+                foreach (Tag tag in e.Tags)
+                {
+                    target.Add(tag.Keyword);
+                }
+                
+                string[] titleWord = e.Title.Split(" ");
+                
+                foreach(string s in titleWord)
+                {
+                    target.Add(s);
+                }
+                if (target.Intersect(queryWords).Any())
+                {
+                    result.Add(e);
+                }
+            }
+            return new List<Event>(result);
+        }
+
+
+
 
         public async Task<bool> UpdateAccepted(SetAcceptedCommand command)
         {

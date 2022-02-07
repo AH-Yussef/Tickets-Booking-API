@@ -21,6 +21,12 @@ namespace TicketsBooking.Infrastructure.Persistence.Configurations
 
             builder.Property(customer => customer.ValidationToken)
                    .HasMaxLength(30);
+
+            builder.HasMany(customer => customer.Purchases)
+                .WithOne()
+               // .HasForeignKey(p => p.customerObject)
+                .OnDelete(DeleteBehavior.Cascade);
         }
+    
     }
 }
