@@ -135,8 +135,12 @@ namespace TicketsBooking.Infrastructure.Repos
                 SingleTicketCost = obj.SingleTicketCost,
             };
 
-            List<Event> events = _dbContext.Events.AsQueryable().ToList();
-            List<Customer> customers = _dbContext.Customers.AsQueryable().ToList();
+            List<Event> events = _dbContext.Events
+                .Include(e => e.Purchases)
+                .AsQueryable().ToList();
+            List<Customer> customers = _dbContext.Customers
+                .Include(e => e.Purchases)
+                .AsQueryable().ToList();
             bool isFound = false;
             foreach (Event e in events)
             {
