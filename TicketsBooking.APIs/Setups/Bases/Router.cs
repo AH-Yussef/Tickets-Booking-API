@@ -20,6 +20,7 @@ namespace TicketsBooking.APIs.Setups.Bases
             public const string Decline = Prefix + "Decline";
             public const string Filter = Prefix + "Filter";
             public const string Search = Prefix + "Search";
+            public const string GetNearlyFinished = Prefix + "GetNearlyFinished";
 
         }
 

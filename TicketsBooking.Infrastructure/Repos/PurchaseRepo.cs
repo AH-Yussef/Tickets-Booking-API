@@ -27,6 +27,9 @@ namespace TicketsBooking.Infrastructure.Repos
                 .Include(e => e.Purchases)
                 .FirstOrDefaultAsync(e => e.EventID == command.EventID);
             
+            // if the user wants to buy more tickets than the remaining
+            if (command.TicketsCount > eventObject.AllTickets - eventObject.BoughtTickets) return null;
+            
             Customer customer = await _dbContext.Customers
                 .Include(e => e.Purchases)
                 .FirstOrDefaultAsync(e => e.Email == command.CustomerID);
@@ -77,9 +80,14 @@ namespace TicketsBooking.Infrastructure.Repos
                .Include(c => c.Purchases)
                .FirstOrDefaultAsync(c => c.Email == CustomerID);
 
+            if (customer == null) return null;
+
             List<Event> eventsList = _dbContext.Events
                 .Include(e => e.Purchases)
+                .OrderBy(e => e.dateTime)
                 .AsQueryable().ToList();
+
+            
 
             List<PurchaseRepoDTO> purchaseRepoDTOs = new List<PurchaseRepoDTO>();
 

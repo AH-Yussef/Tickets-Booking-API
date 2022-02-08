@@ -87,7 +87,8 @@ namespace TicketsBooking.Infrastructure.Repos
         {
             var result = _dbContext.Events
                 .Include(e => e.Provider)
-                .Include(e=> e.Tags)
+                .Include(e => e.Tags)
+                .OrderBy(e => e.dateTime)
                 .AsQueryable();
 
             string[] tags = query.Split(" "); 
@@ -131,6 +132,27 @@ namespace TicketsBooking.Infrastructure.Repos
             return await result.ToListAsync();
         }
 
+        public async Task<List<Event>> GetNearlyFinished(int numberOfEventsNeeded)
+        {
+            // gets the events whose bought tickets are >= 90%
+            // AKA the remaining is <= 10%
+            // and sorts them according to reservation due date
+
+            List<Event> events = await _dbContext.Events
+                .AsQueryable()
+                .Where(e => e.BoughtTickets >= e.AllTickets * 0.9)
+                .OrderBy(e => e.ReservationDueDate)
+                .ToListAsync();
+
+            // return the number of events needed
+            // if the number required is greater than the size just return the list
+            if (numberOfEventsNeeded > events.Count) return events;
+
+            return events.GetRange(0, numberOfEventsNeeded);
+            
+            throw new NotImplementedException();
+        }
+
         public async Task<Event> GetSingle(string EventID)
         {
             return await _dbContext.Events.Where(e => e.EventID == EventID.ToLower())
@@ -147,6 +169,7 @@ namespace TicketsBooking.Infrastructure.Repos
             var events = _dbContext.Events
                 .Include(e => e.Provider)
                 .Include(e => e.Tags)
+                .OrderBy(e => e.dateTime)
                 .AsQueryable();
             foreach (Event e in events)
             {

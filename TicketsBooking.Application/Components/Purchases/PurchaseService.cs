@@ -98,6 +98,17 @@ namespace TicketsBooking.Application.Components.Purchases
                 };
             }
             var ListDTO = await _purchaseRepo.GetAll(customerID);
+
+            if(ListDTO == null)
+            {
+                return new OutputResponse<List<PurchaseSingleResult>>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.NotFound,
+                    Message = ResponseMessages.Failure,
+                    Model = null,
+                };
+            }
             List<PurchaseSingleResult> psrl = new List<PurchaseSingleResult>();
             foreach(var item in ListDTO)
             {

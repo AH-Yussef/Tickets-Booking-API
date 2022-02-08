@@ -136,7 +136,6 @@ namespace TicketsBooking.Application.Components.Events
                 Model = _mapper.Map<List<EventListedResult>>(e),
             };
 
-
             throw new NotImplementedException();
         }
 
@@ -341,6 +340,19 @@ namespace TicketsBooking.Application.Components.Events
             };
 
 
+            throw new NotImplementedException();
+        }
+
+        public async Task<OutputResponse<List<EventListedResult>>> GetNearlyFinished(int numberOfEventsNeeded)
+        {
+            var e = await _eventRepo.GetNearlyFinished(numberOfEventsNeeded);
+            return new OutputResponse<List<EventListedResult>>
+            {
+                Success = true,
+                StatusCode = HttpStatusCode.Accepted,
+                Message = ResponseMessages.Success,
+                Model = _mapper.Map<List<EventListedResult>>(e),
+            };
             throw new NotImplementedException();
         }
     }

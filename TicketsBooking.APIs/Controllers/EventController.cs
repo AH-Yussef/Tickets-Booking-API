@@ -82,5 +82,12 @@ namespace TicketsBooking.APIs.Controllers
             var result = await _eventService.Search(query);
             return NewResult(result);
         }
+        [AllowAnonymous]
+        [HttpGet(Router.Event.GetNearlyFinished)]
+        public async Task<IActionResult> GetNearlyFinished([FromQuery] int numberOfEventsNeeded)
+        {
+            var result = await _eventService.GetNearlyFinished(numberOfEventsNeeded);
+            return NewResult(result);
+        }
     }
 }
