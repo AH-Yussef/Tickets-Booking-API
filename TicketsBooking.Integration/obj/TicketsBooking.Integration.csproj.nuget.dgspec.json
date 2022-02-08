@@ -14,7 +14,7 @@
         "outputPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Crosscut/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/alihassan/.nuget/NuGet/NuGet.Config"
+          "/Users/alihassan/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -80,7 +80,7 @@
         "outputPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Integration/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/alihassan/.nuget/NuGet/NuGet.Config"
+          "/Users/alihassan/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"

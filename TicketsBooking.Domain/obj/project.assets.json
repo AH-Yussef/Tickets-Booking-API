@@ -4244,7 +4244,7 @@
       "outputPath": "/Users/alihassan/Desktop/Tickets-Booking-API/TicketsBooking.Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/alihassan/.nuget/NuGet/NuGet.Config"
+        "/Users/alihassan/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
