@@ -48,8 +48,12 @@ namespace TicketsBooking.Infrastructure.Persistence.Configurations
             builder.HasOne(eventRelation => eventRelation.Provider)
                 .WithMany()
                 .OnDelete(DeleteBehavior.Cascade);
+            
+            builder.HasMany(eventRelation => eventRelation.Purchases)
+                .WithOne()
+                //.HasForeignKey(p => p.eventObject)
+                .OnDelete(DeleteBehavior.Cascade);
         }
-        
 
     }
 }

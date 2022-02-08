@@ -21,5 +21,6 @@ namespace TicketsBooking.Domain.Entities
         public bool Accepted { get; set; }
         public ICollection<Tag> Tags { get; set; }
         public ICollection<Participant> Participants { get; set; }
+        public ICollection<Purchase> Purchases { get; set; }
     }
 }

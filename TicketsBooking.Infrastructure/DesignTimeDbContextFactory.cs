@@ -10,7 +10,7 @@ namespace TicketsBooking.Infrastructure
         public AppDbContext CreateDbContext(string[] args)
         {
             var builder = new DbContextOptionsBuilder<AppDbContext>();
-            builder.UseMySQL("Server=localhost;port=3306;database=TicketsBookingDB;user=root;password=mysql2507;");
+            builder.UseMySQL("Server=localhost;port=3306;database=TicketsBookingDB;user=root;password=gold-berg;");
             return new AppDbContext(builder.Options);
         }
     }

@@ -83,6 +83,35 @@ namespace TicketsBooking.Infrastructure.Repos
             return true;
         }
 
+        public async Task<List<Event>> Filter(string query)
+        {
+            var result = _dbContext.Events
+                .Include(e => e.Provider)
+                .Include(e => e.Tags)
+                .Where(e => e.Accepted == true)
+                .Where(e => DateTime.Compare(e.ReservationDueDate, DateTime.Today) >= 0)
+                .OrderBy(e => e.dateTime)
+                .AsQueryable();
+
+            string[] tags = query.Split(" "); 
+            HashSet<Event> events = new HashSet<Event>();
+            foreach (Event e in result)
+            {
+                foreach (Tag tag in e.Tags)
+                {
+                    foreach(string queryTag in tags)
+                    {
+                        if (tag.Keyword == queryTag)
+                        {
+                            events.Add(e);
+                        }
+                    }
+                }
+            }
+            var resultList = new List<Event>(events);
+           return resultList;
+        }
+
         public async Task<List<Event>> GetAll(GetAllEventsQuery query)
         {
             var result = _dbContext.Events
@@ -105,6 +134,27 @@ namespace TicketsBooking.Infrastructure.Repos
             return await result.ToListAsync();
         }
 
+        public async Task<List<Event>> GetNearlyFinished(int numberOfEventsNeeded)
+        {
+            // gets the events whose bought tickets are >= 90%
+            // AKA the remaining is <= 10%
+            // and sorts them according to reservation due date
+
+            List<Event> events = await _dbContext.Events
+                .AsQueryable()
+                .Where(e => e.BoughtTickets >= e.AllTickets * 0.9)
+                .OrderBy(e => e.ReservationDueDate)
+                .ToListAsync();
+
+            // return the number of events needed
+            // if the number required is greater than the size just return the list
+            if (numberOfEventsNeeded > events.Count) return events;
+
+            return events.GetRange(0, numberOfEventsNeeded);
+            
+            throw new NotImplementedException();
+        }
+
         public async Task<Event> GetSingle(string EventID)
         {
             return await _dbContext.Events.Where(e => e.EventID == EventID.ToLower())
@@ -113,6 +163,42 @@ namespace TicketsBooking.Infrastructure.Repos
                 .Include(e => e.Participants)
                 .FirstOrDefaultAsync(e => e.EventID == EventID);
         }
+
+        public async Task<List<Event>> Search(string query)
+        {
+            List<string> queryWords = query.Split(" ").ToList();
+            HashSet<Event> result = new HashSet<Event>();
+            var events = _dbContext.Events
+                .Include(e => e.Provider)
+                .Include(e => e.Tags)
+                .Where(e => e.Accepted == true)
+                .Where(e => DateTime.Compare(e.ReservationDueDate, DateTime.Today) >= 0)
+                .OrderBy(e => e.dateTime)
+                .AsQueryable();
+            foreach (Event e in events)
+            {
+                List<string> target = new List<string>();
+                foreach (Tag tag in e.Tags)
+                {
+                    target.Add(tag.Keyword);
+                }
+                
+                string[] titleWord = e.Title.Split(" ");
+                
+                foreach(string s in titleWord)
+                {
+                    target.Add(s);
+                }
+                if (target.Intersect(queryWords).Any())
+                {
+                    result.Add(e);
+                }
+            }
+            return new List<Event>(result);
+        }
+
+
+
 
         public async Task<bool> UpdateAccepted(SetAcceptedCommand command)
         {

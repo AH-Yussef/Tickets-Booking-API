@@ -193,6 +193,35 @@ namespace TicketsBooking.Infrastructure.Persistence.Migrations
                     b.ToTable("Participants");
                 });
 
+            modelBuilder.Entity("TicketsBooking.Domain.Entities.Purchase", b =>
+                {
+                    b.Property<string>("PurchaseID")
+                        .HasColumnType("varchar(767)");
+
+                    b.Property<string>("CustomerEmail")
+                        .HasColumnType("varchar(767)");
+
+                    b.Property<string>("EventID")
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<DateTime>("ReservationDate")
+                        .HasColumnType("datetime");
+
+                    b.Property<float>("SingleTicketCost")
+                        .HasColumnType("float");
+
+                    b.Property<int>("TicketsCount")
+                        .HasColumnType("int");
+
+                    b.HasKey("PurchaseID");
+
+                    b.HasIndex("CustomerEmail");
+
+                    b.HasIndex("EventID");
+
+                    b.ToTable("Purchases");
+                });
+
             modelBuilder.Entity("TicketsBooking.Domain.Entities.SocialMedia", b =>
                 {
                     b.Property<string>("Link")
@@ -258,6 +287,19 @@ namespace TicketsBooking.Infrastructure.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
                 });
 
+            modelBuilder.Entity("TicketsBooking.Domain.Entities.Purchase", b =>
+                {
+                    b.HasOne("TicketsBooking.Domain.Entities.Customer", null)
+                        .WithMany("Purchases")
+                        .HasForeignKey("CustomerEmail")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("TicketsBooking.Domain.Entities.Event", null)
+                        .WithMany("Purchases")
+                        .HasForeignKey("EventID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("TicketsBooking.Domain.Entities.SocialMedia", b =>
                 {
                     b.HasOne("TicketsBooking.Domain.Entities.EventProvider", null)
@@ -266,9 +308,16 @@ namespace TicketsBooking.Infrastructure.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("TicketsBooking.Domain.Entities.Customer", b =>
+                {
+                    b.Navigation("Purchases");
+                });
+
             modelBuilder.Entity("TicketsBooking.Domain.Entities.Event", b =>
                 {
                     b.Navigation("Participants");
+
+                    b.Navigation("Purchases");
                 });
 
             modelBuilder.Entity("TicketsBooking.Domain.Entities.EventProvider", b =>

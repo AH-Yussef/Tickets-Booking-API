@@ -10,5 +10,6 @@ namespace TicketsBooking.Domain.Entities
     {
         public bool Accepted { get; set; }
         public string ValidationToken { get; set; }
+        public ICollection<Purchase> Purchases { set; get; }
     }
 }
