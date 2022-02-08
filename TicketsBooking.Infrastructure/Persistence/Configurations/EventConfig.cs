@@ -54,7 +54,6 @@ namespace TicketsBooking.Infrastructure.Persistence.Configurations
                 //.HasForeignKey(p => p.eventObject)
                 .OnDelete(DeleteBehavior.Cascade);
         }
-        
 
     }
 }

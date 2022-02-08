@@ -61,7 +61,8 @@ namespace TicketsBooking.APIs.Setups.Bases
             public const string List = Prefix;
             public const string Create = Prefix + "Create";
             public const string GetSingle = Prefix + "GetSingle";
-            public const string GetAll = Prefix + "GetAll";
+            public const string GetAllNotPassed = Prefix + "GetAllNotPassed";
+            public const string Refund = Prefix + "Refund";
 
 
         }

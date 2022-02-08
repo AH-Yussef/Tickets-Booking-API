@@ -74,7 +74,7 @@ namespace TicketsBooking.Infrastructure.Repos
 
             return customer.Purchases.ToList();
         }*/
-        public async Task<List<PurchaseRepoDTO>> GetAll(string CustomerID)
+        public async Task<List<PurchaseRepoDTO>> GetAllNotPassed(string CustomerID)
         {
             Customer customer = await _dbContext.Customers
                .Include(c => c.Purchases)
@@ -85,9 +85,9 @@ namespace TicketsBooking.Infrastructure.Repos
             List<Event> eventsList = _dbContext.Events
                 .Include(e => e.Purchases)
                 .OrderBy(e => e.dateTime)
+                .Where(e => DateTime.Compare(e.ReservationDueDate, DateTime.Today) >= 0)
                 .AsQueryable().ToList();
 
-            
 
             List<PurchaseRepoDTO> purchaseRepoDTOs = new List<PurchaseRepoDTO>();
 
@@ -98,6 +98,47 @@ namespace TicketsBooking.Infrastructure.Repos
                     foreach(Purchase ec in customer.Purchases)
                     {
                         if(ec.PurchaseID == ep.PurchaseID)
+                        {
+                            purchaseRepoDTOs.Add(new PurchaseRepoDTO
+                            {
+                                PurchaseID = ep.PurchaseID,
+                                EventID = e.EventID,
+                                CustomerID = CustomerID,
+                                TicketsCount = ep.TicketsCount,
+                                ReservationDate = ep.ReservationDate,
+                                SingleTicketCost = ep.SingleTicketCost,
+                            });
+                        }
+                    }
+                }
+            }
+            return purchaseRepoDTOs;
+        }
+
+        public async Task<List<PurchaseRepoDTO>> GetAllPassed(string CustomerID)
+        {
+            Customer customer = await _dbContext.Customers
+               .Include(c => c.Purchases)
+               .FirstOrDefaultAsync(c => c.Email == CustomerID);
+
+            if (customer == null) return null;
+
+            List<Event> eventsList = _dbContext.Events
+                .Include(e => e.Purchases)
+                .OrderBy(e => e.dateTime)
+                .Where(e => DateTime.Compare(e.ReservationDueDate, DateTime.Today) < 0)
+                .AsQueryable().ToList();
+
+
+            List<PurchaseRepoDTO> purchaseRepoDTOs = new List<PurchaseRepoDTO>();
+
+            foreach (Event e in eventsList)
+            {
+                foreach (Purchase ep in e.Purchases)
+                {
+                    foreach (Purchase ec in customer.Purchases)
+                    {
+                        if (ec.PurchaseID == ep.PurchaseID)
                         {
                             purchaseRepoDTOs.Add(new PurchaseRepoDTO
                             {
@@ -177,6 +218,21 @@ namespace TicketsBooking.Infrastructure.Repos
                 }
             }
             return dto;
+        }
+
+        public async Task<bool> Refund(string purchaseID)
+        {
+            PurchaseRepoDTO prd = await GetSingle(purchaseID);
+            Event e = await _dbContext.Events.FirstOrDefaultAsync(e => e.EventID == prd.EventID);
+
+            e.BoughtTickets -= prd.TicketsCount;
+
+            Purchase purchase = await _dbContext.Purchases
+                .FirstOrDefaultAsync(e => e.PurchaseID == purchaseID);
+
+            _dbContext.Purchases.Remove(purchase); 
+            await _dbContext.SaveChangesAsync();
+            return true;
         }
     }
 }

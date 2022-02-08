@@ -88,6 +88,8 @@ namespace TicketsBooking.Infrastructure.Repos
             var result = _dbContext.Events
                 .Include(e => e.Provider)
                 .Include(e => e.Tags)
+                .Where(e => e.Accepted == true)
+                .Where(e => DateTime.Compare(e.ReservationDueDate, DateTime.Today) >= 0)
                 .OrderBy(e => e.dateTime)
                 .AsQueryable();
 
@@ -169,6 +171,8 @@ namespace TicketsBooking.Infrastructure.Repos
             var events = _dbContext.Events
                 .Include(e => e.Provider)
                 .Include(e => e.Tags)
+                .Where(e => e.Accepted == true)
+                .Where(e => DateTime.Compare(e.ReservationDueDate, DateTime.Today) >= 0)
                 .OrderBy(e => e.dateTime)
                 .AsQueryable();
             foreach (Event e in events)

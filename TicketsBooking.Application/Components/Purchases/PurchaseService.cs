@@ -85,7 +85,7 @@ namespace TicketsBooking.Application.Components.Purchases
             };
         }
 
-        public async Task<OutputResponse<List<PurchaseSingleResult>>> GetAll(string customerID)
+        public async Task<OutputResponse<List<PurchaseSingleResult>>> GetAllNotPassed(string customerID)
         {
             var isValid = !string.IsNullOrEmpty(customerID);
             if (!isValid)
@@ -97,7 +97,7 @@ namespace TicketsBooking.Application.Components.Purchases
                     Message = ResponseMessages.UnprocessableEntity,
                 };
             }
-            var ListDTO = await _purchaseRepo.GetAll(customerID);
+            var ListDTO = await _purchaseRepo.GetAllNotPassed(customerID);
 
             if(ListDTO == null)
             {
@@ -113,6 +113,52 @@ namespace TicketsBooking.Application.Components.Purchases
             foreach(var item in ListDTO)
             {
                 psrl.Add(new PurchaseSingleResult { 
+                    PurchaseID = item.PurchaseID,
+                    CustomerID = customerID,
+                    EventID = item.EventID,
+                    TicketCount = item.TicketsCount,
+                    ReservationDate = item.ReservationDate,
+                    SingleTicketCost = item.SingleTicketCost
+                });
+            }
+            return new OutputResponse<List<PurchaseSingleResult>>
+            {
+                Success = true,
+                StatusCode = HttpStatusCode.Accepted,
+                Message = ResponseMessages.Success,
+                Model = psrl,
+            };
+        }
+
+        public async Task<OutputResponse<List<PurchaseSingleResult>>> GetAllPassed(string customerID)
+        {
+            var isValid = !string.IsNullOrEmpty(customerID);
+            if (!isValid)
+            {
+                return new OutputResponse<List<PurchaseSingleResult>>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.UnprocessableEntity,
+                    Message = ResponseMessages.UnprocessableEntity,
+                };
+            }
+            var ListDTO = await _purchaseRepo.GetAllNotPassed(customerID);
+
+            if (ListDTO == null)
+            {
+                return new OutputResponse<List<PurchaseSingleResult>>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.NotFound,
+                    Message = ResponseMessages.Failure,
+                    Model = null,
+                };
+            }
+            List<PurchaseSingleResult> psrl = new List<PurchaseSingleResult>();
+            foreach (var item in ListDTO)
+            {
+                psrl.Add(new PurchaseSingleResult
+                {
                     PurchaseID = item.PurchaseID,
                     CustomerID = customerID,
                     EventID = item.EventID,
@@ -179,6 +225,43 @@ namespace TicketsBooking.Application.Components.Purchases
                 Message = ResponseMessages.Success,
                 Model = singleResult,
             };
+        }
+
+        public async Task<OutputResponse<bool>> Refund(string purchaseID)
+        {
+            // verify that the id is not null or empty
+            if (string.IsNullOrEmpty(purchaseID))
+            {
+                return new OutputResponse<bool>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.UnprocessableEntity,
+                    Message = ResponseMessages.UnprocessableEntity,
+                    Model = false,
+                };
+            }
+            //verify that it exists
+            PurchaseRepoDTO e = await _purchaseRepo.GetSingle(purchaseID);
+            if (e == null)
+            {
+                return new OutputResponse<bool>
+                {
+                    Success = false,
+                    StatusCode = HttpStatusCode.NotFound,
+                    Message = ResponseMessages.Failure,
+                    Model = false,
+                };
+            }
+            // if it exists then we delete
+            await _purchaseRepo.Refund(purchaseID);
+            return new OutputResponse<bool>
+            {
+                Success = true,
+                StatusCode = HttpStatusCode.Accepted,
+                Message = ResponseMessages.Success,
+                Model = true,
+            };
+            throw new NotImplementedException();
         }
     }
 }

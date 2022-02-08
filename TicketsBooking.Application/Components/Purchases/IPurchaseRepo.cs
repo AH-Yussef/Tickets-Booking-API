@@ -15,6 +15,8 @@ namespace TicketsBooking.Application.Components.Purchases
     {
         public Task<Purchase> CreateNewPurchase(CreateNewPurchaseCommand command);
         public Task<PurchaseRepoDTO> GetSingle(string purchaseID);
-        public Task<List<PurchaseRepoDTO>> GetAll(string CustomerID);
+        public Task<List<PurchaseRepoDTO>> GetAllNotPassed(string CustomerID);
+        public Task<List<PurchaseRepoDTO>> GetAllPassed(string CustomerID);
+        public Task<bool> Refund(string purchaseID);
     }
 }
