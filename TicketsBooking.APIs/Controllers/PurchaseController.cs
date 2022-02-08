@@ -45,6 +45,13 @@ namespace TicketsBooking.APIs.Controllers
             return NewResult(result);
         }
         [AllowAnonymous]
+        [HttpPost(Router.Purchase.GetAllPassed)]
+        public async Task<IActionResult> GetAllPassed([FromQuery] string customerID)
+        {
+            var result = await _purchaseService.GetAllPassed(customerID);
+            return NewResult(result);
+        }
+        [AllowAnonymous]
         [HttpPost(Router.Purchase.Refund)]
         public async Task<IActionResult> Refund([FromQuery] string purchaseID)
         {
