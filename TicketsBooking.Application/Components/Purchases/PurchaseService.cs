@@ -142,7 +142,7 @@ namespace TicketsBooking.Application.Components.Purchases
                     Message = ResponseMessages.UnprocessableEntity,
                 };
             }
-            var ListDTO = await _purchaseRepo.GetAllNotPassed(customerID);
+            var ListDTO = await _purchaseRepo.GetAllPassed(customerID);
 
             if (ListDTO == null)
             {
