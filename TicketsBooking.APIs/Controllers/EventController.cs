@@ -18,7 +18,8 @@ namespace TicketsBooking.APIs.Controllers
             _eventService = eventService;
         }
 
-        [Authorize(Roles = "EventProvider,Admin")]
+        //[Authorize(Roles = "EventProvider,Admin")]
+        [AllowAnonymous]
         [HttpPost(Router.Event.Create)]
         public async Task<IActionResult> Create([FromForm] CreateNewEventCommand command)
         {
@@ -63,6 +64,29 @@ namespace TicketsBooking.APIs.Controllers
         public async Task<IActionResult> Decline([FromQuery] string eventId)
         {
             var result = await _eventService.Decline(eventId);
+            return NewResult(result);
+        }
+
+        [AllowAnonymous]
+        [HttpGet(Router.Event.Filter)]
+        public async Task<IActionResult> Filter([FromQuery] string query)
+        {
+            var result = await _eventService.Filter(query);
+            return NewResult(result);
+        }
+
+        [AllowAnonymous]
+        [HttpGet(Router.Event.Search)]
+        public async Task<IActionResult> Search([FromQuery] string query)
+        {
+            var result = await _eventService.Search(query);
+            return NewResult(result);
+        }
+        [AllowAnonymous]
+        [HttpGet(Router.Event.GetNearlyFinished)]
+        public async Task<IActionResult> GetNearlyFinished([FromQuery] int numberOfEventsNeeded)
+        {
+            var result = await _eventService.GetNearlyFinished(numberOfEventsNeeded);
             return NewResult(result);
         }
     }

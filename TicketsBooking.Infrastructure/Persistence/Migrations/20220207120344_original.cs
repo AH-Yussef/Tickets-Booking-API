@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TicketsBooking.Infrastructure.Persistence.Migrations
 {
-    public partial class initial : Migration
+    public partial class original : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -155,6 +155,34 @@ namespace TicketsBooking.Infrastructure.Persistence.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Purchases",
+                columns: table => new
+                {
+                    PurchaseID = table.Column<string>(type: "varchar(767)", nullable: false),
+                    ReservationDate = table.Column<DateTime>(type: "datetime", nullable: false),
+                    TicketsCount = table.Column<int>(type: "int", nullable: false),
+                    SingleTicketCost = table.Column<float>(type: "float", nullable: false),
+                    CustomerEmail = table.Column<string>(type: "varchar(767)", nullable: true),
+                    EventID = table.Column<string>(type: "varchar(200)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Purchases", x => x.PurchaseID);
+                    table.ForeignKey(
+                        name: "FK_Purchases_Customers_CustomerEmail",
+                        column: x => x.CustomerEmail,
+                        principalTable: "Customers",
+                        principalColumn: "Email",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Purchases_Events_EventID",
+                        column: x => x.EventID,
+                        principalTable: "Events",
+                        principalColumn: "EventID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_EventProviders_WebsiteLink",
                 table: "EventProviders",
@@ -177,6 +205,16 @@ namespace TicketsBooking.Infrastructure.Persistence.Migrations
                 column: "EventID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Purchases_CustomerEmail",
+                table: "Purchases",
+                column: "CustomerEmail");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Purchases_EventID",
+                table: "Purchases",
+                column: "EventID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_SocialMedias_EventProviderName",
                 table: "SocialMedias",
                 column: "EventProviderName");
@@ -188,19 +226,22 @@ namespace TicketsBooking.Infrastructure.Persistence.Migrations
                 name: "Admins");
 
             migrationBuilder.DropTable(
-                name: "Customers");
-
-            migrationBuilder.DropTable(
                 name: "EventTag");
 
             migrationBuilder.DropTable(
                 name: "Participants");
 
             migrationBuilder.DropTable(
+                name: "Purchases");
+
+            migrationBuilder.DropTable(
                 name: "SocialMedias");
 
             migrationBuilder.DropTable(
                 name: "Tags");
+
+            migrationBuilder.DropTable(
+                name: "Customers");
 
             migrationBuilder.DropTable(
                 name: "Events");

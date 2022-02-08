@@ -16,8 +16,11 @@ namespace TicketsBooking.Application.Components.Events
         public Task<OutputResponse<bool>> Delete(string EventID);
         public Task<OutputResponse<EventSingleResult>> Update(UpdateEventCommand command);
         public Task<OutputResponse<List<EventListedResult>>> GetAll(GetAllEventsQuery query);
+        public Task<OutputResponse<List<EventListedResult>>> GetNearlyFinished(int numberOfEventsNeeded);
         public Task<OutputResponse<EventSingleResult>> GetSingle(string EventID);
         public Task<OutputResponse<bool>> Accept(string eventId);
         public Task<OutputResponse<bool>> Decline(string eventId);
+        public Task<OutputResponse<List<EventListedResult>>> Filter(string query);
+        public Task<OutputResponse<List<EventListedResult>>> Search(string query);
     }
 }

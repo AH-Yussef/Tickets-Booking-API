@@ -11,6 +11,12 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TicketsBooking.APIs", "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.APIs", "TicketsBooking.APIs.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TicketsBooking.Application", "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Application", "TicketsBooking.Application.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TicketsBooking.Crosscut", "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Crosscut", "TicketsBooking.Crosscut.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TicketsBooking.Domain", "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Domain", "TicketsBooking.Domain.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TicketsBooking.Infrastructure", "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Infrastructure", "TicketsBooking.Infrastructure.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TicketsBooking.Integration", "E:\\SWE\\Tickets-Booking-API\\TicketsBooking.Integration", "TicketsBooking.Integration.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("TicketsBooking.UnitTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
