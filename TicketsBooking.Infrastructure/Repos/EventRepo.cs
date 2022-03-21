@@ -180,10 +180,10 @@ namespace TicketsBooking.Infrastructure.Repos
                 List<string> target = new List<string>();
                 foreach (Tag tag in e.Tags)
                 {
-                    target.Add(tag.Keyword);
+                    target.Add(tag.Keyword.ToLower());
                 }
                 
-                string[] titleWord = e.Title.Split(" ");
+                string[] titleWord = e.Title.ToLower().Split(" ");
                 
                 foreach(string s in titleWord)
                 {

@@ -37,7 +37,7 @@ namespace TicketsBooking.Infrastructure.Repos
             Purchase purchase = new Purchase
             {
                 PurchaseID = command.CustomerID + command.EventID + eventObject.BoughtTickets,
-                ReservationDate = command.PurchaseTime,
+                ReservationDate = DateTime.Today,
                 TicketsCount = command.TicketsCount,
                 SingleTicketCost = eventObject.SingleTicketPrice,
                 //customerObject = customer,

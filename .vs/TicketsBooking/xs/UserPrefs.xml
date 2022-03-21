@@ -1,35 +1,45 @@
 ﻿<Properties StartupConfiguration="{55CEFEE5-DB37-49F7-8512-77785319A1E2}|Default">
   <MonoDevelop.Ide.ItemProperties.TicketsBooking.APIs PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TicketsBooking.Infrastructure/DesignTimeDbContextFactory.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TicketsBooking.UnitTest/ServideLayerTesting/PurchaseTests/PurchaseCreateTests.cs">
     <Files>
-      <File FileName="TicketsBooking.Application/Components/Events/DTOs/Commands/CreateNewEventCommand.cs" Line="19" Column="40" />
-      <File FileName="TicketsBooking.Application/Components/Events/Validators/CreateEventCommandValidator.cs" Line="1" Column="1" />
-      <File FileName="TicketsBooking.UnitTest/ServideLayerTesting/EventTests/EventCreateTests.cs" Line="1" Column="1" />
-      <File FileName="TicketsBooking.Infrastructure/Persistence/Configurations/EventConfig.cs" Line="1" Column="1" />
-      <File FileName="TicketsBooking.APIs/appsettings.json" Line="1" Column="1" />
-      <File FileName="TicketsBooking.Infrastructure/DesignTimeDbContextFactory.cs" Line="1" Column="1" />
+      <File FileName="TicketsBooking.APIs/Controllers/PurchaseController.cs" Line="1" Column="1" />
+      <File FileName="TicketsBooking.APIs/Controllers/EventController.cs" />
+      <File FileName="TicketsBooking.Application/Components/Events/EventService.cs" />
+      <File FileName="TicketsBooking.Infrastructure/Repos/EventRepo.cs" />
+      <File FileName="TicketsBooking.UnitTest/ServideLayerTesting/PurchaseTests/PurchaseCreateTests.cs" Line="116" Column="72" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TicketsBooking" expanded="True">
-            <Node name="TicketsBooking.APIs" expanded="True" />
-            <Node name="TicketsBooking.Domain" expanded="True">
-              <Node name="Entities" expanded="True" />
+            <Node name="TicketsBooking.APIs" expanded="True">
+              <Node name="Controllers" expanded="True" />
             </Node>
-            <Node name="TicketsBooking.Infrastructure" expanded="True">
-              <Node name="Persistence" expanded="True">
-                <Node name="Configurations" expanded="True" />
+            <Node name="TicketsBooking.Application" expanded="True">
+              <Node name="Components" expanded="True">
+                <Node name="Events" expanded="True">
+                  <Node name="DTOs" expanded="True">
+                    <Node name="Commands" expanded="True" />
+                    <Node name="Queries" expanded="True" />
+                    <Node name="Results" expanded="True" />
+                  </Node>
+                </Node>
               </Node>
-              <Node name="DesignTimeDbContextFactory.cs" selected="True" />
             </Node>
             <Node name="TicketsBooking.UnitTest" expanded="True">
               <Node name="ServideLayerTesting" expanded="True">
-                <Node name="CustomerTests" expanded="True" />
                 <Node name="EventTests" expanded="True" />
+                <Node name="PurchaseTests" expanded="True">
+                  <Node name="PurchaseCreateTests.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="TicketsBooking" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>

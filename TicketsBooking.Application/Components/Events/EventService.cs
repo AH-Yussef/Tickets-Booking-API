@@ -330,7 +330,7 @@ namespace TicketsBooking.Application.Components.Events
                     Message = ResponseMessages.UnprocessableEntity,
                 };
             }
-            var e = await _eventRepo.Search(query);
+            var e = await _eventRepo.Search(query.ToLower());
             return new OutputResponse<List<EventListedResult>>
             {
                 Success = true,

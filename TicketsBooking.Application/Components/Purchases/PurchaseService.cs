@@ -53,17 +53,7 @@ namespace TicketsBooking.Application.Components.Purchases
                     Message = ResponseMessages.UnprocessableEntity,
                 };
             }
-            //string NewEventID = command.ProviderName + command.Title;
-            // event already exists
-            /*if (await _eventRepo.GetSingle(NewEventID) != null)
-            {
-                return new OutputResponse<bool>
-                {
-                    Success = false,
-                    StatusCode = HttpStatusCode.BadRequest,
-                    Message = ResponseMessages.Failure,
-                };
-            }*/
+
             var purchase = await _purchaseRepo.CreateNewPurchase(command);
            // var singleResult = _mapper.Map<PurchaseSingleResult>(purchase);
             PurchaseSingleResult singleResult = new PurchaseSingleResult

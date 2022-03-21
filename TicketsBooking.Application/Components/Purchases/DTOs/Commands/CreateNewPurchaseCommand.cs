@@ -10,7 +10,6 @@ namespace TicketsBooking.Application.Components.Purchases.DTOs.Commands
     {
         public string EventID { get; set; }
         public string CustomerID { get; set; }
-        public DateTime PurchaseTime { get; set; }
         public int TicketsCount { get; set; }
 
     }

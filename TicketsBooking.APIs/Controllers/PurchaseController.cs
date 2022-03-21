@@ -20,7 +20,6 @@ namespace TicketsBooking.APIs.Controllers
             _purchaseService = purchaseService;
         }
 
-        //[Authorize(Roles = "EventProvider,Admin")]
         [AllowAnonymous]
         [HttpPost(Router.Purchase.Create)]
         public async Task<IActionResult> Create([FromForm] CreateNewPurchaseCommand command)
@@ -30,7 +29,7 @@ namespace TicketsBooking.APIs.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost(Router.Purchase.GetSingle)]
+        [HttpGet(Router.Purchase.GetSingle)]
         public async Task<IActionResult> GetSingle([FromQuery] string purchaseID)
         {
             var result = await _purchaseService.GetSingle(purchaseID);
@@ -38,14 +37,14 @@ namespace TicketsBooking.APIs.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost(Router.Purchase.GetAllNotPassed)]
+        [HttpGet(Router.Purchase.GetAllNotPassed)]
         public async Task<IActionResult> GetAllNotPassed([FromQuery] string customerID)
         {
             var result = await _purchaseService.GetAllNotPassed(customerID);
             return NewResult(result);
         }
         [AllowAnonymous]
-        [HttpPost(Router.Purchase.GetAllPassed)]
+        [HttpGet(Router.Purchase.GetAllPassed)]
         public async Task<IActionResult> GetAllPassed([FromQuery] string customerID)
         {
             var result = await _purchaseService.GetAllPassed(customerID);
@@ -53,7 +52,7 @@ namespace TicketsBooking.APIs.Controllers
         }
         [AllowAnonymous]
         [HttpPost(Router.Purchase.Refund)]
-        public async Task<IActionResult> Refund([FromQuery] string purchaseID)
+        public async Task<IActionResult> Refund([FromForm] string purchaseID)
         {
             var result = await _purchaseService.Refund(purchaseID);
             return NewResult(result);

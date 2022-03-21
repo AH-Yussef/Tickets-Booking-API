@@ -9,8 +9,8 @@ using TicketsBooking.Infrastructure.Persistence;
 namespace TicketsBooking.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220207120344_original")]
-    partial class original
+    [Migration("20220208201140_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

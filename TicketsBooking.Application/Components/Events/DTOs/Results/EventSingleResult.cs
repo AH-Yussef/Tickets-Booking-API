@@ -18,6 +18,7 @@ namespace TicketsBooking.Application.Components.Events.DTOs.Results
         public string ProviderName { get; set; }
         public DateTime dateTime { get; set; }
         public int AllTickets { get; set; }
+        public int BoughtTickets { get; set; }
         public int SingleTicketPrice { get; set; }
         public DateTime ReservationDueDate { get; set; }
         public string Location { get; set; }

@@ -14,7 +14,6 @@ namespace TicketsBooking.Application.Components.Purchases.Validators
         {
             RuleFor(c => c.EventID).NotNull().NotEmpty();
             RuleFor(c => c.CustomerID).NotNull().NotEmpty();
-            RuleFor(c => c.PurchaseTime).NotNull().NotEmpty();
             RuleFor(c => c.TicketsCount).NotNull().NotEmpty();
         }
     }

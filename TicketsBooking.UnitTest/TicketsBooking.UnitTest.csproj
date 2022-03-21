@@ -53,7 +53,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="RepoLayerTesting\AdminTests\" />
-    <Folder Include="ServideLayerTesting\EventTests\" />
-    <Folder Include="RepoLayerTesting\EventTests\" />
   </ItemGroup>
 </Project>
